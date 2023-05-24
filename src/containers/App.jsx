@@ -4,7 +4,9 @@ import Content from './Content';
 
 export default function App() {
   return (
-    <main className='bg-slate-500 min-h-screen flex flex-col justify-between'>
+    <main className='bg-gradient-to-b from-black to-slate-700
+    text-slate-100
+     min-h-screen flex flex-col justify-between'>
       <Header/>
       <Content/>
       <Footer/>
