@@ -1,7 +1,8 @@
 export default function Skill({ skill }) {
     return (
-        <article>
-            <h1>{skill}</h1>
-        </article>
+        <figure>
+            <img src={skill} alt={skill.slice(-4)} 
+            className="w-12"/>
+        </figure>
     )
 }
