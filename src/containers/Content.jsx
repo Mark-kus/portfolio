@@ -4,10 +4,10 @@ import About from "../components/About";
 
 export default function Content() {
     return (
-        <section>
+        <section className="space-y-10">
+            <About />
             <Skills />
             <Projects />
-            <About />
         </section>
     )
 }
