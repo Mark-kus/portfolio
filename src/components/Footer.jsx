@@ -4,9 +4,9 @@ import gmail from '../assets/contact/gmail.svg';
 
 export default function Footer() {
     return (
-        <footer className='flex justify-between mt-16'>
-            <a href="/gmail" target='_blank' className='flex'>
-                <img src={gmail} alt="gmail profile link" />
+        <footer className='flex justify-between mt-16 border-t border-slate-500 bg-slate-600'>
+            <a href="mailto:tignanellimarco@gmail.com" target='_blank' className='flex items-center'>
+                <img src={gmail} alt="gmail link" />
                 tignanellimarco@gmail.com
             </a>
 
