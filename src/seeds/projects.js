@@ -6,5 +6,9 @@ export default [
     {
         name: "Dogs API",
         image: "https://placehold.co/600x400",
-    }
+    },
+    {
+        name: "Rick and Morty API",
+        image: "https://placehold.co/600x400",
+    },
 ]
