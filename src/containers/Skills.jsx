@@ -12,9 +12,9 @@ import sequelize from '../assets/tech/sequelize.svg'
 export default function Skills() {
     const techSkills = [html, css, javscript, nodejs, react, nextjs, redux, postgres, sequelize]
     return (
-        <section className="flex flex-col">
+        <section className="flex flex-col md:m-10">
             <header className="text-lg">Tech Skills</header>
-            <article className="flex flex-wrap justify-center">
+            <article className="flex flex-wrap justify-center md:justify-start">
                 {techSkills.map((skill, i) => <Skill key={i} skill={skill} />)}
             </article>
         </section>
