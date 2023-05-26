@@ -8,14 +8,16 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Projects() {
     const settings = {
         dots: true,
-        arrows: true,
+        arrows: false,
         slidesToShow: 2,
+        centerMode: true,
+        centerPadding: "200px",
         responsive: [
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
-                    arrows: false,
+                    centerMode: false,
                 }
             }
         ]
@@ -23,11 +25,11 @@ export default function Projects() {
 
     return (
         <section className="flex flex-col">
-            <header>Projects</header>
-            <article className="w-full">
-                <Slider {...settings} >
-                    {myProjects.map((project, i) => <Project key={i} project={project} />)}
-                </Slider>
+            <header className="md:mx-10">Projects</header>
+            <article className="">
+                    <Slider {...settings} >
+                        {myProjects.map((project, i) => <Project key={i} project={project} />)}
+                    </Slider>
             </article>
         </section>
     )
