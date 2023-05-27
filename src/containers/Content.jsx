@@ -1,6 +1,7 @@
 import Projects from "./Projects";
 import Skills from "./Skills";
 import About from "../components/About";
+import Contact from "./Contact";
 
 export default function Content() {
     return (
@@ -8,6 +9,7 @@ export default function Content() {
             <About />
             <Skills />
             <Projects />
+            <Contact />
         </section>
     )
 }
