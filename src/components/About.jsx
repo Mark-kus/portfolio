@@ -4,7 +4,7 @@ export default function About() {
     return (
         <article className='flex flex-col items-center m-10 min-h-screen
         md:min-h-0 md:flex-row'>
-            <img src="https://placehold.co/600x400" alt="Marco image" className='w-5/6 sm:w-80 rounded-full' />
+            <img src={profile} alt="Marco image" className='w-5/6 sm:w-80 rounded-full' />
             <article className='text-center md: m-6'>
                 <header className='text-3xl leading-relaxed'>Marco Tignanelli</header>
                 When I become an adult, I would like to be a genius, millionaire, playboy, philanthropist. Yes, like him.
