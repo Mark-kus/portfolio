@@ -1,7 +1,9 @@
+import hueneyRuca from '../assets/projects/hueneyRuca.jpeg'
+
 export default [
     {
         name: "Hueney Ruca",
-        image: "https://placehold.co/600x400",
+        image: hueneyRuca,
     },
     {
         name: "Dogs",
