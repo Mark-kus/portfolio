@@ -7,10 +7,10 @@ const {
 
 export default (inputs, setInputs) => {
     console.log(inputs);
-    // emailjs.send(EMAIL_SERVICE, EMAIL_TEMPLATE, {
-    //     from_name: inputs.name,
-    //     message: inputs.message,
-    //     from_email: inputs.email,
-    // });
+    emailjs.send(EMAIL_SERVICE, EMAIL_TEMPLATE, {
+        from_name: inputs.name,
+        message: inputs.message,
+        from_email: inputs.email,
+    });
     setInputs({ name: '', email: '', message: '' })
 }
