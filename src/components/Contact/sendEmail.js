@@ -12,5 +12,5 @@ export default (inputs, setInputs) => {
     //     message: inputs.message,
     //     from_email: inputs.email,
     // });
-    setInputs({})
+    setInputs({ name: '', email: '', message: '' })
 }
