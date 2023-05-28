@@ -1,22 +1,27 @@
 import { useState } from "react";
 
 export default function Project({ project }) {
-    const [title, setTitle] = useState('');
+    const [toggle, setToggle] = useState(false);
 
-    const showTitle = () => setTitle(project.name);
-    const hideTitle = () => setTitle('');
-    const clsImage = title ? 'md:scale-110' : ''
-    const clsTitle = title ? 'block' : ''
+    const showToggle = () => setToggle(true);
+    const hideToggle = () => setToggle(false);
+
+    const clsImage = toggle ? 'md:scale-105' : ''
 
     return (
-        <article className="md:w-3/4 md:h-60 border md:rounded-lg md:mx-auto overflow-hidden"
-        onMouseEnter={showTitle}
-        onMouseLeave={hideTitle}>
-            <img src={project.image} alt={project.name} className={`object-cover w-full h-full
-            transition-all ${clsImage}`} />
-            <h1 className={`p-2 hidden absolute bottom-0 md:block border-t border-slate-500 bg-slate-400
-             ${clsTitle}`}>{title}</h1>
-            <h1 className="m-2 md:hidden">{project.name}</h1>
+        <article className="md:w-[400px] md:h-60 border md:rounded-lg md:mx-auto overflow-hidden"
+            onMouseEnter={showToggle}
+            onMouseLeave={hideToggle}>
+
+            <img src={project.image} alt={project.name} className={`object-cover w-full 
+            transition-all h-52 ${clsImage}`} />
+
+            <div className={`flex justify-between bg-slate-600`}>
+                <h1 className="p-1">{project.name}</h1>
+                <a href={project.deploy || project.repo} target="_blank"
+                className="p-1 bg-slate-800">{project.deploy ? 'Deploy' : 'Repository'}</a>
+            </div>
+
         </article>
     )
 }
