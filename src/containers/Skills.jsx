@@ -5,7 +5,7 @@ export default function Skills() {
     return (
         <section className="flex flex-col md:m-10">
             <header className="text-lg">Tech Skills</header>
-            <article className="flex flex-wrap justify-center md:justify-start">
+            <article className="flex flex-wrap justify-center">
                 {techSkills.map((skill, i) => <Skill key={i} skill={skill} />)}
             </article>
         </section>
