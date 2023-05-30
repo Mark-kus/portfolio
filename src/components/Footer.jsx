@@ -2,14 +2,28 @@ import github from '../assets/contact/github.svg';
 import linkedin from '../assets/contact/linkedin.svg';
 import gmail from '../assets/contact/gmail.svg';
 import twitter from '../assets/contact/twitter.svg';
+import { useState } from 'react';
 
 export default function Footer() {
+    const [copied, setCopied] = useState(false)
+
+    const handleCopy = () => {
+        if (!copied) {
+            navigator.clipboard.writeText('tignanellimarco@gmail.com')
+            setCopied(true)
+            setTimeout(() => {
+                setCopied(false)
+            }, 1000)
+        }
+    }
+
     return (
         <footer className='flex justify-between mt-16 border-t border-slate-500 bg-slate-600'>
-            <a href="mailto:tignanellimarco@gmail.com" target='_blank' className='flex items-center'>
+            <p onClick={handleCopy}
+                className='flex items-center cursor-pointer'>
                 <img src={gmail} alt="gmail link" className='w-8 md:w-12' />
-                tignanellimarco@gmail.com
-            </a>
+                {copied ? 'Copied to clipboard!' : 'tignanellimarco@gmail.com'}
+            </p>
 
             <div className='flex'>
                 <a href="https://www.linkedin.com/in/marco-tignanelli/" target='_blank'>
