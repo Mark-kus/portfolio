@@ -9,6 +9,7 @@ import redux from '../assets/tech/redux.svg'
 import sequelize from '../assets/tech/sequelize.svg'
 import mongodb from '../assets/tech/mongodb.svg'
 import tailwind from '../assets/tech/tailwind.svg'
+import mongoose from '../assets/tech/mongoose.svg'
 
 export default [
     {
@@ -41,6 +42,9 @@ export default [
     }, {
         tech: mongodb,
         name: 'MongoDB'
+    }, {
+        tech: mongoose,
+        name: 'Mongoose'
     }, {
         tech: tailwind,
         name: 'TailwindCSS'
