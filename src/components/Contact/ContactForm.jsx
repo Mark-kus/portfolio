@@ -35,7 +35,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col w-5/6 md:w-2/3 mx-auto text-sm">
+        <form onSubmit={handleSubmit} className="flex flex-col w-5/6 md:w-2/3 mx-auto text-sm md:text-base">
 
             <ToastContainer />
 

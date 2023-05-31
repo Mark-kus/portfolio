@@ -33,7 +33,7 @@ export default function Projects() {
 
     return (
         <section className="flex flex-col">
-            <header className="md:mx-10 flex">
+            <header className="md:mx-10 flex text-xl md:text-3xl mb-2">
                 Projects
                 <img src={swipe} alt="swipe indicator" className="ml-2 w-5 xl:hidden" />
             </header>
