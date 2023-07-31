@@ -5,3 +5,19 @@
 body {
     font-family: 'Roboto';
 }
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(28, 48, 48);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(119, 136, 153);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(47, 79, 79);
+}
