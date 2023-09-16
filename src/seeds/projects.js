@@ -1,8 +1,8 @@
-import hueneyRuca from '../assets/projects/hueneyRuca.jpeg'
-import rym from '../assets/projects/rym.jpeg'
-import dogApi from '../assets/projects/dogApi.jpeg'
+import hueneyRuca from '@/assets/projects/hueneyRuca.jpeg'
+import rym from '@/assets/projects/rym.jpeg'
+import dogApi from '@/assets/projects/dogApi.jpeg'
 
-export default [
+const projects = [
     {
         name: "Hueney Ruca",
         image: hueneyRuca,
@@ -22,3 +22,5 @@ export default [
         repo: "https://github.com/Mark-kus/rick-and-morty-api",
     },
 ]
+
+export default projects

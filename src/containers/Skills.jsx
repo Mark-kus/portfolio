@@ -1,5 +1,5 @@
-import Skill from "../components/Skill"
-import techSkills from "../seeds/techSkills"
+import Skill from "@/components/Skill"
+import techSkills from "@/seeds/techSkills"
 
 export default function Skills() {
     return (

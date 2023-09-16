@@ -1,4 +1,4 @@
-import '../styles/global.css'
+import '@/styles/global.css'
 import { Roboto } from 'next/font/google'
 
 export const metadata = {
@@ -25,7 +25,7 @@ export const metadata = {
 }
 
 const roboto = Roboto({
-  weight: ["400"],
+  weight: ["500"],
   subsets: ["latin"]
 })
 

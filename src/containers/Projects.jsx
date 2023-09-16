@@ -1,9 +1,9 @@
 "use client"
 
-import Project from "../components/Project";
-import myProjects from "../seeds/projects.js"
+import Project from "@/components/Project";
+import myProjects from "@/seeds/projects.js"
 import Slider from "react-slick";
-import swipe from '../assets/swipe.svg'
+import swipe from '@/assets/swipe.svg'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -38,7 +38,7 @@ export default function Projects() {
         <section className="flex flex-col">
             <header className="md:mx-10 flex text-xl md:text-3xl mb-2">
                 Projects
-                <Image src={swipe} alt="Indicator, for swiping the screen" className="ml-2 w-5 xl:hidden" />
+                <Image src={swipe} width={22} alt="Indicator, for swiping the screen" className="ml-2" />
             </header>
             <article>
                 <Slider {...settings} >

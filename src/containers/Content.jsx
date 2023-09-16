@@ -1,6 +1,6 @@
 import Projects from "./Projects";
 import Skills from "./Skills";
-import About from "../components/About";
+import About from "@/components/About";
 import Contact from "./Contact";
 
 export default function Content() {

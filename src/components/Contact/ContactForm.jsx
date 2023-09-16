@@ -51,7 +51,7 @@ export default function ContactForm() {
                 className={`mb-2 ${inputCls}`} />
 
             <div className="flex justify-between">
-                <label htmlFor="email" className="m">Email to respond</label>
+                <label htmlFor="email" className="m">Email</label>
                 <p className={`${errors?.email ? 'opacity-100' : 'opacity-0'} ${errorCls}`}>{errors?.email}</p>
             </div>
 
