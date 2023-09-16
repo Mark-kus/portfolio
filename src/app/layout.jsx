@@ -9,6 +9,8 @@ export const metadata = {
   openGraph: {
     title: "Mark-kus",
     description: "My personal portfolio, directory of projects, hall of fame, where you can get to know me and my history.",
+    url: "https://mark-kus.vercel.app",
+    siteName: "Mark-kus",
     images: [
       {
         url: "https://media.licdn.com/dms/image/D4E16AQFqH5W9rs1tAA/profile-displaybackgroundimage-shrink_350_1400/0/1675456435876?e=1696464000&v=beta&t=zijO_Cq5oWyxsFM8LX-z1xiyi2uKArQh8lBJcXmgb4A",
@@ -16,7 +18,6 @@ export const metadata = {
         height: 350
       }
     ],
-    url: "https://mark-kus.vercel.app",
     type: "website",
   },
 
