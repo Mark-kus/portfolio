@@ -1,3 +1,5 @@
+"use client"
+
 import sendEmail from "./sendEmail";
 import validateForm from "./validateForm"
 import { useState } from "react";

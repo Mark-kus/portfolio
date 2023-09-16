@@ -1,3 +1,6 @@
+"use client"
+
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Project({ project }) {
@@ -11,7 +14,7 @@ export default function Project({ project }) {
     return (
         <article className="xl:w-[400px] md:w-[375px] md:h-60 border md:rounded-lg md:mx-auto overflow-hidden">
 
-            <img src={project.image} alt={project.name} className={`object-cover w-full 
+            <Image src={project.image} alt={project.name} className={`object-cover w-full 
             transition-all h-52 ${clsImage}`}
                 onMouseEnter={showToggle}
                 onMouseLeave={hideToggle} />

@@ -2,18 +2,18 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
 const {
-    VITE_EMAIL_TEMPLATE,
-    VITE_EMAIL_SERVICE,
-    VITE_EMAIL_KEY
-} = import.meta.env
+    NEXT_PUBLIC_EMAIL_TEMPLATE,
+    NEXT_PUBLIC_EMAIL_SERVICE,
+    NEXT_PUBLIC_EMAIL_KEY
+} = import.meta
 
-export default (inputs, setInputs, setSending) => {
-    
-    emailjs.send(VITE_EMAIL_SERVICE, VITE_EMAIL_TEMPLATE, {
+const sendEmail = (inputs, setInputs, setSending) => {
+
+    emailjs.send(NEXT_PUBLIC_EMAIL_SERVICE, NEXT_PUBLIC_EMAIL_TEMPLATE, {
         from_name: inputs.name,
         message: inputs.message,
         from_email: inputs.email,
-    }, VITE_EMAIL_KEY)
+    }, NEXT_PUBLIC_EMAIL_KEY)
 
         .then(() => {
             toast.success("Mail sent!", {
@@ -31,3 +31,5 @@ export default (inputs, setInputs, setSending) => {
             setSending(false)
         })
 }
+
+export default sendEmail
