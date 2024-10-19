@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profile from '@/assets/profile.png'
+import profile from '@/assets/fotito.jpg'
 
 export default function About() {
     return (
