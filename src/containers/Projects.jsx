@@ -42,6 +42,10 @@ export default function Projects() {
             </header>
             <article>
                 <Slider {...settings} >
+                    <span style={{
+                        fontSize: "0.1rem",
+                        opacity: 0.5,
+                    }}>Algunos proyectos son hosteados en páginas gratuitas que, con el fin de optimizar recursos, entran en suspensión si no son visitadas con frecuencia, por lo que pueden llegar a tomar alrededor de 60 segundos en hacer la primera carga</span>
                     {myProjects.map((project, i) => <Project key={i} project={project} />)}
                 </Slider>
             </article>

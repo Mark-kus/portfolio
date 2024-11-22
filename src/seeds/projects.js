@@ -12,13 +12,13 @@ const projects = [
     {
         name: "Dogs",
         image: dogApi,
-        deploy: "",
+        deploy: "https://dogs-api-kfmi.onrender.com/",
         repo: "https://github.com/Mark-kus/dogs-api",
     },
     {
         name: "Rick and Morty",
         image: rym,
-        deploy: "",
+        deploy: "https://rick-and-morty-api-ofpv.onrender.com/",
         repo: "https://github.com/Mark-kus/rick-and-morty-api",
     },
 ]
