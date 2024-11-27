@@ -1,20 +1,23 @@
 import Image from "next/image";
 
 export default function Project({ project }) {
-    return (
-        <article className="xl:w-[400px] md:w-[375px] md:h-60 border md:rounded-lg md:mx-auto overflow-hidden">
-
-            <div className="overflow-hidden">
-                <Image src={project.image} alt={project.name} className="object-cover w-full 
-                transition-all h-52 hover:scale-110 duration-500" />
-            </div>
-
-            <div className={`flex justify-between bg-slate-600`}>
-                <h1 className="p-1">{project.name}</h1>
-                <a href={project.deploy || project.repo} target="_blank"
-                    className="p-1 transition-opacity hover:opacity-70">{project.deploy ? 'Go to deploy' : 'Go to repository'}</a>
-            </div>
-
-        </article>
-    )
+  return (
+    <>
+      <picture className="overflow-hidden w-full h-5/12 block rounded-lg mb-4 border-2 border-slate-700">
+        <Image
+          src={project.image}
+          alt={project.alt}
+          className="w-full h-full object-cover block hover:scale-105 transition-transform"
+        />
+      </picture>
+      <a
+        target="_blank"
+        noreferrer
+        href={project.deploy ?? project.repo}
+        className="bg-blue-500 py-2 px-4 rounded-lg hover:bg-gray-300 hover:text-blue-600 active:bg-gray-400 transition-colors"
+      >
+        {project.deploy ? "Deployment" : "Repository"}
+      </a>
+    </>
+  );
 }

@@ -4,12 +4,14 @@ import About from "@/components/About";
 import Contact from "./Contact";
 
 export default function Content() {
-    return (
-        <section className="space-y-10">
-            <About />
-            <Skills />
-            <Projects />
-            <Contact />
-        </section>
-    )
+  return (
+    <section className="space-y-10">
+      <div className="border border-slate-700 rounded-3xl m-10">
+        <About />
+        <Skills />
+      </div>
+      <Projects />
+      <Contact />
+    </section>
+  );
 }

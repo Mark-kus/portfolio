@@ -3,7 +3,7 @@ import profile from '@/assets/fotito.jpg'
 
 export default function About() {
     return (
-        <article className='flex flex-col items-center m-10 md:flex-row'>
+        <article className='flex flex-col items-center m-5 md:flex-row'>
             <Image src={profile} alt="Image of Marco Tignanelli" className='w-5/6 sm:w-80 rounded-full' />
             <article className='text-center md: m-6'>
                 <header className='text-3xl leading-relaxed bg-clip-text text-transparent 
