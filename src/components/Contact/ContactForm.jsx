@@ -1,76 +1,86 @@
-"use client"
+"use client";
 
 import sendEmail from "./sendEmail";
-import validateForm from "./validateForm"
+import validateForm from "./validateForm";
 import { useState } from "react";
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
-    const [inputs, setInputs] = useState({ name: '', email: '', message: '' });
-    const [errors, setErrors] = useState({ name: '', email: '', message: '' })
-    const [disable, setDisable] = useState(false)
-    const [sending, setSending] = useState(false)
+  const [inputs, setInputs] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
+  const [disable, setDisable] = useState(false);
+  const [sending, setSending] = useState(false);
 
-    const inputCls = "bg-slate-600 p-2 rounded"
-    const errorCls = "text-red-500 transition-opacity"
+  const formIsValid = (inputs, errors) => {
+    const errorCount = Object.values(errors).some((err) => err !== "");
+    const unfilledFields = Object.values(inputs).some(
+      (input) => input.length < 1
+    );
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setInputs({ ...inputs, [name]: value });
-        setErrors(validateForm({ ...inputs, [name]: value }))
-        if (disable) setDisable(false)
-    }
+    return !errorCount && !unfilledFields;
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs({ ...inputs, [name]: value });
 
-        const errorCount = Object.values(errors).some(err => err !== '')
-        const unfilledFields = Object.values(inputs).some(input => input.length < 1)
+    const new_errors = validateForm({ ...inputs, [name]: value });
+    setErrors(new_errors);
 
-        if (errorCount || unfilledFields) return setDisable(true)
-        else {
-            setSending(true)
-            sendEmail(inputs, setInputs, setSending)
-        }
-    };
+    const disable = !formIsValid({ ...inputs, [name]: value }, new_errors);
+    setDisable(disable);
+  };
 
-    return (
-        <form onSubmit={handleSubmit} className="flex flex-col w-5/6 md:w-2/3 mx-auto text-sm md:text-base">
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-            <ToastContainer />
+    const disable = !formIsValid(inputs, errors);
+    setDisable(disable);
 
-            <div className="flex justify-between">
-                <label htmlFor="name" className="m">Name</label>
-                <p className={`${errors?.name ? 'opacity-100' : 'opacity-0'} ${errorCls}`}>{errors?.name}</p>
-            </div>
+    if (disable) return;
 
-            <input id="name" name="name" type="text" onChange={handleChange} value={inputs.name}
-                placeholder="Peter Pan / GarfioTech"
-                className={`mb-2 ${inputCls}`} />
+    setSending(true);
+    sendEmail(inputs, setInputs, setSending);
+  };
 
-            <div className="flex justify-between">
-                <label htmlFor="email" className="m">Email</label>
-                <p className={`${errors?.email ? 'opacity-100' : 'opacity-0'} ${errorCls}`}>{errors?.email}</p>
-            </div>
-
-            <input id="email" name="email" type="email" onChange={handleChange} value={inputs.email}
-                placeholder="wendyrecruiter@gmail.com"
-                className={`mb-2 ${inputCls}`} />
-
-            <div className="flex justify-between">
-                <label htmlFor="message" className="m">Message</label>
-                <p className={`${errors?.message ? 'opacity-100' : 'opacity-0'} ${errorCls}`}>{errors?.message}</p>
-            </div>
-            <textarea name="message" id="message" cols="30" rows="10" onChange={handleChange} value={inputs.message}
-                className={`resize-none rounded-b-none ${inputCls}`} placeholder="Hi! I like your projects..." />
-
-            <button className={`p-2 ${disable ? 'bg-red-500 ' : 'bg-blue-400'}`}
-                disabled={disable || sending}>
-                {disable ? 'Fill the fields correctly' : 'Send Email'}
-            </button>
-
-        </form>
-    )
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col lg:w-1/2 md:pr-20 md:pt-8 px-8 md:pb-12 pb-8"
+    >
+      <ToastContainer />
+      <h3 className="text-2xl font-bold py-8">Send me a message!</h3>
+      <input
+        onChange={handleChange}
+        id="nombre"
+        placeholder="Name"
+        className="py-2 px-4 my-4 bg-transparent rounded-lg shadow-xl"
+        name="name"
+        value=""
+      />
+      <input
+        onChange={handleChange}
+        id="Email"
+        placeholder="Email"
+        className="py-2 px-4 my-4 bg-transparent rounded-lg shadow-xl"
+        name="email"
+      />
+      <textarea
+        onChange={handleChange}
+        id="mensaje"
+        placeholder="Message"
+        className="py-2 px-4 my-4 bg-transparent rounded-lg shadow-xl resize-none h-40"
+        name="message"
+      ></textarea>
+      <button
+        type="submit"
+        disabled={disable || sending}
+        className="w-fit py-1 px-4 my-4 gradient rounded-lg shadow-xl"
+      >
+        Send message
+      </button>
+    </form>
+  );
 }

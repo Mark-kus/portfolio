@@ -6,8 +6,7 @@ export default function About() {
         <article className='flex flex-col items-center m-5 md:flex-row'>
             <Image src={profile} alt="Image of Marco Tignanelli" className='w-5/6 sm:w-80 rounded-full' />
             <article className='text-center md: m-6'>
-                <header className='text-3xl leading-relaxed bg-clip-text text-transparent 
-                bg-gradient-to-r from-red-600 to-yellow-500 to-80%'>Marco Tignanelli</header>
+                <header className='text-3xl leading-relaxed bg-clip-text-gradient'>Marco Tignanelli</header>
                 <h4 className='text-lg md:text-xl text-red-500'>Full Stack Web Developer</h4>
                 <p className='md:text-lg'>
                     Graduated

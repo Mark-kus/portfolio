@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Project({ project }) {
   return (
     <>
-      <picture className="overflow-hidden w-full h-5/12 block rounded-lg mb-4 border-2 border-slate-700">
+      <picture className="overflow-hidden w-full h-5/12 block rounded-lg mb-4">
         <Image
           src={project.image}
           alt={project.alt}
