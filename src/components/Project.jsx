@@ -12,7 +12,7 @@ export default function Project({ project }) {
       </picture>
       <a
         target="_blank"
-        noreferrer
+        noreferrer={"true"}
         href={project.deploy ?? project.repo}
         className="bg-blue-500 py-2 px-4 rounded-lg hover:bg-gray-300 hover:text-blue-600 active:bg-gray-400 transition-colors"
       >

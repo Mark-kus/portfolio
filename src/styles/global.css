@@ -18,6 +18,10 @@
     background: rgb(47, 79, 79);
 }
 
+.bg-gradient-themed {
+    @apply bg-gradient-to-r from-red-600 to-yellow-500 to-80%;
+}
+
 .bg-clip-text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-yellow-500 to-80%;
+    @apply bg-clip-text text-transparent bg-gradient-to-r bg-gradient-themed;
 }

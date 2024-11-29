@@ -11,8 +11,8 @@ import "react-vertical-timeline-component/style.min.css";
 
 export default function Projects() {
   return (
-    <section className="flex flex-col">
-      <header className="text-xl md:text-3xl mb-10">Projects</header>
+    <section id="projects" className="flex flex-col">
+      <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text-gradient">Projects</header>
       <article>
         <VerticalTimeline>
           {myProjects.map((project, index) => (

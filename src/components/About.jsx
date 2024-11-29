@@ -6,12 +6,12 @@ export default function About() {
         <article className='flex flex-col items-center m-5 md:flex-row'>
             <Image src={profile} alt="Image of Marco Tignanelli" className='w-5/6 sm:w-80 rounded-full' />
             <article className='text-center md: m-6'>
-                <header className='text-3xl leading-relaxed bg-clip-text-gradient'>Marco Tignanelli</header>
-                <h4 className='text-lg md:text-xl text-red-500'>Full Stack Web Developer</h4>
+                <header className='text-3xl md:text-5xl font-extrabold pb-2 leading-relaxed bg-clip-text-gradient'>Marco Tignanelli</header>
+                <h4 className='text-1xl md:text-3xl'>Full Stack Web Developer</h4>
                 <p className='md:text-lg'>
                     Graduated
-                    from <a href="https://www.soyhenry.com/" target='_blank' className='text-yellow-400'>SoyHenry</a>,
-                    and studied at <a href="https://www.udemy.com/" target='_blank' className='text-violet-400'>Udemy</a>,
+                    from <a href="https://www.soyhenry.com/" target='_blank' className='text-yellow-400 hover:underline'>SoyHenry</a>,
+                    and studied at <a href="https://www.udemy.com/" target='_blank' className='text-violet-400 hover:underline'>Udemy</a>,
                     to later become <span className='text-sky-400'>self-taught</span>. <br />
                     I armed myself with knowledge on front and back end, to develop amazing web
                     applications. <br />

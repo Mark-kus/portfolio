@@ -56,7 +56,7 @@ export default function ContactForm() {
         onChange={handleChange}
         id="nombre"
         placeholder="Name"
-        className="py-2 px-4 my-4 bg-transparent rounded-lg shadow-xl"
+        className="py-2 px-4 my-4 bg-white bg-opacity-30 rounded-lg shadow-xl"
         name="name"
         value=""
       />
@@ -64,20 +64,20 @@ export default function ContactForm() {
         onChange={handleChange}
         id="Email"
         placeholder="Email"
-        className="py-2 px-4 my-4 bg-transparent rounded-lg shadow-xl"
+        className="py-2 px-4 my-4 bg-white bg-opacity-30 rounded-lg shadow-xl"
         name="email"
       />
       <textarea
         onChange={handleChange}
         id="mensaje"
         placeholder="Message"
-        className="py-2 px-4 my-4 bg-transparent rounded-lg shadow-xl resize-none h-40"
+        className="py-2 px-4 my-4 bg-white bg-opacity-30 rounded-lg shadow-xl resize-none h-40"
         name="message"
       ></textarea>
       <button
         type="submit"
         disabled={disable || sending}
-        className="w-fit py-1 px-4 my-4 gradient rounded-lg shadow-xl"
+        className="w-fit py-1 px-4 my-4 gradient rounded-lg shadow-xl bg-gradient-themed"
       >
         Send message
       </button>
