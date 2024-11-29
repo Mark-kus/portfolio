@@ -54,30 +54,29 @@ export default function ContactForm() {
       <h3 className="text-2xl font-bold py-8">Send me a message!</h3>
       <input
         onChange={handleChange}
-        id="nombre"
         placeholder="Name"
         className="py-2 px-4 my-4 bg-white bg-opacity-30 rounded-lg shadow-xl"
         name="name"
-        value=""
+        value={inputs.name}
       />
       <input
         onChange={handleChange}
-        id="Email"
         placeholder="Email"
         className="py-2 px-4 my-4 bg-white bg-opacity-30 rounded-lg shadow-xl"
         name="email"
+        value={inputs.email}
       />
       <textarea
         onChange={handleChange}
-        id="mensaje"
         placeholder="Message"
         className="py-2 px-4 my-4 bg-white bg-opacity-30 rounded-lg shadow-xl resize-none h-40"
         name="message"
+        value={inputs.message}
       ></textarea>
       <button
         type="submit"
         disabled={disable || sending}
-        className="w-fit py-1 px-4 my-4 gradient rounded-lg shadow-xl bg-gradient-themed"
+        className="w-fit py-1 px-4 my-4 gradient rounded-lg shadow-xl bg-gradient-gold dark:bg-gradient-marine transition-colors"
       >
         Send message
       </button>

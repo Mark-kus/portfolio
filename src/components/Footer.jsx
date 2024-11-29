@@ -8,7 +8,9 @@ export default function Footer() {
     <footer className="flex justify-between items-center text-black bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg px-6 z-10 fixed bottom-0 w-full">
       <p className="flex items-center">
         <span className="text-sm">
-          {new Date().toLocaleDateString()} - Made with 🖤 by {GITHUB.username}
+          {new Date().toLocaleDateString()} - Made with{" "}
+          <span className="hidden dark:inline">🖤</span>
+          <span className="dark:hidden">🤍</span> by {GITHUB.username}
         </span>
       </p>
 

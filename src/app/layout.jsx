@@ -33,7 +33,7 @@ const roboto = Roboto({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className='dark'>
       <body className={roboto.className}>
         {children}
         

@@ -3,25 +3,17 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: rgb(28, 48, 48);
+  background: rgb(28, 48, 48);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(119, 136, 153);
+  background: rgb(119, 136, 153);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(47, 79, 79);
-}
-
-.bg-gradient-themed {
-    @apply bg-gradient-to-r from-red-600 to-yellow-500 to-80%;
-}
-
-.bg-clip-text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r bg-gradient-themed;
+  background: rgb(47, 79, 79);
 }

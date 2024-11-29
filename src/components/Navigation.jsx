@@ -6,10 +6,46 @@ import SVGPersonalLogo from "./svgs/SVGPersonalLogo";
 import SVGSun from "./svgs/SVGSun";
 
 export default function Navigation() {
-  const handleTheme = () => {};
+  // Estado para manejar el tema
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  // Función para cambiar el tema
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    // Cambiar la clase en el <html> para activar el tema oscuro
+    if (newTheme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  };
+
+  // Comprobar si hay un tema guardado en el localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  // Guardar el tema en el localStorage
+  useEffect(() => {
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
+
+  // Función para cambiar el lenguaje
+  const changeLanguage = ({ target: { value } }) => {
+    // Cambiar el idioma de la página
+    console.log(value);
+  };
 
   return (
-    <nav className="flex justify-between md:justify-end items-center p-3 bg-slate-800 dark:bg-green-800">
+    <nav className="flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800">
       <a className="md:ml-20 md:absolute md:left-0" href="/">
         <SVGPersonalLogo />
       </a>
@@ -46,9 +82,10 @@ export default function Navigation() {
       </div>
       <div className="hidden md:block mr-20 ml-10">
         <ul className="flex list-none gap-3 items-center">
-          <li className="py-2 px-4 rounded-3xl">
+          <li className="rounded-3xl">
             <select
-              className="bg-slate-800 text-white border border-gray-600 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={changeLanguage}
+              className="bg-transparent h-9 py-1 px-2 outline-none ring-2 ring-black dark:ring-orange-300 rounded-3xl cursor-pointer"
               defaultValue="en"
             >
               <option value="en">English</option>
@@ -56,16 +93,25 @@ export default function Navigation() {
             </select>
           </li>
           <button
-            onChange={handleTheme}
-            className="p-2 rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-orange-300"
+            onClick={toggleTheme}
+            className={`text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 ${
+              isDarkMode ? "bg-orange-300" : "bg-black"
+            }`}
           >
-            <SVGSun />
-          </button>
-          <button
-            onChange={handleTheme}
-            className="p-2 rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-black"
-          >
-            <SVGMoon />
+            <picture
+              className={`transition-all ${
+                isDarkMode ? " opacity-100" : "opacity-0 translate-x-5"
+              }`}
+            >
+              <SVGSun />
+            </picture>
+            <picture
+              className={`transition-all ${
+                isDarkMode ? " opacity-0 -translate-x-5" : "opacity-100"
+              }`}
+            >
+              <SVGMoon />
+            </picture>
           </button>
         </ul>
       </div>
