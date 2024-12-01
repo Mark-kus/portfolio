@@ -41,11 +41,14 @@ export default function Navigation() {
   // Función para cambiar el lenguaje
   const changeLanguage = ({ target: { value } }) => {
     // Cambiar el idioma de la página
-    console.log(value);
+    document.documentElement.lang = value;
+    localStorage.setItem("lang", value);
+    // Recargar la página para que los cambios surtan efecto
+    window.location.reload();
   };
 
   return (
-    <nav className="flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800">
+    <nav className="flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white">
       <a className="md:ml-20 md:absolute md:left-0" href="/">
         <SVGPersonalLogo />
       </a>
@@ -85,7 +88,7 @@ export default function Navigation() {
           <li className="rounded-3xl">
             <select
               onChange={changeLanguage}
-              className="bg-transparent h-9 py-1 px-2 outline-none ring-2 ring-black dark:ring-orange-300 rounded-3xl cursor-pointer"
+              className="bg-transparent h-9 py-1 px-2 outline-none ring-2 ring-gray-300 rounded-3xl cursor-pointer"
               defaultValue="en"
             >
               <option value="en">English</option>
@@ -95,19 +98,19 @@ export default function Navigation() {
           <button
             onClick={toggleTheme}
             className={`text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 ${
-              isDarkMode ? "bg-orange-300" : "bg-black"
+              !isDarkMode ? "bg-orange-300" : "bg-black"
             }`}
           >
             <picture
               className={`transition-all ${
-                isDarkMode ? " opacity-100" : "opacity-0 translate-x-5"
+                !isDarkMode ? " opacity-100" : "opacity-0 translate-x-5"
               }`}
             >
               <SVGSun />
             </picture>
             <picture
               className={`transition-all ${
-                isDarkMode ? " opacity-0 -translate-x-5" : "opacity-100"
+                !isDarkMode ? " opacity-0 -translate-x-5" : "opacity-100"
               }`}
             >
               <SVGMoon />

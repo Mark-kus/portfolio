@@ -40,18 +40,24 @@ const Contact = () => {
           </li>
           <li>
             <a
-              href={`mailto:${EMAIL}`}
+              href={`mailto:${EMAIL.username}`}
               target="_BLANK"
               className="flex items-center gap-x-2 w-fit"
             >
               <SVGMail />
-              {EMAIL}
+              {EMAIL.username}
+            </a>
+          </li>
+          <li>
+            <a
+              href={true ? "/curriculum.pdf" : "/resume.pdf"}
+              target="_BLANK"
+              className="inline-block px-4 py-1 rounded-3xl border-2 cursor-pointer dark:hover:bg-gray-700 hover:bg-gray-300 active:scale-95 transition-all font-semibold md:text-lg"
+            >
+              Open Resume
             </a>
           </li>
         </ul>
-        <button className="inline-block px-4 py-2 rounded-3xl border-2 cursor-pointer hover:scale-105 transition-all font-bold md:text-xl">
-          Download CV
-        </button>
       </div>
       <div className="Toastify"></div>
       <ContactForm />
