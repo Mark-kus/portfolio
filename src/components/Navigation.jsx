@@ -47,8 +47,6 @@ export default function Navigation({ lang, dictionary }) {
     menuList: "hidden md:block",
     menuItems: "flex list-none gap-3 items-center",
     menuItem: "py-2 px-4 rounded-3xl",
-    languageSelector:
-      "bg-transparent h-9 py-1 px-2 outline-none ring-2 ring-gray-300 rounded-3xl cursor-pointer",
     themeButton: `text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 ${
       !isDarkMode ? "bg-orange-300" : "bg-black"
     }`,

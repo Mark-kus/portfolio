@@ -1,5 +1,5 @@
 import Skill from "@/components/Skill";
-import techSkills from "@/seeds/techSkills";
+import skills from "@/seeds/skills";
 
 export default function Skills({ dictionary }) {
   return (
@@ -8,7 +8,7 @@ export default function Skills({ dictionary }) {
         {dictionary.title}
       </header>
       <article className="flex flex-wrap justify-center">
-        {techSkills.map((skill, i) => (
+        {skills.map((skill, i) => (
           <Skill key={i} skill={skill} />
         ))}
       </article>
