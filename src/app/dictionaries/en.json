@@ -1,0 +1,63 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "content": {
+    "about": {
+      "name": "Marco Tignanelli",
+      "title": "Full Stack Web Developer",
+      "graduatedFrom": "Graduated from",
+      "studiedWith": "studied at",
+      "toLater": "to later become",
+      "selfTaught": "self-taught",
+      "knowledge": "I armed myself with knowledge on front and back end, to develop client-tailored web applications.",
+      "continueLearning": "Although you can see my main tech skills, I continue to learn new ones even at this moment, either with a study group or on my own.",
+      "contactMe": "If you see me capable of developing your project, contact me, and if not, send me a greeting since you are here."
+    },
+    "technologies": {
+      "title": "Main Technologies"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "contact": {
+      "callToAction": {
+        "title": "Get in Touch",
+        "subtitle": "I am very approachable and would love to speak to you. Feel free to send me an email, follow me in social media or simply complete the enquiry form.",
+        "openResume": "Open Resume"
+      },
+      "form": {
+        "title": "Send me a message!",
+        "name": {
+          "placeholder": "Name",
+          "errors": {
+            "length": "Name must be at most 50 characters long",
+            "regex": "Can only contain letters"
+          }
+        },
+        "email": {
+          "placeholder": "Email",
+          "errors": {
+            "regex": "Email must be a valid email address"
+          }
+        },
+        "message": {
+          "placeholder": "Message",
+          "errors": {
+            "length": "Message must be at most 500 characters long",
+            "regex": "Can only contain letters, numbers and punctuation"
+          }
+        },
+        "submit": "Send Message",
+        "success": "Mail sent! Hope to talk to you soon ;)",
+        "error": "An error occurred! You can try to reach me through my social media though :)"
+      }
+    }
+  },
+  "footer": {
+    "made": "Made with",
+    "by": "by"
+  }
+}

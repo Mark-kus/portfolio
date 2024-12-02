@@ -3,15 +3,15 @@ import Skills from "./Skills";
 import About from "@/components/About";
 import Contact from "./Contact";
 
-export default function Content() {
+export default function Content({ lang, dictionary }) {
   return (
     <section className="space-y-10">
       <div className="border-2 border-amber-900 dark:border-slate-700 rounded-3xl m-10">
-        <About />
+        <About dictionary={dictionary.about} />
       </div>
-        <Skills />
-      <Projects />
-      <Contact />
+      <Skills dictionary={dictionary.technologies} />
+      <Projects lang={lang} dictionary={dictionary.projects} />
+      <Contact lang={lang} dictionary={dictionary.contact} />
     </section>
   );
 }

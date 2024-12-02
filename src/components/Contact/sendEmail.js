@@ -16,7 +16,7 @@ const sendEmail = (inputs, setInputs, setSending, setSubmitted) => {
       process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY
     )
     .then(() => {
-      toast.success("Mail sent! Hope to talk to you soon ;)", {
+      toast.success(dictionary.success, {
         autoClose: 4000,
         theme: isDark ? "dark" : "light",
       });
@@ -24,13 +24,10 @@ const sendEmail = (inputs, setInputs, setSending, setSubmitted) => {
       setSubmitted(false);
     })
     .catch(() => {
-      toast.error(
-        "An error ocurred! You can try to reach me through my social media tho :)",
-        {
-          autoClose: 4000,
-          theme: isDark ? "dark" : "light",
-        }
-      );
+      toast.error(dictionary.error, {
+        autoClose: 4000,
+        theme: isDark ? "dark" : "light",
+      });
     })
     .finally(() => {
       setSending(false);

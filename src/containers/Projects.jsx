@@ -11,7 +11,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-export default function Projects() {
+export default function Projects({ lang, dictionary }) {
   const [elements, setElements] = useState(projects.slice(0, 3));
 
   const loadMore = () => {
@@ -21,7 +21,7 @@ export default function Projects() {
     ]);
   };
 
-  const getTimelineElements = () => {
+  const getTimelineElements = (lang = "en") => {
     return elements.map((project, index) => {
       return (
         <VerticalTimelineElement
@@ -50,18 +50,16 @@ export default function Projects() {
   return (
     <section id="projects" className="flex flex-col items-center">
       <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
-        Projects
+        {dictionary.title}
       </header>
       <article className="w-full">
         <VerticalTimeline>
-          {getTimelineElements()}
+          {getTimelineElements(lang)}
           {elements.length < projects.length && (
             <VerticalTimelineElement
               iconClassName="vertical-timeline-element-icon--button cursor-pointer bg-slate-700 hover:bg-slate-800 transition-colors"
               iconOnClick={loadMore}
-              icon={
-                <SVGPlus />
-              }
+              icon={<SVGPlus />}
             />
           )}
         </VerticalTimeline>

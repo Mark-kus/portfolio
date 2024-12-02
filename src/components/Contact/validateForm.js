@@ -1,4 +1,4 @@
-const validateForm = (inputs) => {
+const validateForm = (inputs, dictionary) => {
   const regularExpresions = {
     email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     name: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s´]+$/,
@@ -9,21 +9,20 @@ const validateForm = (inputs) => {
 
   if (inputs.name) {
     if (!regularExpresions.name.test(inputs.name))
-      errors.name = "Can only contain letters, numbers and punctuation";
-    else if (inputs.name.length > 50) errors.name = "Maximum length is 50";
+      errors.name = dictionary.name.errors.regex;
+    else if (inputs.name.length > 50)
+      errors.name = dictionary.name.errors.length;
   }
 
-  if (inputs.email) {
-    if (!regularExpresions.email.test(inputs.email))
-      errors.email = "Must be a valid email";
-    else if (inputs.email.length > 50) errors.email = "Maximum length is 50";
+  if (inputs.email && !regularExpresions.email.test(inputs.email)) {
+    errors.email = dictionary.email.errors.regex;
   }
 
   if (inputs.message) {
     if (!regularExpresions.message.test(inputs.message))
-      errors.message = "Can only contain letters, numbers and punctuation";
+      errors.message = dictionary.message.errors.regex;
     else if (inputs.message.length > 500)
-      errors.message = "Maximum length is 500";
+      errors.message = dictionary.message.errors.length;
   }
 
   return errors;

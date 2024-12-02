@@ -1,0 +1,63 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "content": {
+    "about": {
+      "name": "Marco Tignanelli",
+      "title": "Desarrollador Web Full Stack",
+      "graduatedFrom": "Graduado de",
+      "studiedWith": "estudié en",
+      "toLater": "para luego convertirme en",
+      "selfTaught": "autodidacta",
+      "knowledge": "Me armé de conocimientos en front y back end, para desarrollar aplicaciones web a medida del cliente.",
+      "continueLearning": "Aunque podés ver mis principales habilidades tecnológicas, sigo aprendiendo nuevas incluso en este momento, ya sea con un grupo de estudio o por mi cuenta.",
+      "contactMe": "Si me ves capaz de desarrollar tu proyecto, contactame, y si no, enviame un saludo ya que estás acá."
+    },
+    "technologies": {
+      "title": "Tecnologías Principales"
+    },
+    "projects": {
+      "title": "Proyectos"
+    },
+    "contact": {
+      "callToAction": {
+        "title": "Ponete en Contacto",
+        "subtitle": "Soy muy accesible y me encantaría hablar con vos. No dudes en enviarme un mail, seguirme en redes sociales o simplemente completar el formulario de consulta.",
+        "openResume": "Abrir Currículum"
+      },
+      "form": {
+        "title": "Enviame un mensaje!",
+        "name": {
+          "placeholder": "Nombre",
+          "errors": {
+            "length": "El nombre debe tener como máximo 50 caracteres",
+            "regex": "Solo puede contener letras"
+          }
+        },
+        "email": {
+          "placeholder": "Email",
+          "errors": {
+            "regex": "El email debe ser una dirección válida"
+          }
+        },
+        "message": {
+          "placeholder": "Mensaje",
+          "errors": {
+            "length": "El mensaje debe tener como máximo 500 caracteres",
+            "regex": "Solo puede contener letras, números y puntuación"
+          }
+        },
+        "submit": "Enviar Mensaje",
+        "success": "¡Correo enviado! Espero hablar con vos pronto ;)",
+        "error": "¡Ocurrió un error! Sin embargo, podés intentar contactarme a través de mis redes sociales :)"
+      }
+    }
+  },
+  "footer": {
+    "made": "Hecho con",
+    "by": "por"
+  }
+}

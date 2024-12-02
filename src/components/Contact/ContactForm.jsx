@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ContactForm() {
+export default function ContactForm({ dictionary }) {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
@@ -39,7 +39,7 @@ export default function ContactForm() {
     setInputs(newInputs);
 
     if (submitted) {
-      const newErrors = validateForm(newInputs);
+      const newErrors = validateForm(newInputs, dictionary);
       setErrors(newErrors);
     }
   };
@@ -48,12 +48,12 @@ export default function ContactForm() {
     e.preventDefault();
     e.target.reset();
 
-    const newErrors = validateForm(inputs);
+    const newErrors = validateForm(inputs, dictionary);
     const isValid = formIsValid(inputs, newErrors);
 
     if (isValid) {
       setSending(true);
-      sendEmail(inputs, setInputs, setSending, setSubmitted);
+      sendEmail(inputs, setInputs, setSending, setSubmitted, dictionary);
     } else {
       setErrors(newErrors);
     }
@@ -105,10 +105,10 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className={classNames.form}>
       <ToastContainer />
-      <h3 className={classNames.header}>Send me a message!</h3>
+      <h2 className={classNames.header}>{dictionary.title}</h2>
       <input
         onChange={handleChange}
-        placeholder="Name"
+        placeholder={dictionary.name.placeholder}
         className={classNames.name}
         name="name"
         value={inputs.name}
@@ -117,7 +117,7 @@ export default function ContactForm() {
       {errors.name && <p className={classNames.errorText}>{errors.name}</p>}
       <input
         onChange={handleChange}
-        placeholder="Email"
+        placeholder={dictionary.email.placeholder}
         className={classNames.email}
         name="email"
         value={inputs.email}
@@ -126,7 +126,7 @@ export default function ContactForm() {
       {errors.email && <p className={classNames.errorText}>{errors.email}</p>}
       <textarea
         onChange={handleChange}
-        placeholder="Message"
+        placeholder={dictionary.message.placeholder}
         className={classNames.message}
         name="message"
         value={inputs.message}
@@ -140,7 +140,7 @@ export default function ContactForm() {
         disabled={isSubmitDisabled}
         className={classNames.submitButton}
       >
-        Send message
+        {sending ? "Sending..." : dictionary.submit}
       </button>
     </form>
   );
