@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGMoon = ({ color = "currentColor" }) => {
+const Moon = ({ color = "currentColor" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ const SVGMoon = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGMoon;
+export default Moon;

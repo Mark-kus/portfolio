@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SVGMoon from "./svgs/SVGMoon";
-import SVGPersonalLogo from "./svgs/SVGPersonalLogo";
-import SVGSun from "./svgs/SVGSun";
+import Moon from "./svgs/generic/Moon";
+import PersonalLogo from "./svgs/PersonalLogo";
+import Sun from "./svgs/generic/Sun";
 import LanguageSelector from "./LanguageSelector";
 
 export default function Navigation({ lang, dictionary }) {
@@ -42,11 +42,7 @@ export default function Navigation({ lang, dictionary }) {
   const classnames = {
     nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white",
     logo: "md:ml-20 md:absolute md:left-0",
-    menuButton: "md:hidden",
-    menuIcon: "w-6 h-6",
-    menuList: "hidden md:block",
-    menuItems: "flex list-none gap-3 items-center",
-    menuItem: "py-2 px-4 rounded-3xl",
+    menuItems: "flex list-none gap-3 items-center mr-5",
     themeButton: `text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 ${
       !isDarkMode ? "bg-orange-300" : "bg-black"
     }`,
@@ -65,52 +61,43 @@ export default function Navigation({ lang, dictionary }) {
       aria-label="Main Navigation"
     >
       <span className={classnames.logo}>
-        <SVGPersonalLogo aria-label="Personal Logo" />
+        <PersonalLogo aria-label="Personal Logo" />
       </span>
-      <div className={classnames.menuButton}>
-        <button
-          aria-label="Menu"
-          aria-expanded="false"
-          aria-controls="menu-list"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className={classnames.menuIcon}
+
+      <ul className={classnames.menuItems}>
+        <li>
+          <a
+            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
+            data-section="#landing"
+            href="/#"
+            aria-label={dictionary.home}
           >
-            <path d="M3 18h18v-2H3v2zM3 13h18v-2H3v2zM3 6v2h18V6H3z"></path>
-          </svg>
-        </button>
-      </div>
-      <div className={classnames.menuList} id="menu-list">
-        <ul className={classnames.menuItems}>
-          <li className={classnames.menuItem}>
-            <a data-section="#landing" href="/#" aria-label={dictionary.home}>
-              {dictionary.home}
-            </a>
-          </li>
-          <li className={classnames.menuItem}>
-            <a
-              data-section="#projects"
-              href="/#projects"
-              aria-label={dictionary.projects}
-            >
-              {dictionary.projects}
-            </a>
-          </li>
-          <li className={classnames.menuItem}>
-            <a
-              data-section="#contact"
-              href="/#contact"
-              aria-label={dictionary.contact}
-            >
-              {dictionary.contact}
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="hidden md:block mr-20 ml-10">
+            {dictionary.home}
+          </a>
+        </li>
+        <li>
+          <a
+            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
+            data-section="#projects"
+            href="/#projects"
+            aria-label={dictionary.projects}
+          >
+            {dictionary.projects}
+          </a>
+        </li>
+        <li>
+          <a
+            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
+            data-section="#contact"
+            href="/#contact"
+            aria-label={dictionary.contact}
+          >
+            {dictionary.contact}
+          </a>
+        </li>
+      </ul>
+      <div className="hidden md:block h-6 w-0.5 bg-white bg-opacity-20"></div>
+      <div className="hidden md:block mr-20 ml-5">
         <ul className={classnames.menuItems}>
           <li className="rounded-3xl">
             <LanguageSelector lang={lang} />
@@ -123,10 +110,10 @@ export default function Navigation({ lang, dictionary }) {
               aria-label="Toggle dark mode"
             >
               <picture className={classnames.sunIcon}>
-                <SVGSun aria-hidden="true" />
+                <Sun aria-hidden="true" />
               </picture>
               <picture className={classnames.moonIcon}>
-                <SVGMoon aria-hidden="true" />
+                <Moon aria-hidden="true" />
               </picture>
             </button>
           </li>

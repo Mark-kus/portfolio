@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGGitHub = ({ color = "currentColor" }) => {
+const GitHub = ({ color = "currentColor" }) => {
   return (
     <svg
       stroke={color}
@@ -17,4 +17,4 @@ const SVGGitHub = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGGitHub;
+export default GitHub;

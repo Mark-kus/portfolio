@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGPlus = ({ color = "currentColor" }) => {
+const Plus = ({ color = "currentColor" }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -49,4 +49,4 @@ const SVGPlus = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGPlus;
+export default Plus;

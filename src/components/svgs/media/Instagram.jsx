@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGInstagram = ({ color = "currentColor" }) => {
+const Instagram = ({ color = "currentColor" }) => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -30,4 +30,4 @@ const SVGInstagram = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGInstagram;
+export default Instagram;

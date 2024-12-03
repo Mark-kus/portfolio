@@ -1,7 +1,7 @@
 "use client";
 
 import Project from "@/components/Project";
-import SVGPlus from "@/components/svgs/SVGPlus";
+import Plus from "@/components/svgs/generic/Plus";
 import projects from "@/seeds/projects.js";
 import { useState } from "react";
 
@@ -21,27 +21,22 @@ export default function Projects({ lang, dictionary }) {
     ]);
   };
 
-  const getTimelineElements = (lang = "en") => {
-    return elements.map((project, index) => {
+  const getTimelineElements = (lang = "en", dictionary) => {
+    return elements.map(({ props, data }, index) => {
       return (
         <VerticalTimelineElement
           key={index}
-          className="vertical-timeline-element--work"
-          dateClassName="text-gray-900 dark:text-white"
+          {...props}
+          textClassName={data.image ? props?.textClassName : `md:mb-12 ${props?.textClassName}`}
+          dateClassName={data.image ? props?.iconClassName : `md:text-white ${props?.iconClassName}`}
           date={
             <div>
-              <h3>{project.date}</h3>
-              <p>{project.description}</p>
-            </div>
-          }
-          iconStyle={{ background: "rgb(45, 55, 72)", color: "#fff" }}
-          icon={
-            <div className="font-semibold flex justify-center items-center h-full text-lg">
-              {projects.length - index}
+              <span>{data.date[lang]}</span>
+              <p>{data.content[lang]}</p>
             </div>
           }
         >
-          <Project project={project} />
+          <Project lang={lang} project={data} dictionary={dictionary.card} />
         </VerticalTimelineElement>
       );
     });
@@ -54,12 +49,12 @@ export default function Projects({ lang, dictionary }) {
       </header>
       <article className="w-full">
         <VerticalTimeline>
-          {getTimelineElements(lang)}
+          {getTimelineElements(lang, dictionary)}
           {elements.length < projects.length && (
             <VerticalTimelineElement
               iconClassName="vertical-timeline-element-icon--button cursor-pointer bg-slate-700 hover:bg-slate-800 transition-colors"
               iconOnClick={loadMore}
-              icon={<SVGPlus />}
+              icon={<Plus />}
             />
           )}
         </VerticalTimeline>

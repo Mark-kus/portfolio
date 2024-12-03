@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGSun = ({ color = "currentColor" }) => {
+const Sun = ({ color = "currentColor" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,4 +13,4 @@ const SVGSun = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGSun;
+export default Sun;

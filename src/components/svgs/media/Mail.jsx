@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGMail = ({ color = "currentColor" }) => {
+const Mail = ({ color = "currentColor" }) => {
   return (
     <svg
       stroke={color}
@@ -18,4 +18,4 @@ const SVGMail = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGMail;
+export default Mail;

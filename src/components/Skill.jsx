@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 export default function Skill({ skill }) {
   useEffect(() => {
     projects.forEach((project) => {
-      if (project.deploy) {
-        if (sessionStorage.getItem(project.deploy)) return;
+      if (project.websiteUrl && project.websiteUrl.includes("render")) {
+        if (sessionStorage.getItem(project.websiteUrl)) return;
 
-        fetch(project.deploy);
-        sessionStorage.setItem(project.deploy, true);
+        fetch(project.websiteUrl);
+        sessionStorage.setItem(project.websiteUrl, true);
       }
     });
   }, []);

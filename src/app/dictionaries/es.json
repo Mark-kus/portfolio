@@ -20,7 +20,11 @@
       "title": "Tecnologías Principales"
     },
     "projects": {
-      "title": "Proyectos"
+      "title": "Trayectoria",
+      "card": {
+        "website": "Visitar Sitio Web",
+        "repository": "Ir A Repositorio"
+      }
     },
     "contact": {
       "callToAction": {

@@ -1,23 +1,40 @@
 import Image from "next/image";
 
-export default function Project({ project }) {
+export default function Project({ lang, project, dictionary }) {
   return (
     <>
-      <picture className="overflow-hidden w-full h-5/12 block rounded-lg mb-4">
-        <Image
-          src={project.image}
-          alt={project.alt}
-          className="w-full h-full object-cover block hover:scale-105 transition-transform"
-        />
-      </picture>
-      <a
-        target="_blank"
-        noreferrer={"true"}
-        href={project.deploy ?? project.repo}
-        className="bg-blue-500 py-2 px-4 rounded-lg hover:bg-gray-300 hover:text-blue-600 active:bg-gray-400 transition-colors"
-      >
-        {project.deploy ? "Deployment" : "Repository"}
-      </a>
+      <h4 className="text-xl">{project.title[lang]}</h4>
+      {project.image && (
+        <picture className="overflow-hidden w-full h-5/12 block rounded-lg mb-4 mt-2">
+          <Image
+            src={project.image}
+            alt={project.alt[lang]}
+            className="w-full h-full object-cover block hover:scale-105 transition-transform"
+          />
+        </picture>
+      )}
+      <div className="flex gap-2 mt-2">
+        {project.websiteUrl && (
+          <a
+            target="_blank"
+            noreferrer={"true"}
+            href={project.websiteUrl}
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 active:!bg-opacity-10 py-2 px-4 rounded-lg transition-colors md:text-white"
+          >
+            {dictionary.website}
+          </a>
+        )}
+        {project.repositoryUrl && (
+          <a
+            target="_blank"
+            noreferrer={"true"}
+            href={project.repositoryUrl}
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 active:!bg-opacity-10 py-2 px-4 rounded-lg transition-colors md:text-white"
+          >
+            {dictionary.repository}
+          </a>
+        )}
+      </div>
     </>
   );
 }

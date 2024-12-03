@@ -20,7 +20,11 @@
       "title": "Main Technologies"
     },
     "projects": {
-      "title": "Projects"
+      "title": "Career",
+      "card": {
+        "website": "Visit Website",
+        "repository": "Go To Repository"
+      }
     },
     "contact": {
       "callToAction": {

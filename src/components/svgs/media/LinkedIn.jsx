@@ -1,6 +1,6 @@
 import React from "react";
 
-const SVGLinkedIn = ({ color = "currentColor" }) => {
+const LinkedIn = ({ color = "currentColor" }) => {
   return (
     <svg
       stroke={color}
@@ -17,4 +17,4 @@ const SVGLinkedIn = ({ color = "currentColor" }) => {
   );
 };
 
-export default SVGLinkedIn;
+export default LinkedIn;
