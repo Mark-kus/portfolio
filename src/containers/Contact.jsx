@@ -8,7 +8,7 @@ const styles = {
   container:
     "flex flex-col md:flex-row bg-white bg-opacity-10 lg:w-2/3 md:gap-x-8 lg:mx-auto mx-10 rounded-3xl shadow-xl",
   leftColumn:
-    "flex flex-col lg:w-1/2 md:pl-20 md:pt-8 pb-6 md:pb-0 mx-8 border-b-2 md:border-b-0 border-gray-300",
+    "flex flex-col lg:w-1/2 md:pl-20 md:pt-2 pb-6 md:pb-0 mx-8 border-b-2 md:border-b-0 border-gray-300",
   title: "text-2xl font-bold mt-6 md:py-8",
   subtitle: "py-4 md:pb-12",
   list: "flex flex-col gap-y-2",
