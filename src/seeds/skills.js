@@ -1,40 +1,55 @@
-import html from "@/assets/tech/html.svg";
-import css from "@/assets/tech/css.svg";
-import javascript from "@/assets/tech/javascript.svg";
-import nextjs from "@/assets/tech/nextjs.svg";
-import nodejs from "@/assets/tech/nodejs.svg";
-import react from "@/assets/tech/react.svg";
-import redux from "@/assets/tech/redux.svg";
+import HypertextMarkupLanguage from "@/components/svgs/techonologies/HypertextMarkupLanguage";
+import CascadeStyleSheets from "@/components/svgs/techonologies/CascadeStyleSheets";
+import JavaScript from "@/components/svgs/techonologies/JavaScript";
+import Python from "@/components/svgs/techonologies/Python";
+import ReactJS from "@/components/svgs/techonologies/ReactJS";
+import FastAPI from "@/components/svgs/techonologies/FastAPI";
+import Docker from "@/components/svgs/techonologies/Docker";
+import Kubernetes from "@/components/svgs/techonologies/Kubernetes";
+import AmazonWebServices from "@/components/svgs/techonologies/AmazonWebServices";
+import StructuredQueryLanguage from "@/components/svgs/techonologies/StructuredQueryLanguage";
 
 const skills = [
   {
-    tech: html,
+    component: <HypertextMarkupLanguage />,
     name: "HTML",
   },
   {
-    tech: css,
+    component: <CascadeStyleSheets />,
     name: "CSS",
   },
   {
-    tech: javascript,
-    name: "Javascript",
+    component: <JavaScript />,
+    name: "JavaScript",
   },
   {
-    tech: nodejs,
-    name: "Node.JS",
+    component: <ReactJS />,
+    name: "React",
   },
   {
-    tech: react,
-    name: "React.JS",
+    component: <Python />,
+    name: "Python",
   },
   {
-    tech: nextjs,
-    name: "Next.JS",
+    component: <FastAPI />,
+    name: "FastAPI",
   },
   {
-    tech: redux,
-    name: "Redux.JS",
+    component: <Docker />,
+    name: "Docker",
   },
+  {
+    component: <Kubernetes />,
+    name: "Kubernetes",
+  },
+  {
+    component: <AmazonWebServices />,
+    name: "AWS",
+  },
+  {
+    component: <StructuredQueryLanguage />,
+    name: "SQL",
+  }
 ];
 
 export default skills;

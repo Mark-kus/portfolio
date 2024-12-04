@@ -40,18 +40,27 @@ export default function Navigation({ lang, dictionary }) {
   }, [isDarkMode]);
 
   const classnames = {
-    nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white",
+    nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
     logo: "md:ml-20 md:absolute md:left-0",
     menuItems: "flex list-none gap-3 items-center mr-5",
     themeButton: `text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 ${
       !isDarkMode ? "bg-orange-300" : "bg-black"
     }`,
-    sunIcon: `transition-all ${
+    sunIcon: `transition-all duration-500 ${
       !isDarkMode ? " opacity-100" : "opacity-0 translate-x-5"
     }`,
-    moonIcon: `transition-all ${
+    moonIcon: `transition-all duration-500 ${
       !isDarkMode ? " opacity-0 -translate-x-5" : "opacity-100"
     }`,
+  };
+
+  const handleScroll = (event) => {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute("data-section");
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -66,34 +75,34 @@ export default function Navigation({ lang, dictionary }) {
 
       <ul className={classnames.menuItems}>
         <li>
-          <a
+          <button
             className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
             data-section="#landing"
-            href="/#"
             aria-label={dictionary.home}
+            onClick={handleScroll}
           >
             {dictionary.home}
-          </a>
+          </button>
         </li>
         <li>
-          <a
+          <button
             className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
             data-section="#projects"
-            href="/#projects"
             aria-label={dictionary.projects}
+            onClick={handleScroll}
           >
             {dictionary.projects}
-          </a>
+          </button>
         </li>
         <li>
-          <a
+          <button
             className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
             data-section="#contact"
-            href="/#contact"
             aria-label={dictionary.contact}
+            onClick={handleScroll}
           >
             {dictionary.contact}
-          </a>
+          </button>
         </li>
       </ul>
       <div className="hidden md:block h-6 w-0.5 bg-white bg-opacity-20"></div>

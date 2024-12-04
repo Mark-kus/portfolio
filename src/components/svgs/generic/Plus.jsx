@@ -21,7 +21,7 @@ const Plus = ({ color = "currentColor" }) => {
             <g>
               <line
                 fill="none"
-                stroke={color}
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
@@ -32,7 +32,7 @@ const Plus = ({ color = "currentColor" }) => {
               ></line>
               <line
                 fill="none"
-                stroke={color}
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"

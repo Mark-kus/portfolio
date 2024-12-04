@@ -7,9 +7,9 @@ export default function Skills({ dictionary }) {
       <header className="text-3xl md:text-5xl font-extrabold pb-2 mb-8 text-center bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
         {dictionary.title}
       </header>
-      <article className="flex flex-wrap justify-center">
+      <article className="flex flex-wrap justify-center md:max-w-4xl">
         {skills.map((skill, i) => (
-          <Skill key={i} skill={skill} />
+          <Skill key={i} skill={skill} render={skill.component} />
         ))}
       </article>
     </section>

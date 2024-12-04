@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "home": "Inicio",
-    "projects": "Proyectos",
+    "home": "Sobre Mí",
+    "projects": "Trayectoria",
     "contact": "Contacto"
   },
   "content": {
@@ -17,7 +17,7 @@
       "contactMe": "Si me ves capaz de desarrollar tu proyecto, contactame, y si no, enviame un saludo ya que estás acá."
     },
     "technologies": {
-      "title": "Tecnologías Principales"
+      "title": "Tecnologías Favoritas"
     },
     "projects": {
       "title": "Trayectoria",

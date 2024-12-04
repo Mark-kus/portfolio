@@ -1,15 +1,20 @@
 import React from "react";
 
-const Python = ({ color = "text-current", size = "h-6 w-6" }) => {
+const Python = ({ width = "full", height = "full" }) => {
     return (
         <svg
+            width={width}
+            height={height}
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={`${color} ${size}`}
         >
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+            <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            ></g>
             <g id="SVGRepo_iconCarrier">
                 <path
                     fill-rule="evenodd"

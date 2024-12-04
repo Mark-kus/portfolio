@@ -1,10 +1,9 @@
 "use client";
 
 import projects from "@/seeds/projects";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function Skill({ skill }) {
+export default function Skill({ skill, render }) {
   useEffect(() => {
     projects.forEach((project) => {
       if (project.websiteUrl && project.websiteUrl.includes("render")) {
@@ -22,16 +21,14 @@ export default function Skill({ skill }) {
 
   return (
     <figure className="flex justify-center items-center m-2">
-      <Image
-        src={skill.tech}
-        alt={skill.name}
-        className="w-12 md:w-24 hover:blur-xl transition-all"
+      <div
         onMouseEnter={showName}
         onMouseLeave={hideName}
-      />
-      <h1 className="absolute pointer-events-none text-xs md:text-base">
-        {name}
-      </h1>
+        className="hover:blur-2xl transition-all w-20 md:w-28 m-2"
+      >
+        {render}
+      </div>
+      <h1 className="absolute pointer-events-none md:text-xl">{name}</h1>
     </figure>
   );
 }

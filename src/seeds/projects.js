@@ -2,10 +2,12 @@ import hueneyRuca from "@/assets/projects/hueneyRuca.jpeg";
 import rym from "@/assets/projects/rym.jpeg";
 import dogApi from "@/assets/projects/dogApi.jpeg";
 
-import Suitcase from "@/components/svgs/generic/Suitcase";
 import Mortarboard from "@/components/svgs/generic/Mortarboard";
 import ReactJS from "@/components/svgs/techonologies/ReactJS";
 import NextJS from "@/components/svgs/techonologies/NextJS";
+import People from "@/components/svgs/brands/People";
+import SoyHenry from "@/components/svgs/brands/SoyHenry";
+import Epam from "@/components/svgs/brands/Epam";
 
 const projects = [
   {
@@ -16,8 +18,41 @@ const projects = [
         color: "#fff",
       },
       contentArrowStyle: { borderRight: "7px solid  #000" },
+      iconStyle: { background: "#FFF", color: "#fff" },
+      icon: <Epam />,
+    },
+    data: {
+      date: {
+        en: "2023 / July - August",
+        es: "2023 / Julio - Agosto",
+      },
+      content: {
+        en: "Completed a one-month internship at PPOL, where I gained practical experience in web development, working on various projects and collaborating with a professional team. This internship provided valuable insights into industry practices and enhanced my technical skills.",
+        es: "Completé una pasantía de un mes en PPOL, donde adquirí experiencia práctica en desarrollo web, trabajando en varios proyectos y colaborando con un equipo profesional. Esta pasantía proporcionó valiosas ideas sobre las prácticas de la industria y mejoró mis habilidades técnicas.",
+      },
+      title: {
+        en: "PPOL Internship",
+        es: "Pasantía en PPOL",
+      },
+      image: null,
+      alt: {
+        en: "PPOL Internship",
+        es: "Pasantía en PPOL",
+      },
+      websiteUrl: "https://ppol.io/",
+      repositoryUrl: null,
+    },
+  },
+  {
+    props: {
+      className: "vertical-timeline-element--work",
+      contentStyle: {
+        background: "#000",
+        color: "#fff",
+      },
+      contentArrowStyle: { borderRight: "7px solid  #000" },
       iconStyle: { background: "#000", color: "#fff" },
-      icon: <Suitcase />,
+      icon: <People />,
     },
     data: {
       date: {
@@ -140,7 +175,7 @@ const projects = [
       },
       contentArrowStyle: { borderRight: "7px solid #000" },
       iconStyle: { background: "#000", color: "yellow" },
-      icon: <Mortarboard />,
+      icon: <SoyHenry />,
     },
     data: {
       date: {

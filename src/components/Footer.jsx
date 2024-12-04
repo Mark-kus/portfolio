@@ -17,7 +17,7 @@ export default function Footer({ dictionary }) {
     <footer className={styles.footer}>
       <p className={styles.paragraph}>
         <span className={styles.span}>
-          <span className="hidden md:block">
+          <span className="hidden md:inline">
             {new Date().toLocaleDateString()} -{" "}
           </span>
           {dictionary.made} <span className="hidden dark:inline">🖤</span>

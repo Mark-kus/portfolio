@@ -27,12 +27,19 @@ export default function Projects({ lang, dictionary }) {
         <VerticalTimelineElement
           key={index}
           {...props}
-          textClassName={data.image ? props?.textClassName : `md:mb-12 ${props?.textClassName}`}
-          dateClassName={data.image ? props?.iconClassName : `md:text-white ${props?.iconClassName}`}
+          textClassName={
+            data.image
+              ? props?.textClassName
+              : `md:mb-12 ${props?.textClassName}`
+          }
           date={
             <div>
-              <span>{data.date[lang]}</span>
-              <p>{data.content[lang]}</p>
+              <span className="dark:md:text-white md:text-black">
+                {data.date[lang]}
+              </span>
+              <p className="dark:md:text-white md:text-black">
+                {data.content[lang]}
+              </p>
             </div>
           }
         >
@@ -52,7 +59,7 @@ export default function Projects({ lang, dictionary }) {
           {getTimelineElements(lang, dictionary)}
           {elements.length < projects.length && (
             <VerticalTimelineElement
-              iconClassName="vertical-timeline-element-icon--button cursor-pointer bg-slate-700 hover:bg-slate-800 transition-colors"
+              iconClassName="vertical-timeline-element-icon--button cursor-pointer bg-slate-100 hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:hover:bg-slate-800 active:bg-slate-400 dark:active:bg-slate-900"
               iconOnClick={loadMore}
               icon={<Plus />}
             />

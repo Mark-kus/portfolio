@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "home": "Home",
-    "projects": "Projects",
+    "home": "About Me",
+    "projects": "Career",
     "contact": "Contact"
   },
   "content": {
@@ -17,7 +17,7 @@
       "contactMe": "If you see me capable of developing your project, contact me, and if not, send me a greeting since you are here."
     },
     "technologies": {
-      "title": "Main Technologies"
+      "title": "Favorite Technologies"
     },
     "projects": {
       "title": "Career",
