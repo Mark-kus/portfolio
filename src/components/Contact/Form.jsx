@@ -75,7 +75,7 @@ export default function Form({ dictionary }) {
   const checkMessageError = messageError && submitted;
 
   const classNames = {
-    form: "flex flex-col w-full p-8",
+    form: "flex flex-col w-full p-8 md:p-0",
     header: "text-2xl font-bold",
     name: `py-2 px-4 my-4 rounded-lg shadow-xl !bg-opacity-20 outline-none focus:!bg-opacity-80 dark:focus:!bg-opacity-30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
       checkNameError

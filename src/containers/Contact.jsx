@@ -3,7 +3,7 @@ import CallToAction from "@/components/Contact/CallToAction";
 
 const styles = {
   container:
-    "flex flex-col md:flex-row bg-white bg-opacity-10 lg:w-2/3 md:gap-x-8 lg:mx-auto mx-10 rounded-3xl shadow-xl md:p-4",
+    "flex flex-col md:flex-row bg-white bg-opacity-10 lg:w-2/3 rounded-3xl shadow-xl mx-10 md:p-8",
 };
 
 const Contact = ({ lang, dictionary }) => {
