@@ -23,8 +23,8 @@ const projects = [
         es: "2024 - Presente",
       },
       content: {
-        en: "",
-        es: "",
+        en: "Intrigued by technology and programming, I decided to start the Systems Engineering career at the National Technological University, to continue learning about it from a more formal and structured perspective.",
+        es: "Intrigado por la tecnología y la programación, decidí comenzar la carrera de Ingeniería en Sistemas de Información en la Universidad Tecnológica Nacional, para seguir aprendiendo sobre ello desde una perspectiva más formal y estructurada.",
       },
       title: {
         en: "National Technological University",
@@ -47,8 +47,8 @@ const projects = [
     },
     data: {
       date: {
-        en: "2023 / August - Present",
-        es: "2023 / Agosto - Presente",
+        en: "2023 - Present",
+        es: "2023 - Presente",
       },
       content: {
         en: "I participated in the full stack development team, as a junior and as a leader, using React.js with Next.js along with Python with FastAPI. We implemented Scrum practices, focusing on the fast delivery of customized and quality products according to the client's needs.",
