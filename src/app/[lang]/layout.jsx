@@ -1,6 +1,8 @@
 import "@/styles/global.css";
 import { Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { cookies } from "next/headers";
+import { DarkModeProvider } from "@/context/DarkModeContext";
 
 export const metadata = {
   title: "Mark-kus",
@@ -18,13 +20,19 @@ const roboto = Roboto({
 });
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className="dark">
-      <body className={roboto.className}>
-        {children}
+  const cookieStore = cookies();
+  const isDarkCookie = cookieStore.get("theme")
+  const isDarkMode = isDarkCookie === undefined || isDarkCookie.value === "dark";
 
-        <Analytics />
-      </body>
-    </html>
+  return (
+    <DarkModeProvider initialDarkMode={isDarkMode}>
+      <html lang="en" className={isDarkMode ? "dark" : ""}>
+        <body className={roboto.className}>
+          {children}
+
+          <Analytics />
+        </body>
+      </html>
+    </DarkModeProvider>
   );
 }

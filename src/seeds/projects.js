@@ -1,86 +1,74 @@
-import hueneyRuca from "@/assets/projects/hueneyRuca.jpeg";
-import rym from "@/assets/projects/rym.jpeg";
-import dogApi from "@/assets/projects/dogApi.jpeg";
+import hueneyRuca from "@/assets/projects/hueneyRuca.webp";
+import rickAndMorty from "@/assets/projects/rickAndMorty.webp";
+import dogs from "@/assets/projects/dogs.webp";
 
-import Mortarboard from "@/components/svgs/generic/Mortarboard";
 import ReactJS from "@/components/svgs/techonologies/ReactJS";
 import NextJS from "@/components/svgs/techonologies/NextJS";
 import People from "@/components/svgs/brands/People";
 import SoyHenry from "@/components/svgs/brands/SoyHenry";
 import Epam from "@/components/svgs/brands/Epam";
+import Udemy from "@/components/svgs/brands/Udemy";
 
 const projects = [
+  // {
+  //   props: {
+  //     className: "vertical-timeline-element--work",
+  //     iconStyle: { background: "#FFF", color: "#fff" },
+  //     icon: <Epam />,
+  //   },
+  //   data: {
+  //     date: {
+  //       en: "2023 / August - Present",
+  //       es: "2023 / Agosto - Presente",
+  //     },
+  //     content: {
+  //       en: "Completed a one-month internship at PPOL, where I gained practical experience in web development, working on various projects and collaborating with a professional team. This internship provided valuable insights into industry practices and enhanced my technical skills.",
+  //       es: "Completé una pasantía de un mes en PPOL, donde adquirí experiencia práctica en desarrollo web, trabajando en varios proyectos y colaborando con un equipo profesional. Esta pasantía proporcionó valiosas ideas sobre las prácticas de la industria y mejoró mis habilidades técnicas.",
+  //     },
+  //     title: {
+  //       en: "Vates Software, an EPAM Company",
+  //       es: "Vates Software, una empresa de EPAM",
+  //     },
+  //     image: null,
+  //     alt: {
+  //       en: "Vates Software, an EPAM Company",
+  //       es: "Vates Software, una empresa de EPAM",
+  //     },
+  //     websiteUrl: "https://vates.com/",
+  //     repositoryUrl: null,
+  //   },
+  // },
+  // {
+  //   props: {
+  //     className: "vertical-timeline-element--work",
+  //     iconStyle: { background: "#000", color: "#fff" },
+  //     icon: <People />,
+  //   },
+  //   data: {
+  //     date: {
+  //       en: "2023 / July - August",
+  //       es: "2023 / Julio - Agosto",
+  //     },
+  //     content: {
+  //       en: "Managed to develop the implementation of various APIs, such as Github, Google Maps and Spotify, using React, to deliver a styled product to embed in the final application.",
+  //       es: "Me encargué de desarrollar la implementación de varias APIs, como Github, Google Maps y Spotify, utilizando React, para entregar un producto estilizado que incrustar en la aplicación final.",
+  //     },
+  //     title: {
+  //       en: "PPOL Internship",
+  //       es: "Pasantía en PPOL",
+  //     },
+  //     image: null,
+  //     alt: {
+  //       en: "PPOL Internship",
+  //       es: "Pasantía en PPOL",
+  //     },
+  //     websiteUrl: "https://ppol.io/",
+  //     repositoryUrl: null,
+  //   },
+  // },
   {
     props: {
       className: "vertical-timeline-element--work",
-      contentStyle: {
-        background: "#000",
-        color: "#fff",
-      },
-      contentArrowStyle: { borderRight: "7px solid  #000" },
-      iconStyle: { background: "#FFF", color: "#fff" },
-      icon: <Epam />,
-    },
-    data: {
-      date: {
-        en: "2023 / July - August",
-        es: "2023 / Julio - Agosto",
-      },
-      content: {
-        en: "Completed a one-month internship at PPOL, where I gained practical experience in web development, working on various projects and collaborating with a professional team. This internship provided valuable insights into industry practices and enhanced my technical skills.",
-        es: "Completé una pasantía de un mes en PPOL, donde adquirí experiencia práctica en desarrollo web, trabajando en varios proyectos y colaborando con un equipo profesional. Esta pasantía proporcionó valiosas ideas sobre las prácticas de la industria y mejoró mis habilidades técnicas.",
-      },
-      title: {
-        en: "PPOL Internship",
-        es: "Pasantía en PPOL",
-      },
-      image: null,
-      alt: {
-        en: "PPOL Internship",
-        es: "Pasantía en PPOL",
-      },
-      websiteUrl: "https://ppol.io/",
-      repositoryUrl: null,
-    },
-  },
-  {
-    props: {
-      className: "vertical-timeline-element--work",
-      contentStyle: {
-        background: "#000",
-        color: "#fff",
-      },
-      contentArrowStyle: { borderRight: "7px solid  #000" },
-      iconStyle: { background: "#000", color: "#fff" },
-      icon: <People />,
-    },
-    data: {
-      date: {
-        en: "2023 / July - August",
-        es: "2023 / Julio - Agosto",
-      },
-      content: {
-        en: "Completed a one-month internship at PPOL, where I gained practical experience in web development, working on various projects and collaborating with a professional team. This internship provided valuable insights into industry practices and enhanced my technical skills.",
-        es: "Completé una pasantía de un mes en PPOL, donde adquirí experiencia práctica en desarrollo web, trabajando en varios proyectos y colaborando con un equipo profesional. Esta pasantía proporcionó valiosas ideas sobre las prácticas de la industria y mejoró mis habilidades técnicas.",
-      },
-      title: {
-        en: "PPOL Internship",
-        es: "Pasantía en PPOL",
-      },
-      image: null,
-      alt: {
-        en: "PPOL Internship",
-        es: "Pasantía en PPOL",
-      },
-      websiteUrl: "https://ppol.io/",
-      repositoryUrl: null,
-    },
-  },
-  {
-    props: {
-      className: "vertical-timeline-element--work",
-      contentStyle: { background: "#000", color: "#fff" },
-      contentArrowStyle: { borderRight: "7px solid  #000" },
       iconStyle: { background: "#000", color: "#fff" },
       icon: <NextJS />,
     },
@@ -109,9 +97,7 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--work",
-      contentStyle: { background: "rgb(33, 150, 243)", color: "#fff" },
-      contentArrowStyle: { borderRight: "7px solid  rgb(33, 150, 243)" },
-      iconStyle: { background: "rgb(33, 150, 243)", color: "#fff" },
+      iconStyle: { background: "#2196f3", color: "#fff" },
       icon: <ReactJS />,
     },
     data: {
@@ -127,7 +113,7 @@ const projects = [
         en: "Dogs API",
         es: "Dogs API",
       },
-      image: dogApi,
+      image: dogs,
       alt: {
         en: "Dogs API",
         es: "Dogs API",
@@ -139,9 +125,7 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--work",
-      contentStyle: { background: "rgb(33, 150, 243)", color: "#fff" },
-      contentArrowStyle: { borderRight: "7px solid  rgb(33, 150, 243)" },
-      iconStyle: { background: "rgb(33, 150, 243)", color: "#fff" },
+      iconStyle: { background: "#000", color: "yellow" },
       icon: <ReactJS />,
     },
     data: {
@@ -157,7 +141,7 @@ const projects = [
         en: "Rick and Morty API",
         es: "Rick y Morty API",
       },
-      image: rym,
+      image: rickAndMorty,
       alt: {
         en: "Rick and Morty API",
         es: "Rick y Morty API",
@@ -169,11 +153,6 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--education",
-      contentStyle: {
-        background: "#000",
-        color: "yellow",
-      },
-      contentArrowStyle: { borderRight: "7px solid #000" },
       iconStyle: { background: "#000", color: "yellow" },
       icon: <SoyHenry />,
     },
@@ -183,7 +162,7 @@ const projects = [
         es: "2023 / Febrero - Junio",
       },
       content: {
-        en: "Made an intensive full-stack web development bootcamp at SoyHenry, covering front-end, back-end, and database management. The curriculum included technologies such as JavaScript, React, Node.js, Express, and PostgreSQL.",
+        en: "Made an intensive full-stack web development bootcamp at SoyHenry, covering front-end, back-end, and database management. The career included technologies such as JavaScript, React, Node.js, Express, and PostgreSQL.",
         es: "Realicé un bootcamp intensivo de desarrollo web full-stack en SoyHenry, cubriendo front-end, back-end y gestión de bases de datos. El plan de estudios incluyó tecnologías como JavaScript, React, Node.js, Express y PostgreSQL.",
       },
       title: {
@@ -196,6 +175,34 @@ const projects = [
         es: "Bootcamp de SoyHenry",
       },
       websiteUrl: "https://www.soyhenry.com/",
+      repositoryUrl: null,
+    },
+  },
+  {
+    props: {
+      className: "vertical-timeline-element--education",
+      iconStyle: { background: "#FFF", color: "white" },
+      icon: <Udemy />,
+    },
+    data: {
+      date: {
+        en: "2022",
+        es: "2022",
+      },
+      content: {
+        en: "I started my journey in the world of programming by taking a full-stack web development course on Udemy, with Colt Steele as the teacher (a great guy), where I learned the fundamentals of HTML, CSS, JavaScript, Node.js, Express, and MongoDB. That's how I got the hang of programming.",
+        es: "Acá empezó todo. Me anoté en un curso de desarrollo web full stack en Udemy, con Colt Steele como profesor (un tipazo), donde aprendí los fundamentos de HTML, CSS, JavaScript, Node.js, Express y MongoDB. Así le agarré el gustito a la programación.",
+      },
+      title: {
+        en: "Udemy Web Development Course",
+        es: "Curso de Desarrollo Web de Udemy",
+      },
+      image: null,
+      alt: {
+        en: "Udemy Web Development Course",
+        es: "Curso de Desarrollo Web de Udemy",
+      },
+      websiteUrl: "https://www.udemy.com/",
       repositoryUrl: null,
     },
   },

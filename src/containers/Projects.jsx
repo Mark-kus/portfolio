@@ -2,6 +2,7 @@
 
 import Project from "@/components/Project";
 import Plus from "@/components/svgs/generic/Plus";
+import { useDarkModeContext } from "@/context/DarkModeContext";
 import projects from "@/seeds/projects.js";
 import { useState } from "react";
 
@@ -13,6 +14,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 export default function Projects({ lang, dictionary }) {
   const [elements, setElements] = useState(projects.slice(0, 3));
+  const { isDarkMode } = useDarkModeContext();
 
   const loadMore = () => {
     setElements((prevElements) => [
@@ -22,31 +24,35 @@ export default function Projects({ lang, dictionary }) {
   };
 
   const getTimelineElements = (lang = "en", dictionary) => {
-    return elements.map(({ props, data }, index) => {
-      return (
-        <VerticalTimelineElement
-          key={index}
-          {...props}
-          textClassName={
-            data.image
-              ? props?.textClassName
-              : `md:mb-12 ${props?.textClassName}`
-          }
-          date={
-            <div>
-              <span className="dark:md:text-white md:text-black">
-                {data.date[lang]}
-              </span>
-              <p className="dark:md:text-white md:text-black">
-                {data.content[lang]}
-              </p>
-            </div>
-          }
-        >
-          <Project lang={lang} project={data} dictionary={dictionary.card} />
-        </VerticalTimelineElement>
-      );
-    });
+    return elements.map(({ props, data }, index) => (
+      <VerticalTimelineElement
+        key={index}
+        {...props}
+        textClassName={
+          data.image ? props?.textClassName : `md:mb-12 ${props?.textClassName}`
+        }
+        className="text-black dark:text-white"
+        contentStyle={{
+          backgroundColor: isDarkMode ? "#000" : "#FFF",
+          color: isDarkMode ? "#FFF" : "#000",
+        }}
+        contentArrowStyle={{
+          borderRight: isDarkMode ? "7px solid #000" : "7px solid #FFF",
+        }}
+        date={
+          <div>
+            <span className="dark:md:text-white md:text-black">
+              {data.date[lang]}
+            </span>
+            <p className="dark:md:text-white md:text-black">
+              {data.content[lang]}
+            </p>
+          </div>
+        }
+      >
+        <Project lang={lang} project={data} dictionary={dictionary.card} />
+      </VerticalTimelineElement>
+    ));
   };
 
   return (
@@ -54,7 +60,7 @@ export default function Projects({ lang, dictionary }) {
       <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
         {dictionary.title}
       </header>
-      <article className="w-full">
+      <article className="w-full max-w-6xl">
         <VerticalTimeline>
           {getTimelineElements(lang, dictionary)}
           {elements.length < projects.length && (

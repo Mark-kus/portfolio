@@ -1,57 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Moon from "./svgs/generic/Moon";
 import PersonalLogo from "./svgs/PersonalLogo";
 import Sun from "./svgs/generic/Sun";
 import LanguageSelector from "./LanguageSelector";
+import { useDarkModeContext } from "@/context/DarkModeContext";
 
 export default function Navigation({ lang, dictionary }) {
   // Estado para manejar el tema
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  // Función para cambiar el tema
-  const toggleTheme = () => {
-    const newTheme = !isDarkMode;
-    setIsDarkMode(newTheme);
-    // Cambiar la clase en el <html> para activar el tema oscuro
-    if (newTheme) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
-
-  // Comprobar si hay un tema guardado en el localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
-  // Guardar el tema en el localStorage
-  useEffect(() => {
-    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-  }, [isDarkMode]);
+  const { toggleDarkMode } = useDarkModeContext();
 
   const classnames = {
     nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
     logo: "md:ml-20 md:absolute md:left-0",
     menuItems: "flex list-none gap-3 items-center mr-5",
-    themeButton: `text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 ${
-      !isDarkMode ? "bg-orange-300" : "bg-black"
-    }`,
-    sunIcon: `transition-all duration-500 ${
-      !isDarkMode ? " opacity-100" : "opacity-0 translate-x-5"
-    }`,
-    moonIcon: `transition-all duration-500 ${
-      !isDarkMode ? " opacity-0 -translate-x-5" : "opacity-100"
-    }`,
+    themeButton: "text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-orange-300 dark:bg-black",
+    sunIcon: "transition-all duration-500 opacity-100 dark:opacity-0 dark:translate-x-5",
+    moonIcon: "transition-all duration-500 opacity-0 -translate-x-5 dark:opacity-100 dark:-translate-x-0",
   };
 
   const handleScroll = (event) => {
@@ -114,7 +79,7 @@ export default function Navigation({ lang, dictionary }) {
           <li>
             <button
               name="Toggle dark mode"
-              onClick={toggleTheme}
+              onClick={toggleDarkMode}
               className={classnames.themeButton}
               aria-label="Toggle dark mode"
             >

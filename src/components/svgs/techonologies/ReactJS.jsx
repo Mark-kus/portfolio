@@ -1,3 +1,5 @@
+import React from "react";
+
 const ReactJS = ({ width = "full", height = "full" }) => {
   return (
     <svg
