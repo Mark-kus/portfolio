@@ -1,4 +1,4 @@
-const NextJS = ({ width = "full", height = "full" }) => {
+const NextJS = ({ width = "100%", height = "100%" }) => {
   return (
     <svg
       viewBox="0 0 512 512"

@@ -60,7 +60,7 @@ export default function Projects({ lang, dictionary }) {
       <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
         {dictionary.title}
       </header>
-      <article className="w-full max-w-6xl">
+      <article className="w-full md:max-w-6xl">
         <VerticalTimeline>
           {getTimelineElements(lang, dictionary)}
           {elements.length < projects.length && (

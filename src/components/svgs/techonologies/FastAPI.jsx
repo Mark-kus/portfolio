@@ -1,6 +1,6 @@
 import React from "react";
 
-const FastAPI = ({ width = "full", height = "full" }) => {
+const FastAPI = ({ width = "100%", height = "100%" }) => {
   return (
     <svg
       fill="#009485"

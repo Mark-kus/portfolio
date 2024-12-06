@@ -10,7 +10,7 @@ export default function Content({ lang, dictionary }) {
         <About dictionary={dictionary.about} />
       </div>
       <Skills dictionary={dictionary.technologies} />
-      <Projects lang={lang} dictionary={dictionary.projects} />
+      {/* <Projects lang={lang} dictionary={dictionary.projects} /> */}
       <Contact lang={lang} dictionary={dictionary.contact} />
     </section>
   );

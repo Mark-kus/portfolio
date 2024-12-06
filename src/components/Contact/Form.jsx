@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ContactForm({ dictionary }) {
+export default function Form({ dictionary }) {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
@@ -75,8 +75,8 @@ export default function ContactForm({ dictionary }) {
   const checkMessageError = messageError && submitted;
 
   const classNames = {
-    form: "flex flex-col lg:w-1/2 md:pr-20 md:pt-8 px-8 md:pb-12 pb-4 md:pb-8",
-    header: "text-2xl font-bold pt-6 md:py-8",
+    form: "flex flex-col w-full p-8",
+    header: "text-2xl font-bold",
     name: `py-2 px-4 my-4 rounded-lg shadow-xl !bg-opacity-20 outline-none focus:!bg-opacity-80 dark:focus:!bg-opacity-30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
       checkNameError
         ? "bg-red-500 bg-opacity-50 dark:!bg-opacity-20"

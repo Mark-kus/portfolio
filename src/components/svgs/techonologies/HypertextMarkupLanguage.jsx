@@ -1,6 +1,6 @@
 import React from "react";
 
-const HypertextMarkupLanguage = ({ width = "full", height = "full" }) => {
+const HypertextMarkupLanguage = ({ width = "100%", height = "100%" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

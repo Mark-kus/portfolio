@@ -1,6 +1,6 @@
 import React from "react";
 
-const Kubernetes = ({ width = "full", height = "full" }) => {
+const Kubernetes = ({ width = "100%", height = "100%" }) => {
   return (
     <svg
       viewBox="0 0 16 16"

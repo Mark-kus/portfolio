@@ -1,6 +1,6 @@
 import React from "react";
 
-const Python = ({ width = "full", height = "full" }) => {
+const Python = ({ width = "100%", height = "100%" }) => {
     return (
         <svg
             width={width}
