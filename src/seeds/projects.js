@@ -8,74 +8,103 @@ import People from "@/components/svgs/brands/People";
 import SoyHenry from "@/components/svgs/brands/SoyHenry";
 import Epam from "@/components/svgs/brands/Epam";
 import Udemy from "@/components/svgs/brands/Udemy";
+import UTN from "@/components/svgs/brands/UTN";
 
 const projects = [
-  // {
-  //   props: {
-  //     className: "vertical-timeline-element--work",
-  //     iconStyle: { background: "#FFF", color: "#fff" },
-  //     icon: <Epam />,
-  //   },
-  //   data: {
-  //     date: {
-  //       en: "2023 / August - Present",
-  //       es: "2023 / Agosto - Presente",
-  //     },
-  //     content: {
-  //       en: "Completed a one-month internship at PPOL, where I gained practical experience in web development, working on various projects and collaborating with a professional team. This internship provided valuable insights into industry practices and enhanced my technical skills.",
-  //       es: "Completé una pasantía de un mes en PPOL, donde adquirí experiencia práctica en desarrollo web, trabajando en varios proyectos y colaborando con un equipo profesional. Esta pasantía proporcionó valiosas ideas sobre las prácticas de la industria y mejoró mis habilidades técnicas.",
-  //     },
-  //     title: {
-  //       en: "Vates Software, an EPAM Company",
-  //       es: "Vates Software, una empresa de EPAM",
-  //     },
-  //     image: null,
-  //     alt: {
-  //       en: "Vates Software, an EPAM Company",
-  //       es: "Vates Software, una empresa de EPAM",
-  //     },
-  //     websiteUrl: "https://vates.com/",
-  //     repositoryUrl: null,
-  //   },
-  // },
-  // {
-  //   props: {
-  //     className: "vertical-timeline-element--work",
-  //     iconStyle: { background: "#000", color: "#fff" },
-  //     icon: <People />,
-  //   },
-  //   data: {
-  //     date: {
-  //       en: "2023 / July - August",
-  //       es: "2023 / Julio - Agosto",
-  //     },
-  //     content: {
-  //       en: "Managed to develop the implementation of various APIs, such as Github, Google Maps and Spotify, using React, to deliver a styled product to embed in the final application.",
-  //       es: "Me encargué de desarrollar la implementación de varias APIs, como Github, Google Maps y Spotify, utilizando React, para entregar un producto estilizado que incrustar en la aplicación final.",
-  //     },
-  //     title: {
-  //       en: "PPOL Internship",
-  //       es: "Pasantía en PPOL",
-  //     },
-  //     image: null,
-  //     alt: {
-  //       en: "PPOL Internship",
-  //       es: "Pasantía en PPOL",
-  //     },
-  //     websiteUrl: "https://ppol.io/",
-  //     repositoryUrl: null,
-  //   },
-  // },
+  {
+    props: {
+      className: "vertical-timeline-element--education",
+      iconStyle: { background: "#FFF" },
+      icon: <UTN />,
+    },
+    data: {
+      date: {
+        en: "2024 - Present",
+        es: "2024 - Presente",
+      },
+      content: {
+        en: "",
+        es: "",
+      },
+      title: {
+        en: "National Technological University",
+        es: "Universidad Tecnológica Nacional",
+      },
+      image: null,
+      alt: {
+        en: "National Technological University",
+        es: "Universidad Tecnológica Nacional",
+      },
+      websiteUrl: "https://utn.edu.ar/",
+      repositoryUrl: null,
+    },
+  },
   {
     props: {
       className: "vertical-timeline-element--work",
-      iconStyle: { background: "#000", color: "#fff" },
+      iconStyle: { background: "#FFF" },
+      icon: <Epam />,
+    },
+    data: {
+      date: {
+        en: "2023 / August - Present",
+        es: "2023 / Agosto - Presente",
+      },
+      content: {
+        en: "I participated in the full stack development team, as a junior and as a leader, using React.js with Next.js along with Python with FastAPI. We implemented Scrum practices, focusing on the fast delivery of customized and quality products according to the client's needs.",
+        es: "Participé en el equipo de desarrollo full stack, como junior y como lider, utilizando React.js con Next.js junto a Python con FastAPI. Implementamos prácticas de Scrum, enfocándonos en la entrega rápida de productos personalizados y de calidad según las necesidades del cliente.",
+      },
+      title: {
+        en: "Vates Software, an EPAM Company",
+        es: "Vates Software, una empresa de EPAM",
+      },
+      image: null,
+      alt: {
+        en: "Vates Software, an EPAM Company",
+        es: "Vates Software, una empresa de EPAM",
+      },
+      websiteUrl: "https://vates.com/",
+      repositoryUrl: null,
+    },
+  },
+  {
+    props: {
+      className: "vertical-timeline-element--work",
+      iconStyle: { background: "#000" },
+      icon: <People />,
+    },
+    data: {
+      date: {
+        en: "2023 / July - August",
+        es: "2023 / Julio - Agosto",
+      },
+      content: {
+        en: "Managed to develop the implementation of various APIs, such as Github, Google Maps and Spotify, using React, to deliver a styled product to embed in the final application.",
+        es: "Me encargué de desarrollar la implementación de varias APIs, como Github, Google Maps y Spotify, utilizando React, para entregar un producto estilizado que incrustar en la aplicación final.",
+      },
+      title: {
+        en: "PPOL Internship",
+        es: "Pasantía en PPOL",
+      },
+      image: null,
+      alt: {
+        en: "PPOL Internship",
+        es: "Pasantía en PPOL",
+      },
+      websiteUrl: "https://ppol.io/",
+      repositoryUrl: null,
+    },
+  },
+  {
+    props: {
+      className: "vertical-timeline-element--work",
+      iconStyle: { background: "#000" },
       icon: <NextJS />,
     },
     data: {
       date: {
-        en: "2023 / May",
-        es: "2023 / Mayo",
+        en: "2023 / May - June",
+        es: "2023 / Mayo - Junio",
       },
       content: {
         en: "Development of an ecommerce web application in a team, as a final project in SoyHenry, using Next.js for the UI along with the back-end logic and Supabase for managing the PostgreSQL database. Ended up in an production-ready application, following good practices for handling sensitive data and presenting an enjoyable and fluid website.",
@@ -97,13 +126,13 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--work",
-      iconStyle: { background: "#2196f3", color: "#fff" },
+      iconStyle: { background: "#000" },
       icon: <ReactJS />,
     },
     data: {
       date: {
-        en: "2023 / April",
-        es: "2023 / Abril",
+        en: "2023 / April - May",
+        es: "2023 / Abril - Mayo",
       },
       content: {
         en: "Developed a website by my own to demonstrate what was learned during the front, back and database modules of SoyHenry, as an integrating project, using React for the UI, Express in the back-end and Sequelize for database management.",
@@ -125,13 +154,13 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--work",
-      iconStyle: { background: "#000", color: "yellow" },
+      iconStyle: { background: "#000" },
       icon: <ReactJS />,
     },
     data: {
       date: {
-        en: "2023 / March",
-        es: "2023 / Marzo",
+        en: "2023 / March - April",
+        es: "2023 / Marzo - Abril",
       },
       content: {
         en: "I carried out a project using the Rick and Morty API, to implement what I learned in the front and back modules of SoyHenry on the fly. I used React for the UI and Express in the back-end.",
@@ -153,7 +182,7 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--education",
-      iconStyle: { background: "#000", color: "yellow" },
+      iconStyle: { background: "#000" },
       icon: <SoyHenry />,
     },
     data: {
@@ -181,13 +210,13 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--education",
-      iconStyle: { background: "#FFF", color: "white" },
+      iconStyle: { background: "#FFF" },
       icon: <Udemy />,
     },
     data: {
       date: {
-        en: "2022",
-        es: "2022",
+        en: "2022 - 2023",
+        es: "2022 - 2023",
       },
       content: {
         en: "I started my journey in the world of programming by taking a full-stack web development course on Udemy, with Colt Steele as the teacher (a great guy), where I learned the fundamentals of HTML, CSS, JavaScript, Node.js, Express, and MongoDB. That's how I got the hang of programming.",

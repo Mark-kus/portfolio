@@ -9,7 +9,7 @@ const CallToAction = ({ lang, dictionary }) => {
     container:
       "flex flex-col border-b-2 md:border-b-0 border-gray-300 m-8 mt-6 mb-0 pb-8 md:m-0 md:mt-0 md:mb-0 md:pb-0",
     title: "text-2xl font-bold mt-6 md:mt-0",
-    subtitle: "py-4 md:pb-12",
+    subtitle: "py-4 md:pb-12 md:w-2/3",
     list: "flex flex-col gap-y-2",
     listItem: "flex items-center gap-x-2 w-fit",
     resumeButton:
