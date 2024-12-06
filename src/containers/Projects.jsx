@@ -12,6 +12,8 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+import ProjectsAlert from "@/components/ProjectsAlert";
+
 export default function Projects({ lang, dictionary }) {
   const [elements, setElements] = useState(projects.slice(0, 3));
   const { isDarkMode } = useDarkModeContext();
@@ -60,6 +62,12 @@ export default function Projects({ lang, dictionary }) {
       <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
         {dictionary.title}
       </header>
+
+      {/* Bolita de advertencia e inicio de timeline */}
+      <div className="w-full ml-[0.8rem] md:ml-0 md:w-auto">
+        <ProjectsAlert dictionary={dictionary} />
+      </div>
+
       <article className="w-full md:max-w-6xl">
         <VerticalTimeline>
           {getTimelineElements(lang, dictionary)}
@@ -72,6 +80,11 @@ export default function Projects({ lang, dictionary }) {
           )}
         </VerticalTimeline>
       </article>
+
+      {/* Bolita final de timeline */}
+      <div className="w-full ml-[0.8rem] md:ml-0 md:w-auto">
+        <div className="rounded-full w-12 h-12 bg-white"></div>
+      </div>
     </section>
   );
 }

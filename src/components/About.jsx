@@ -25,30 +25,10 @@ export default function About({ dictionary }) {
       />
       <article className={classNames.textContainer}>
         <header className={classNames.header}>{dictionary.name}</header>
-        <h4 className={classNames.subHeader}>{dictionary.title}</h4>
+        <h4 className={classNames.subHeader}>{dictionary.job}</h4>
         <p className={classNames.paragraph}>
-          {dictionary.graduatedFrom}{" "}
-          <a
-            href="https://www.soyhenry.com/"
-            target="_blank"
-            className={classNames.linkYellow}
-          >
-            SoyHenry
-          </a>
-          , {dictionary.studiedWith}{" "}
-          <a
-            href="https://www.udemy.com/"
-            target="_blank"
-            className={classNames.linkViolet}
-          >
-            Udemy
-          </a>
-          , {dictionary.toLater}{" "}
-          <span className={classNames.textSky}>{dictionary.selfTaught}</span>.{" "}
-          <br />
-          {dictionary.knowledge} <br />
-          {dictionary.continueLearning} <br />
-          {dictionary.contactMe}
+          <span className="text-red-600">TL;DR;</span>{" "}
+          <span dangerouslySetInnerHTML={{ __html: dictionary.paragraph }} />
         </p>
       </article>
     </article>

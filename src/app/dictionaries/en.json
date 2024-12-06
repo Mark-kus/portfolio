@@ -7,14 +7,8 @@
   "content": {
     "about": {
       "name": "Marco Tignanelli",
-      "title": "Full Stack Web Developer",
-      "graduatedFrom": "Graduated from",
-      "studiedWith": "studied at",
-      "toLater": "to later become",
-      "selfTaught": "self-taught",
-      "knowledge": "I armed myself with knowledge on front and back end, to develop client-tailored web applications.",
-      "continueLearning": "Although you can see my main tech skills, I continue to learn new ones even at this moment, either with a study group or on my own.",
-      "contactMe": "If you see me capable of developing your project, contact me, and if not, send me a greeting since you are here."
+      "job": "Full Stack Developer",
+      "paragraph": "I got into programming with a web development course on <a href='https://www.udemy.com/' target='_blank' class='text-violet-600 dark:text-violet-400 hover:underline'>Udemy</a>, I professionalized with the full-stack bootcamp at <a href='https://www.soyhenry.com/' target='_blank' class='text-yellow-600 dark:text-yellow-400 hover:underline'>SoyHenry</a>, and now I learn the development side on <span class='text-sky-600 dark:text-sky-400'>my own</span> while studying engineering and business at <span style='color: green'>college</span>. <br /> I'm good at finding information, problem solving and communication. I like to learn, teach, the color <span style='color: dodgerblue'>blue</span> and <span style='color: orangered'>tangerines</span>. When I play volleyball, I play as a middle blocker or setter."
     },
     "technologies": {
       "title": "Favorite Technologies"
@@ -24,7 +18,8 @@
       "card": {
         "website": "Visit Website",
         "repository": "Go To Repository"
-      }
+      },
+      "alert": "Some projects go to sleep after a period of inactivity, so they may take around a minute to load."
     },
     "contact": {
       "callToAction": {
