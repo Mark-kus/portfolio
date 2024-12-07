@@ -1,6 +1,7 @@
 import "@/styles/global.css";
 import { Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
 import { DarkModeProvider } from "@/context/DarkModeContext";
 
@@ -59,7 +60,8 @@ export default function RootLayout({ children }) {
       >
         <body className={roboto.className}>
           {children}
-
+          
+          <SpeedInsights />
           <Analytics />
         </body>
       </html>
