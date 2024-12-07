@@ -64,7 +64,7 @@ export default function Projects({ lang, dictionary }) {
       </header>
 
       {/* Bolita de advertencia e inicio de timeline */}
-      <div className="w-full ml-[0.8rem] md:ml-0 md:w-auto">
+      <div className="w-[95%] min-[1170px]:w-auto mr-2 min-[1170px]:mr-0">
         <ProjectsAlert dictionary={dictionary} />
       </div>
 
@@ -82,7 +82,7 @@ export default function Projects({ lang, dictionary }) {
       </article>
 
       {/* Bolita final de timeline */}
-      <div className="w-full ml-[0.8rem] md:ml-0 md:w-auto">
+      <div className="w-[95%] min-[1170px]:w-auto mr-2 min-[1170px]:mr-0">
         <div className="rounded-full w-12 h-12 bg-white"></div>
       </div>
     </section>

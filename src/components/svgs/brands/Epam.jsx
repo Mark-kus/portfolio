@@ -8,7 +8,7 @@ const Epam = ({ width = "100%", height = "100%" }) => {
       x="0px"
       y="0px"
       viewBox="0 0 226 80"
-      enable-background="new 0 0 226 80"
+      enableBackground="new 0 0 226 80"
       width={width}
       height={height}
     >
