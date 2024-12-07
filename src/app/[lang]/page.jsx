@@ -8,7 +8,7 @@ export default async function Home({ params: { lang = "en" } }) {
   );
 
   return (
-    <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-slate-100 flex flex-col justify-between transition-colors duration-500">
+    <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-between transition-colors duration-500">
       <Navigation lang={lang} dictionary={dictionary.navigation} />
 
       <div id="landing">

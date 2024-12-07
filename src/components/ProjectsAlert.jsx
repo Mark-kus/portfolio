@@ -32,7 +32,7 @@ const ProjectsAlert = ({ dictionary }) => {
         }`}
       />
       <div
-        className={`absolute bg-orange-400 dark:bg-yellow-300 p-2 -top-5 left-14 rounded-lg text-black z-10 w-[85%] min-[1170px]:w-96 transition-opacity ${
+        className={`absolute bg-orange-400 dark:bg-yellow-300 p-2 bottom-0 left-14 rounded-lg text-black z-10 w-[85%] min-[1170px]:w-96 transition-opacity ${
           showPopover ? "opacity-100" : "opacity-0"
         }`}
       >

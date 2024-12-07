@@ -5,7 +5,7 @@ import Instagram from "./svgs/media/Instagram";
 
 const styles = {
   footer:
-    "flex justify-between items-center text-black bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg px-6 z-10 fixed bottom-0 w-full",
+    "flex justify-between items-center text-black bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg px-6 z-10 fixed bottom-0 w-full",
   paragraph: "flex items-center",
   span: "text-sm",
   iconLink:

@@ -16,9 +16,19 @@ export function middleware(request) {
     return NextResponse.redirect(new URL(redirectPath, request.url));
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+
+  // Modificar encabezados sólo para archivos HTML
+  if (request.nextUrl.pathname.endsWith(".html")) {
+    response.headers.set(
+      "Cache-Control",
+      "max-age=0, must-revalidate" // Asegúrate de usar un valor compatible
+    );
+  }
+
+  return response;
 }
 
 export const config = {
-  matcher: "/((?!_next|favicon.ico|.*\\.pdf$).*)",
+  matcher: "/((?!_next|favicon.ico|robots.txt|sitemap.xml|.*\\.pdf$).*)",
 };

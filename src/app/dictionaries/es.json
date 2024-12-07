@@ -8,7 +8,17 @@
     "about": {
       "name": "Marco Tignanelli",
       "job": "Desarrollador Full Stack",
-      "paragraph": "Le agarré el gusto a la programación con un curso de desarrollo web en <a href='https://www.udemy.com/' target='_blank' class='text-violet-600 dark:text-violet-400 hover:underline'>Udemy</a>, lo profesionalicé con el bootcamp full-stack de <a href='https://www.soyhenry.com/' target='_blank' class='text-yellow-600 dark:text-yellow-400 hover:underline'>SoyHenry</a>, y ahora aprendo el lado del desarrollo por <span class='text-sky-600 dark:text-sky-400'>mi cuenta</span> mientras estudio el de la ingenieria y el negocio en la <span style='color: green'>facultad</span>. <br /> Se me da bien la búsqueda de información, la resolución de problemas y la comunicación. Me gusta aprender, enseñar, el color <span style='color: dodgerblue'>azul</span> y las <span style='color: orangered'>mandarinas</span>. Cuando juega al voley, juego de central o armador."
+      "part1": "Le agarré el gusto a la programación con un curso de desarrollo web en",
+      "part2": "lo profesionalicé con el bootcamp full-stack de",
+      "part3": "y ahora aprendo el lado del desarrollo por",
+      "myOwn": "mi cuenta",
+      "part4": "mientras estudio el de la ingenieria y el negocio en la",
+      "college": "facultad",
+      "part5": "Se me da bien la búsqueda de información, la resolución de problemas y la comunicación. Me gusta aprender cosas, enseñar cosas, el color",
+      "blue": "azul",
+      "part6": "y las",
+      "tangerines": "mandarinas",
+      "part7": "Cuando juega al voley, juego de central o armador."
     },
     "technologies": {
       "title": "Tecnologías Favoritas"

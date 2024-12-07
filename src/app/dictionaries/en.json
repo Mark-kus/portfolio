@@ -8,7 +8,17 @@
     "about": {
       "name": "Marco Tignanelli",
       "job": "Full Stack Developer",
-      "paragraph": "I got into programming with a web development course on <a href='https://www.udemy.com/' target='_blank' class='text-violet-600 dark:text-violet-400 hover:underline'>Udemy</a>, I professionalized with the full-stack bootcamp at <a href='https://www.soyhenry.com/' target='_blank' class='text-yellow-600 dark:text-yellow-400 hover:underline'>SoyHenry</a>, and now I learn the development side on <span class='text-sky-600 dark:text-sky-400'>my own</span> while studying engineering and business at <span style='color: green'>college</span>. <br /> I'm good at finding information, problem solving and communication. I like to learn, teach, the color <span style='color: dodgerblue'>blue</span> and <span style='color: orangered'>tangerines</span>. When I play volleyball, I play as a middle blocker or setter."
+      "part1": "I got into programming with a web development course at",
+      "part2": "I professionalized it with the full-stack bootcamp at",
+      "part3": "and now I learn the development side by",
+      "myOwn": "myself",
+      "part4": "while I study engineering and business at",
+      "college": "college",
+      "part5": "I'm good at seeking information, problem solving and communication. I like to learn stuff, teach stuff, the color",
+      "blue": "blue",
+      "part6": "and",
+      "tangerines": "tangerines",
+      "part7": "When I play volleyball, I play as a middle blocker or setter."
     },
     "technologies": {
       "title": "Favorite Technologies"

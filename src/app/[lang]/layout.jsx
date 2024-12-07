@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
 
   return (
     <DarkModeProvider initialDarkMode={isDarkMode}>
-      <html lang="en" className={isDarkMode ? "dark" : ""}>
+      <html lang="en" className={isDarkMode ? "dark" : ""} suppressHydrationWarning>
         <body className={roboto.className}>
           {children}
 
