@@ -30,5 +30,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: "/((?!_next|favicon.ico|robots.txt|sitemap.xml|.*\\.pdf$).*)",
+  matcher: "/:lang([a-z]{0,3})",
 };
