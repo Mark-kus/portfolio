@@ -20,16 +20,16 @@ const projects = [
     },
     data: {
       date: {
-        en: "Working on something...",
-        es: "Trabajando en algo...",
+        en: null,
+        es: null,
       },
       content: {
         en: null,
         es: null,
       },
       title: {
-        en: null,
-        es: null,
+        en: "Working on something...",
+        es: "Trabajando en algo...",
       },
       image: null,
       alt: {

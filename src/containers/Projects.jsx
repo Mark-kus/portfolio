@@ -41,13 +41,13 @@ export default function Projects({ lang, dictionary }) {
         contentArrowStyle={{
           borderRight: isDarkMode ? "7px solid #000" : "7px solid #FFF",
         }}
+        dateClassName={data.date[lang] ? props?.dateClassName : "hidden"}
         date={
           <div>
-            {data.date[lang] && (
-              <span className="dark:md:text-white md:text-black">
-                {data.date[lang]}
-              </span>
-            )}
+            <span className="dark:md:text-white md:text-black">
+              {data.date[lang]}
+            </span>
+
             {data.content[lang] && (
               <p className="dark:md:text-white md:text-black">
                 {data.content[lang]}
@@ -56,9 +56,7 @@ export default function Projects({ lang, dictionary }) {
           </div>
         }
       >
-        {data.title[lang] && (
-          <Project lang={lang} project={data} dictionary={dictionary.card} />
-        )}
+        <Project lang={lang} project={data} dictionary={dictionary.card} />
       </VerticalTimelineElement>
     ));
   };
