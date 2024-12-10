@@ -43,16 +43,22 @@ export default function Projects({ lang, dictionary }) {
         }}
         date={
           <div>
-            <span className="dark:md:text-white md:text-black">
-              {data.date[lang]}
-            </span>
-            <p className="dark:md:text-white md:text-black">
-              {data.content[lang]}
-            </p>
+            {data.date[lang] && (
+              <span className="dark:md:text-white md:text-black">
+                {data.date[lang]}
+              </span>
+            )}
+            {data.content[lang] && (
+              <p className="dark:md:text-white md:text-black">
+                {data.content[lang]}
+              </p>
+            )}
           </div>
         }
       >
-        {data.title && <Project lang={lang} project={data} dictionary={dictionary.card} />}
+        {data.title[lang] && (
+          <Project lang={lang} project={data} dictionary={dictionary.card} />
+        )}
       </VerticalTimelineElement>
     ));
   };

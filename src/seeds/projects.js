@@ -24,8 +24,8 @@ const projects = [
         es: "Trabajando en algo...",
       },
       content: {
-        en: "More information soon.",
-        es: "Más información pronto.",
+        en: null,
+        es: null,
       },
       title: {
         en: null,
