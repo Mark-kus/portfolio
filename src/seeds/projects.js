@@ -9,8 +9,37 @@ import SoyHenry from "@/components/svgs/brands/SoyHenry";
 import Epam from "@/components/svgs/brands/Epam";
 import Udemy from "@/components/svgs/brands/Udemy";
 import UTN from "@/components/svgs/brands/UTN";
+import OnConstruction from "@/components/svgs/generic/OnConstruction";
 
 const projects = [
+  {
+    props: {
+      className: "vertical-timeline-element--work",
+      iconStyle: { background: "#000" },
+      icon: <OnConstruction />,
+    },
+    data: {
+      date: {
+        en: "Working on something...",
+        es: "Trabajando en algo...",
+      },
+      content: {
+        en: "More information soon.",
+        es: "Más información pronto.",
+      },
+      title: {
+        en: null,
+        es: null,
+      },
+      image: null,
+      alt: {
+        en: null,
+        es: null,
+      },
+      websiteUrl: null,
+      repositoryUrl: null,
+    },
+  },
   {
     props: {
       className: "vertical-timeline-element--education",

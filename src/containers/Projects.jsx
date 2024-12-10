@@ -52,7 +52,7 @@ export default function Projects({ lang, dictionary }) {
           </div>
         }
       >
-        <Project lang={lang} project={data} dictionary={dictionary.card} />
+        {data.title && <Project lang={lang} project={data} dictionary={dictionary.card} />}
       </VerticalTimelineElement>
     ));
   };
