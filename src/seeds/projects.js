@@ -148,7 +148,7 @@ const projects = [
         en: "Hueney Ruca",
         es: "Hueney Ruca",
       },
-      websiteUrl: "https://hueney-ruca-three.vercel.app/",
+      websiteUrl: null,
       repositoryUrl: "https://github.com/Mark-kus/hueney-ruca",
     },
   },
