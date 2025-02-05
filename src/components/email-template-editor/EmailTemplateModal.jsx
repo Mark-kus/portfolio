@@ -1,14 +1,47 @@
+import { useState } from "react";
+
 const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [selectedSex, setSelectedSex] = useState("M");
+  const [content, setContent] = useState(
+    selectedTemplate?.content || {
+      en: { M: "", W: "" },
+      es: { M: "", W: "" },
+      pt: { M: "", W: "" },
+    }
+  );
+
+  const handleLanguageChange = (event) => {
+    setSelectedLanguage(event.target.value);
+  };
+
+  const handleSexChange = (event) => {
+    setSelectedSex(event.target.value);
+  };
+
+  const handleContentChange = (event) => {
+    setContent({
+      ...content,
+      [selectedLanguage]: {
+        ...content[selectedLanguage],
+        [selectedSex]: event.target.value,
+      },
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const newTemplate = {
       name: formData.get("name"),
-      content: formData.get("content"),
+      content,
     };
 
     if (selectedTemplate) {
       const newTemplates = [...templates];
+      const templateIndex = templates.findIndex(
+        (template) => template.name === selectedTemplate.name
+      );
       newTemplates[templateIndex] = newTemplate;
       saveTemplates(newTemplates);
       return;
@@ -33,10 +66,99 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
             />
           </div>
           <div className="mb-5">
+            <div className="flex gap-4">
+              <label
+                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
+                  selectedLanguage === "en" &&
+                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="language"
+                  value="en"
+                  checked={selectedLanguage === "en"}
+                  onChange={handleLanguageChange}
+                  className="hidden"
+                />
+                English
+              </label>
+              <label
+                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
+                  selectedLanguage === "es" &&
+                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="language"
+                  value="es"
+                  checked={selectedLanguage === "es"}
+                  onChange={handleLanguageChange}
+                  className="hidden"
+                />
+                Spanish
+              </label>
+              <label
+                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
+                  selectedLanguage === "pt" &&
+                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="language"
+                  value="pt"
+                  checked={selectedLanguage === "pt"}
+                  onChange={handleLanguageChange}
+                  className="hidden"
+                />
+                Portuguese
+              </label>
+            </div>
+          </div>
+          <div className="mb-5">
+            <div className="flex gap-4">
+              <label
+                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
+                  selectedSex === "M" &&
+                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="sex"
+                  value="M"
+                  checked={selectedSex === "M"}
+                  onChange={handleSexChange}
+                  className="hidden"
+                />
+                Male
+              </label>
+              <label
+                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
+                  selectedSex === "W" &&
+                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="sex"
+                  value="W"
+                  checked={selectedSex === "W"}
+                  onChange={handleSexChange}
+                  className="hidden"
+                />
+                Female
+              </label>
+            </div>
+          </div>
+          <div className="mb-5">
             <label className="block mb-2">Email Template</label>
             <textarea
               name="content"
-              defaultValue={selectedTemplate?.content}
+              value={content[selectedLanguage][selectedSex]}
+              onChange={handleContentChange}
               className="w-full p-2 border border-gray-300 text-black"
               rows="5"
               required
@@ -54,7 +176,7 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
               type="submit"
               className="bg-orange-500 dark:bg-green-700 text-white p-2 w-3/12"
             >
-              Add Template
+              Save Template
             </button>
           </div>
         </form>
