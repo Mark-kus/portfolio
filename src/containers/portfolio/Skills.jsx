@@ -1,4 +1,4 @@
-import Skill from "@/components/Skill";
+import Skill from "@/components/portfolio/Skill";
 import skills from "@/seeds/skills";
 
 export default function Skills({ dictionary }) {

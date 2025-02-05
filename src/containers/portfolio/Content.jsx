@@ -1,7 +1,7 @@
-import Projects from "./Projects";
-import Skills from "./Skills";
-import About from "@/components/About";
-import Contact from "./Contact";
+import Projects from "@/containers/portfolio/Projects";
+import Skills from "@/containers/portfolio/Skills";
+import About from "@/components/portfolio/About";
+import Contact from "@/containers/portfolio/Contact";
 
 export default function Content({ lang, dictionary }) {
   return (

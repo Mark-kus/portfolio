@@ -1,7 +1,7 @@
 "use client";
 
-import Project from "@/components/Project";
-import Plus from "@/components/svgs/generic/Plus";
+import Project from "@/components/portfolio/Project";
+import Plus from "@/components/portfolio/svgs/generic/Plus";
 import { useDarkModeContext } from "@/context/DarkModeContext";
 import projects from "@/seeds/projects.js";
 import { useState } from "react";
@@ -12,7 +12,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import ProjectsAlert from "@/components/ProjectsAlert";
+import ProjectsAlert from "@/components/portfolio/ProjectsAlert";
 
 export default function Projects({ lang, dictionary }) {
   const [elements, setElements] = useState(projects.slice(0, 3));

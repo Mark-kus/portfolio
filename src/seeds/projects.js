@@ -2,14 +2,14 @@ import hueneyRuca from "@/assets/projects/hueneyRuca.webp";
 import rickAndMorty from "@/assets/projects/rickAndMorty.webp";
 import dogs from "@/assets/projects/dogs.webp";
 
-import ReactJS from "@/components/svgs/techonologies/ReactJS";
-import NextJS from "@/components/svgs/techonologies/NextJS";
-import People from "@/components/svgs/brands/People";
-import SoyHenry from "@/components/svgs/brands/SoyHenry";
-import Epam from "@/components/svgs/brands/Epam";
-import Udemy from "@/components/svgs/brands/Udemy";
-import UTN from "@/components/svgs/brands/UTN";
-import OnConstruction from "@/components/svgs/generic/OnConstruction";
+import ReactJS from "@/components/portfolio/svgs/techonologies/ReactJS";
+import NextJS from "@/components/portfolio/svgs/techonologies/NextJS";
+import People from "@/components/portfolio/svgs/brands/People";
+import SoyHenry from "@/components/portfolio/svgs/brands/SoyHenry";
+import Epam from "@/components/portfolio/svgs/brands/Epam";
+import Udemy from "@/components/portfolio/svgs/brands/Udemy";
+import UTN from "@/components/portfolio/svgs/brands/UTN";
+import OnConstruction from "@/components/portfolio/svgs/generic/OnConstruction";
 
 const projects = [
   {

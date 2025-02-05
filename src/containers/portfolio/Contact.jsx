@@ -1,5 +1,5 @@
-import Form from "@/components/Contact/Form";
-import CallToAction from "@/components/Contact/CallToAction";
+import Form from "@/components/portfolio/contact/Form";
+import CallToAction from "@/components/portfolio/contact/CallToAction";
 
 const styles = {
   container:

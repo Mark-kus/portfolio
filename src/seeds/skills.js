@@ -1,13 +1,13 @@
-import HypertextMarkupLanguage from "@/components/svgs/techonologies/HypertextMarkupLanguage";
-import CascadeStyleSheets from "@/components/svgs/techonologies/CascadeStyleSheets";
-import JavaScript from "@/components/svgs/techonologies/JavaScript";
-import Python from "@/components/svgs/techonologies/Python";
-import ReactJS from "@/components/svgs/techonologies/ReactJS";
-import FastAPI from "@/components/svgs/techonologies/FastAPI";
-import Docker from "@/components/svgs/techonologies/Docker";
-import Kubernetes from "@/components/svgs/techonologies/Kubernetes";
-import AmazonWebServices from "@/components/svgs/techonologies/AmazonWebServices";
-import StructuredQueryLanguage from "@/components/svgs/techonologies/StructuredQueryLanguage";
+import HypertextMarkupLanguage from "@/components/portfolio/svgs/techonologies/HypertextMarkupLanguage";
+import CascadeStyleSheets from "@/components/portfolio/svgs/techonologies/CascadeStyleSheets";
+import JavaScript from "@/components/portfolio/svgs/techonologies/JavaScript";
+import Python from "@/components/portfolio/svgs/techonologies/Python";
+import ReactJS from "@/components/portfolio/svgs/techonologies/ReactJS";
+import FastAPI from "@/components/portfolio/svgs/techonologies/FastAPI";
+import Docker from "@/components/portfolio/svgs/techonologies/Docker";
+import Kubernetes from "@/components/portfolio/svgs/techonologies/Kubernetes";
+import AmazonWebServices from "@/components/portfolio/svgs/techonologies/AmazonWebServices";
+import StructuredQueryLanguage from "@/components/portfolio/svgs/techonologies/StructuredQueryLanguage";
 
 const skills = [
   {

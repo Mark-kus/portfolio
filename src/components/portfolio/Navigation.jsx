@@ -1,9 +1,9 @@
 "use client";
 
-import Moon from "./svgs/generic/Moon";
-import PersonalLogo from "./svgs/PersonalLogo";
-import Sun from "./svgs/generic/Sun";
-import LanguageSelector from "./LanguageSelector";
+import Moon from "@/components/portfolio/svgs/generic/Moon";
+import PersonalLogo from "@/components/portfolio/svgs/PersonalLogo";
+import Sun from "@/components/portfolio/svgs/generic/Sun";
+import LanguageSelector from "@/components/portfolio/LanguageSelector";
 import { useDarkModeContext } from "@/context/DarkModeContext";
 
 export default function Navigation({ lang, dictionary }) {

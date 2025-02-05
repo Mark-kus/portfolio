@@ -1,8 +1,8 @@
 import React from "react";
 import { EMAIL, GITHUB, LINKEDIN } from "@/seeds/socialLinks";
-import GitHub from "@/components/svgs/media/GitHub";
-import LinkedIn from "@/components/svgs/media/LinkedIn";
-import Mail from "@/components/svgs/media/Mail";
+import GitHub from "@/components/portfolio/svgs/media/GitHub";
+import LinkedIn from "@/components/portfolio/svgs/media/LinkedIn";
+import Mail from "@/components/portfolio/svgs/media/Mail";
 
 const CallToAction = ({ lang, dictionary }) => {
   const styles = {

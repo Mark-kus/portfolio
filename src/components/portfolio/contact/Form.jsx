@@ -1,7 +1,7 @@
 "use client";
 
-import sendEmail from "./sendEmail";
-import validateForm from "./validateForm";
+import sendEmail from "@/components/portfolio/contact/sendEmail";
+import validateForm from "@/components/portfolio/contact/validateForm";
 import { useState } from "react";
 
 import { ToastContainer } from "react-toastify";
