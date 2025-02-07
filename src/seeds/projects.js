@@ -100,7 +100,7 @@ const projects = [
   {
     props: {
       className: "vertical-timeline-element--work",
-      iconStyle: { background: "#FFF" },
+      iconStyle: { background: "#000" },
       icon: <Mail />,
     },
     data: {
@@ -109,8 +109,8 @@ const projects = [
         es: "2025 / Febrero",
       },
       content: {
-        en: "Peeking at the screen of someone working next to me, I noticed that this person had many email templates, all with different purposes. When she had to use one, she replaced the content of some brackets with the corresponding text. I immediately thought that I could make a quick solution for that bottleneck at work. My goal was to make just an MVP, to not invest much time and still meet the requirements, and after 8 hours of work, I presented it to the 'client'. It uses local data persistence so that anyone can save their own templates, load content into them, and copy the result to the clipboard after previewing.",
-        es: "Pispeando en la pantalla de alguien trabajando junto a mí, noté que esta persona tenía muchas plantillas de emails, todas con propósitos distintos. Cuando tenía que usar alguna, reemplazaba el contenido de unos corchetes por el texto que correspondía. En seguida se me ocurrió que podía hacer una solución rápida para ese cuello de botella al trabajar. Mi objetivo era hacer solo un MVP, para no invertirle mucho tiempo y aún así cumplir con los requisitos, y después de 8 horas de trabajo, se lo presenté al 'cliente'. Utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
+        en: "Someone had many email templates, all with different purposes. They replaced the content of some brackets with the corresponding text. My goal was to make just an MVP, which after 8 hours of work, I presented and they liked. It uses local data persistence so that anyone can save their own templates, load content into them, and copy the result to the clipboard after a preview.",
+        es: "Alguien tenía muchas plantillas de emails, todas con propósitos distintos. Reemplazaba el contenido de unos corchetes por el texto que correspondía. Mi objetivo era hacer solo un MVP, que después de 8 horas de trabajo, se lo presenté y le gustó. Utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
       },
       title: {
         en: "Email Template Editor",
