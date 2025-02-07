@@ -1,5 +1,6 @@
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 
 const LanguageSelector = ({ lang }) => {
   const [selectedLanguage, setSelectedLanguage] = useState(lang);
@@ -7,6 +8,7 @@ const LanguageSelector = ({ lang }) => {
   const pathname = usePathname();
 
   const handleSelect = (language) => {
+    Cookies.set("lang", language, { expires: 365 });
     setSelectedLanguage(language);
 
     window.location.href = `/${language}` + pathname.slice(3);

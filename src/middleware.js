@@ -13,7 +13,11 @@ export function middleware(request) {
     const redirectPath = allowedPathnames.includes(`/${preferredLanguage}`)
       ? `/${preferredLanguage}`
       : "/en";
-    return NextResponse.redirect(new URL(redirectPath, request.url));
+
+    // Establecer una cookie con el idioma preferido
+    const response = NextResponse.redirect(new URL(redirectPath, request.url));
+    response.cookies.set("lang", preferredLanguage);
+    return response;
   }
 
   const response = NextResponse.next();
@@ -25,6 +29,9 @@ export function middleware(request) {
       "max-age=0, must-revalidate" // Asegúrate de usar un valor compatible
     );
   }
+
+  // Establecer la cookie con el idioma actual
+  response.cookies.set("lang", pathname.split("/")[1] || "en");
 
   return response;
 }

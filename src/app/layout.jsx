@@ -2,7 +2,7 @@ import "@/styles/global.css";
 import { Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { cookies, headers } from "next/headers";
+import { cookies } from "next/headers";
 import { DarkModeProvider } from "@/context/DarkModeContext";
 import Navigation from "@/components/Navigation";
 import NotFound from "@/app/not-found";
@@ -50,10 +50,7 @@ const roboto = Roboto({
 
 export default async function RootLayout({ children }) {
   const cookieStore = cookies();
-  const lang1 = headers().get("x-invoke-path")?.slice(1, 3)
-  const lang2 = headers().get("Accept-Language")?.slice(0, 2)
-  const lang = lang1 || lang2 || "en"
-  console.log(lang1, lang2, lang)
+  const lang = cookieStore.get("lang")?.value || "en";
   const isDarkCookie = cookieStore.get("theme");
   const isDarkMode =
     isDarkCookie === undefined || isDarkCookie.value === "dark";
