@@ -94,6 +94,7 @@
         "title": "Add Template",
         "templateName": "Template Name",
         "templateContent": "Email Template",
+        "templateContentPlaceholder": "Hello [name]. This will produce an input field for the variable 'name'.",
         "cancel": "Cancel",
         "save": "Save"
       }

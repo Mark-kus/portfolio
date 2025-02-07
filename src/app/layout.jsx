@@ -50,7 +50,7 @@ const roboto = Roboto({
 
 export default async function RootLayout({ children }) {
   const cookieStore = cookies();
-  const lang = headers().get("x-invoke-path").slice(1, 3);
+  const lang = headers().get("x-invoke-path")?.slice(1, 3) || "en";
   const isDarkCookie = cookieStore.get("theme");
   const isDarkMode =
     isDarkCookie === undefined || isDarkCookie.value === "dark";

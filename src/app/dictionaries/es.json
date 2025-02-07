@@ -94,6 +94,7 @@
         "title": "Agregar Plantilla",
         "templateName": "Nombre de Plantilla",
         "templateContent": "Plantilla de Email",
+        "templateContentPlaceholder": "Hola [nombre]. Esto producirá un campo de entrada para la variable 'nombre'.",
         "cancel": "Cancelar",
         "save": "Guardar"
       }

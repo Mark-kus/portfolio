@@ -171,6 +171,7 @@ const EmailTemplateModal = ({
               className="w-full p-2 border border-gray-300 text-black"
               rows="5"
               required
+              placeholder={dictionary.addModal.templateContentPlaceholder}
             />
           </div>
           <div className="flex justify-end gap-10">
