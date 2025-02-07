@@ -1,12 +1,15 @@
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const LanguageSelector = ({ lang }) => {
   const [selectedLanguage, setSelectedLanguage] = useState(lang);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleSelect = (language) => {
     setSelectedLanguage(language);
-    window.location.href = `/${language}`;
+
+    window.location.href = `/${language}` + pathname.slice(3);
     setIsOpen(false);
   };
 

@@ -1,7 +1,7 @@
 import { GITHUB, LINKEDIN } from "@/seeds/socialLinks";
-import GitHub from "@/components/portfolio/svgs/media/GitHub";
-import LinkedIn from "@/components/portfolio/svgs/media/LinkedIn";
-import Instagram from "@/components/portfolio/svgs/media/Instagram";
+import GitHub from "@/components/svgs/media/GitHub";
+import LinkedIn from "@/components/svgs/media/LinkedIn";
+import Instagram from "@/components/svgs/media/Instagram";
 
 const styles = {
   footer:

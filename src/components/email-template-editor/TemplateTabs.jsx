@@ -3,18 +3,19 @@ const TemplateTabs = ({
   currentTemplateIndex,
   setCurrentTemplateIndex,
   setShowAddModal,
+  dictionary,
 }) => {
   const openAddTemplateModal = () => {
     setCurrentTemplateIndex(null);
     setShowAddModal(true);
   };
   return (
-    <div className="mr-5 w-56">
+    <div className="md:mr-5 md:w-56 w-full">
       <button
         className="w-full bg-orange-300 dark:bg-green-700 p-2 mb-2"
         onClick={openAddTemplateModal}
       >
-        Add New Template
+        {dictionary.addTemplate}
       </button>
       {templates.map((template, index) => (
         <button

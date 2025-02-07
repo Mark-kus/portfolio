@@ -1,7 +1,7 @@
 "use client";
 
 import Project from "@/components/portfolio/Project";
-import Plus from "@/components/portfolio/svgs/generic/Plus";
+import Plus from "@/components/svgs/generic/Plus";
 import { useDarkModeContext } from "@/context/DarkModeContext";
 import projects from "@/seeds/projects.js";
 import { useState } from "react";
@@ -62,7 +62,7 @@ export default function Projects({ lang, dictionary }) {
   };
 
   return (
-    <section id="projects" className="flex flex-col items-center">
+    <section id="career" className="flex flex-col items-center">
       <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
         {dictionary.title}
       </header>

@@ -2,8 +2,11 @@ import "@/styles/global.css";
 import { Roboto } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { DarkModeProvider } from "@/context/DarkModeContext";
+import Navigation from "@/components/Navigation";
+import NotFound from "@/app/not-found";
+import Footer from "@/components/portfolio/Footer";
 
 const title = "Mark-kus | Portfolio";
 const description =
@@ -45,22 +48,36 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   const cookieStore = cookies();
+  const lang = headers().get("x-invoke-path").slice(1, 3);
   const isDarkCookie = cookieStore.get("theme");
   const isDarkMode =
     isDarkCookie === undefined || isDarkCookie.value === "dark";
 
+  if (!["en", "es"].includes(lang)) {
+    return <NotFound />;
+  }
+
+  const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(
+    (m) => m.default
+  );
+
   return (
     <DarkModeProvider initialDarkMode={isDarkMode}>
       <html
-        lang="en"
+        lang={lang}
         className={isDarkMode ? "dark" : ""}
         suppressHydrationWarning
       >
         <body className={roboto.className}>
-          {children}
-          
+          <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-between transition-colors duration-500 min-h-screen">
+            <Navigation lang={lang} dictionary={dictionary.navigation} />
+
+            {children}
+          </main>
+
+          <Footer dictionary={dictionary.footer} />
           <SpeedInsights />
           <Analytics />
         </body>

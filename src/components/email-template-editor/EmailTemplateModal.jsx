@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
+const EmailTemplateModal = ({
+  saveTemplates,
+  templates,
+  selectedTemplate,
+  dictionary,
+}) => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [selectedSex, setSelectedSex] = useState("M");
   const [content, setContent] = useState(
@@ -52,11 +57,13 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
 
   return (
     <div className="fixed inset-0 bg-opacity-50 bg-black flex justify-center items-center">
-      <div className="p-5 rounded-lg w-4/6 bg-orange-300 dark:bg-green-900 z-10">
-        <h1 className="text-2xl mb-5">Add Email Template</h1>
+      <div className="p-5 rounded-lg w-full mx-4 md:w-4/6 bg-orange-300 dark:bg-green-900 z-10">
+        <h1 className="text-2xl mb-5">{dictionary.addModal.title}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-5">
-            <label className="block mb-2">Template Name</label>
+            <label className="block mb-2">
+              {dictionary.addModal.templateName}
+            </label>
             <input
               type="text"
               name="name"
@@ -81,7 +88,7 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
                   onChange={handleLanguageChange}
                   className="hidden"
                 />
-                English
+                {dictionary.languages.english}
               </label>
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
@@ -97,7 +104,7 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
                   onChange={handleLanguageChange}
                   className="hidden"
                 />
-                Spanish
+                {dictionary.languages.spanish}
               </label>
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
@@ -113,7 +120,7 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
                   onChange={handleLanguageChange}
                   className="hidden"
                 />
-                Portuguese
+                {dictionary.languages.portuguese}
               </label>
             </div>
           </div>
@@ -133,7 +140,7 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
                   onChange={handleSexChange}
                   className="hidden"
                 />
-                Male
+                {dictionary.genders.male}
               </label>
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
@@ -149,12 +156,14 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
                   onChange={handleSexChange}
                   className="hidden"
                 />
-                Female
+                {dictionary.genders.female}
               </label>
             </div>
           </div>
           <div className="mb-5">
-            <label className="block mb-2">Email Template</label>
+            <label className="block mb-2">
+              {dictionary.addModal.templateContent}
+            </label>
             <textarea
               name="content"
               value={content[selectedLanguage][selectedSex]}
@@ -170,13 +179,13 @@ const EmailTemplateModal = ({ saveTemplates, templates, selectedTemplate }) => {
               className="bg-gray-500 text-white p-2 w-3/12"
               onClick={() => saveTemplates(templates)}
             >
-              Cancel
+              {dictionary.addModal.cancel}
             </button>
             <button
               type="submit"
               className="bg-orange-500 dark:bg-green-700 text-white p-2 w-3/12"
             >
-              Save Template
+              {dictionary.addModal.save}
             </button>
           </div>
         </form>

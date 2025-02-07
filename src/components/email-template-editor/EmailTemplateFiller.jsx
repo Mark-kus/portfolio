@@ -5,6 +5,7 @@ const EmailTemplateFiller = ({
   selectedTemplate,
   setShowAddModal,
   setShowDeleteModal,
+  dictionary,
 }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [selectedSex, setSelectedSex] = useState("M");
@@ -65,8 +66,8 @@ const EmailTemplateFiller = ({
   };
 
   return (
-    <div className="w-3/4 flex">
-      <div className="w-1/2 pr-4">
+    <div className="md:w-3/4 flex md:flex-row flex-col">
+      <div className="md:w-1/2 md:pr-4">
         <div className="flex justify-between items-center mb-5">
           <h1 className="text-2xl">{selectedTemplate.name}</h1>
           <ActionButtons
@@ -90,7 +91,7 @@ const EmailTemplateFiller = ({
                 onChange={handleLanguageChange}
                 className="hidden"
               />
-              English
+              {dictionary.languages.english}
             </label>
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
@@ -106,7 +107,7 @@ const EmailTemplateFiller = ({
                 onChange={handleLanguageChange}
                 className="hidden"
               />
-              Spanish
+              {dictionary.languages.spanish}
             </label>
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
@@ -122,7 +123,7 @@ const EmailTemplateFiller = ({
                 onChange={handleLanguageChange}
                 className="hidden"
               />
-              Portuguese
+              {dictionary.languages.portuguese}
             </label>
           </div>
         </div>
@@ -142,7 +143,7 @@ const EmailTemplateFiller = ({
                 onChange={handleSexChange}
                 className="hidden"
               />
-              Male
+              {dictionary.genders.male}
             </label>
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
@@ -158,7 +159,7 @@ const EmailTemplateFiller = ({
                 onChange={handleSexChange}
                 className="hidden"
               />
-              Female
+              {dictionary.genders.female}
             </label>
           </div>
         </div>
@@ -181,12 +182,12 @@ const EmailTemplateFiller = ({
                   </div>
                 );
               })
-            : "No hay valores para cargar"}
+            : dictionary.noFields}
         </div>
       </div>
-      <div className="w-1/2 pl-4 p-4">
+      <div className="md:w-1/2 md:pl-4 p-4 mb-10">
         <div className="flex justify-between items-center mb-5">
-          <h2 className="text-xl">Preview</h2>
+          <h2 className="text-xl">{dictionary.preview}</h2>
           <button
             className="bg-black bg-opacity-40 p-2 w-10"
             onClick={copyEmail}

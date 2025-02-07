@@ -1,10 +1,11 @@
 "use client";
 
-import Moon from "@/components/portfolio/svgs/generic/Moon";
-import PersonalLogo from "@/components/portfolio/svgs/PersonalLogo";
-import Sun from "@/components/portfolio/svgs/generic/Sun";
-import LanguageSelector from "@/components/portfolio/LanguageSelector";
+import Moon from "@/components/svgs/generic/Moon";
+import PersonalLogo from "@/components/svgs/PersonalLogo";
+import Sun from "@/components/svgs/generic/Sun";
+import LanguageSelector from "@/components/LanguageSelector";
 import { useDarkModeContext } from "@/context/DarkModeContext";
+import Link from "next/link";
 
 export default function Navigation({ lang, dictionary }) {
   // Estado para manejar el tema
@@ -14,18 +15,12 @@ export default function Navigation({ lang, dictionary }) {
     nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
     logo: "md:ml-20 md:absolute md:left-0",
     menuItems: "flex list-none gap-3 items-center mr-5",
-    themeButton: "text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-orange-300 dark:bg-black",
-    sunIcon: "transition-all duration-500 opacity-100 dark:opacity-0 dark:translate-x-5",
-    moonIcon: "transition-all duration-500 opacity-0 -translate-x-5 dark:opacity-100 dark:-translate-x-0",
-  };
-
-  const handleScroll = (event) => {
-    event.preventDefault();
-    const targetId = event.currentTarget.getAttribute("data-section");
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    }
+    themeButton:
+      "text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-orange-300 dark:bg-black",
+    sunIcon:
+      "transition-all duration-500 opacity-100 dark:opacity-0 dark:translate-x-5",
+    moonIcon:
+      "transition-all duration-500 opacity-0 -translate-x-5 dark:opacity-100 dark:-translate-x-0",
   };
 
   return (
@@ -40,34 +35,34 @@ export default function Navigation({ lang, dictionary }) {
 
       <ul className={classnames.menuItems}>
         <li>
-          <button
-            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
-            data-section="#landing"
+          <Link
+            href={`/${lang}`}
+            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white text-sm md:text-base px-2 py-2 md:px-4"
+            data-section="#about"
             aria-label={dictionary.home}
-            onClick={handleScroll}
           >
             {dictionary.home}
-          </button>
+          </Link>
         </li>
         <li>
-          <button
-            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
-            data-section="#projects"
-            aria-label={dictionary.projects}
-            onClick={handleScroll}
+          <Link
+            href={`/${lang}#career`}
+            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white text-sm md:text-base px-2 py-2 md:px-4"
+            data-section="#career"
+            aria-label={dictionary.career}
           >
-            {dictionary.projects}
-          </button>
+            {dictionary.career}
+          </Link>
         </li>
         <li>
-          <button
-            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-4"
+          <Link
+            href={`/${lang}#contact`}
+            className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white text-sm md:text-base px-2 py-2 md:px-4"
             data-section="#contact"
             aria-label={dictionary.contact}
-            onClick={handleScroll}
           >
             {dictionary.contact}
-          </button>
+          </Link>
         </li>
       </ul>
       <div className="hidden md:block h-6 w-0.5 bg-white bg-opacity-20"></div>

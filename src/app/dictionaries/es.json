@@ -1,10 +1,10 @@
 {
   "navigation": {
     "home": "Sobre Mí",
-    "projects": "Trayectoria",
+    "career": "Trayectoria",
     "contact": "Contacto"
   },
-  "content": {
+  "portfolio": {
     "about": {
       "name": "Marco Tignanelli",
       "job": "Desarrollador Full Stack",
@@ -23,7 +23,7 @@
     "technologies": {
       "title": "Tecnologías Favoritas"
     },
-    "projects": {
+    "career": {
       "title": "Trayectoria",
       "card": {
         "website": "Visitar Sitio Web",
@@ -62,6 +62,40 @@
         "submit": "Enviar Mensaje",
         "success": "¡Correo enviado! Espero hablar con vos pronto ;)",
         "error": "¡Ocurrió un error! Sin embargo, podés intentar contactarme a través de mis redes sociales :)"
+      }
+    }
+  },
+  "emailTemplateEditor": {
+    "navigation": {
+      "addTemplate": "Agregar Plantilla"
+    },
+    "deleteModal": {
+      "prompt": "¿Estás seguro de que querés eliminar esta plantilla?",
+      "cancel": "Cancelar",
+      "delete": "Eliminar"
+    },
+    "editor": {
+      "languages": {
+        "spanish": "Español",
+        "english": "Inglés",
+        "portuguese": "Portugués"
+      },
+      "genders": {
+        "male": "Masculino",
+        "female": "Femenino"
+      },
+      "actions": {
+        "save": "Guardar",
+        "cancel": "Cancelar"
+      },
+      "noFields": "No hay campos para cargar",
+      "preview": "Vista Previa",
+      "addModal": {
+        "title": "Agregar Plantilla",
+        "templateName": "Nombre de Plantilla",
+        "templateContent": "Plantilla de Email",
+        "cancel": "Cancelar",
+        "save": "Guardar"
       }
     }
   },

@@ -1,17 +1,17 @@
-const DeleteModal = ({ setShowDeleteModal, deleteTemplate }) => {
+const DeleteModal = ({ setShowDeleteModal, deleteTemplate, dictionary }) => {
   return (
-    <div className="fixed inset-0 bg-black text-white dark:text-black bg-opacity-50 flex justify-center items-center">
-      <div className="p-5 rounded-lg bg-gray-700">
-        <p className="mb-5">Are you sure you want to delete this template?</p>
+    <div className="fixed inset-0 bg-black text-white bg-opacity-50 flex justify-center items-center">
+      <div className="p-5 rounded-lg bg-gray-700 mx-4">
+        <p className="mb-5">{dictionary.prompt}</p>
         <div className="flex justify-between gap-10">
           <button
             className="bg-gray-500 p-2 w-full"
             onClick={() => setShowDeleteModal(false)}
           >
-            No
+            {dictionary.cancel}
           </button>
           <button className="bg-red-500 p-2 w-full" onClick={deleteTemplate}>
-            Yes
+            {dictionary.delete}
           </button>
         </div>
       </div>
