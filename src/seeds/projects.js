@@ -109,8 +109,8 @@ const projects = [
         es: "2025 / Febrero",
       },
       content: {
-        en: "Someone had many email templates, all with different purposes. They replaced the content of some brackets with the corresponding text. My goal was to make just an MVP, which after 8 hours of work, I presented and they liked. It uses local data persistence so that anyone can save their own templates, load content into them, and copy the result to the clipboard after a preview.",
-        es: "Alguien tenía muchas plantillas de emails, todas con propósitos distintos. Reemplazaba el contenido de unos corchetes por el texto que correspondía. Mi objetivo era hacer solo un MVP, que después de 8 horas de trabajo, se lo presenté y le gustó. Utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
+        en: "Someone had many email templates, all with different purposes. They replaced the content of some brackets with the corresponding text. This MVP uses local data persistence so that anyone can save their own templates, load content into them, and copy the result to the clipboard after a preview.",
+        es: "Alguien tenía muchas plantillas de emails, todas con propósitos distintos. Reemplazaba el contenido de unos corchetes por el texto que correspondía. Este MVP utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
       },
       title: {
         en: "Email Template Editor",
