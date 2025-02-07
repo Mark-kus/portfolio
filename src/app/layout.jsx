@@ -53,7 +53,7 @@ export default async function RootLayout({ children }) {
   const lang1 = headers().get("x-invoke-path")?.slice(1, 3)
   const lang2 = headers().get("Accept-Language")?.slice(0, 2)
   const lang = lang1 || lang2 || "en"
-
+  console.log(lang1, lang2, lang)
   const isDarkCookie = cookieStore.get("theme");
   const isDarkMode =
     isDarkCookie === undefined || isDarkCookie.value === "dark";
