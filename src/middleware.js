@@ -1,41 +1,35 @@
 import { NextResponse } from "next/server";
 
-const allowedPathnames = ["/en", "/es"];
+export const allowedLanguages = ["en", "es"];
 
 export function middleware(request) {
-  const { pathname } = request.nextUrl;
   const acceptLanguage = request.headers.get("accept-language");
   const preferredLanguage = acceptLanguage
     ? acceptLanguage.split(",")[0].split("-")[0]
     : "en";
 
-  if (!allowedPathnames.includes(pathname)) {
-    const redirectPath = allowedPathnames.includes(`/${preferredLanguage}`)
-      ? `/${preferredLanguage}`
-      : "/en";
-
-    // Establecer una cookie con el idioma preferido
-    const response = NextResponse.redirect(new URL(redirectPath, request.url));
-    response.cookies.set("lang", preferredLanguage);
-    return response;
-  }
+  // Get the language from cookies or fallback to preferred language
+  const langCookie = request.cookies.get("lang");
+  const language = allowedLanguages.includes(langCookie)
+    ? langCookie
+    : preferredLanguage;
 
   const response = NextResponse.next();
 
-  // Modificar encabezados sólo para archivos HTML
+  // Modify headers only for HTML files
   if (request.nextUrl.pathname.endsWith(".html")) {
     response.headers.set(
       "Cache-Control",
-      "max-age=0, must-revalidate" // Asegúrate de usar un valor compatible
+      "max-age=0, must-revalidate" // Ensure to use a compatible value
     );
   }
 
-  // Establecer la cookie con el idioma actual
-  response.cookies.set("lang", pathname.split("/")[1] || "en");
+  // Set the cookie with the current language
+  response.cookies.set("lang", language);
 
   return response;
 }
 
 export const config = {
-  matcher: "/:lang([a-z]{0,3})",
+  matcher: "/:path*",
 };

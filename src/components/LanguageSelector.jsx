@@ -1,18 +1,16 @@
-import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import Cookies from "js-cookie";
+import { allowedLanguages } from "@/middleware";
 
 const LanguageSelector = ({ lang }) => {
   const [selectedLanguage, setSelectedLanguage] = useState(lang);
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
 
   const handleSelect = (language) => {
     Cookies.set("lang", language, { expires: 365 });
     setSelectedLanguage(language);
-
-    window.location.href = `/${language}` + pathname.slice(3);
     setIsOpen(false);
+    window.location.reload();
   };
 
   const handleKeyDown = (event) => {
@@ -58,7 +56,7 @@ const LanguageSelector = ({ lang }) => {
           role="listbox"
           aria-activedescendant={selectedLanguage}
         >
-          {["en", "es"].map((language) => (
+          {allowedLanguages.map((language) => (
             <li
               key={language}
               id={language}

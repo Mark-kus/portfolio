@@ -4,12 +4,12 @@ import Moon from "@/components/svgs/generic/Moon";
 import PersonalLogo from "@/components/svgs/PersonalLogo";
 import Sun from "@/components/svgs/generic/Sun";
 import LanguageSelector from "@/components/LanguageSelector";
-import { useDarkModeContext } from "@/context/DarkModeContext";
+import { useDarkMode } from "@/context/DarkModeContext";
 import Link from "next/link";
 
 export default function Navigation({ lang, dictionary }) {
   // Estado para manejar el tema
-  const { toggleDarkMode } = useDarkModeContext();
+  const { toggleDarkMode } = useDarkMode();
 
   const classnames = {
     nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
@@ -36,7 +36,7 @@ export default function Navigation({ lang, dictionary }) {
       <ul className={classnames.menuItems}>
         <li>
           <Link
-            href={`/${lang}`}
+            href={`/`}
             className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white text-sm md:text-base px-2 py-2 md:px-4"
             data-section="#about"
             aria-label={dictionary.home}
@@ -46,7 +46,7 @@ export default function Navigation({ lang, dictionary }) {
         </li>
         <li>
           <Link
-            href={`/${lang}#career`}
+            href={`/#career`}
             className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white text-sm md:text-base px-2 py-2 md:px-4"
             data-section="#career"
             aria-label={dictionary.career}
@@ -56,7 +56,7 @@ export default function Navigation({ lang, dictionary }) {
         </li>
         <li>
           <Link
-            href={`/${lang}#contact`}
+            href={`/#contact`}
             className="transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white text-sm md:text-base px-2 py-2 md:px-4"
             data-section="#contact"
             aria-label={dictionary.contact}
@@ -66,7 +66,7 @@ export default function Navigation({ lang, dictionary }) {
         </li>
       </ul>
       <div className="hidden md:block h-6 w-0.5 bg-white bg-opacity-20"></div>
-      <div className="hidden md:block mr-20 ml-5">
+      <div className="hidden sm:block md:mr-20 ml-5">
         <ul className={classnames.menuItems}>
           <li className="rounded-3xl">
             <LanguageSelector lang={lang} />

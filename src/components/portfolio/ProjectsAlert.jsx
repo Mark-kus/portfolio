@@ -1,12 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 const ProjectsAlert = ({ dictionary }) => {
-  const [showPopover, setShowPopover] = useState(true);
+  const hasSeenAlert = Cookies.get("hasSeenAlert");
+  const [showPopover, setShowPopover] = useState(false);
   const [hasFocused, setHasFocused] = useState(false);
 
+  useEffect(() => {
+    if (!hasSeenAlert) {
+      setShowPopover(true);
+    }
+  }, [hasSeenAlert]);
+
   const handleFocus = () => {
+    if (!hasSeenAlert) Cookies.set("hasSeenAlert", "true", { expires: 365 });
     setShowPopover(true);
     setHasFocused(true);
   };

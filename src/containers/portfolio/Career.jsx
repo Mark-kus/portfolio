@@ -2,7 +2,7 @@
 
 import Project from "@/components/portfolio/Project";
 import Plus from "@/components/svgs/generic/Plus";
-import { useDarkModeContext } from "@/context/DarkModeContext";
+import { useDarkMode } from "@/context/DarkModeContext";
 import projects from "@/seeds/projects.js";
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ import ProjectsAlert from "@/components/portfolio/ProjectsAlert";
 
 export default function Projects({ lang, dictionary }) {
   const [elements, setElements] = useState(projects.slice(0, 3));
-  const { isDarkMode } = useDarkModeContext();
+  const { isDarkMode } = useDarkMode();
 
   const loadMore = () => {
     setElements((prevElements) => [
@@ -25,7 +25,7 @@ export default function Projects({ lang, dictionary }) {
     ]);
   };
 
-  const getTimelineElements = (lang = "en", dictionary) => {
+  const getTimelineElements = () => {
     return elements.map(({ props, data }, index) => (
       <VerticalTimelineElement
         key={index}
@@ -74,7 +74,7 @@ export default function Projects({ lang, dictionary }) {
 
       <article className="w-full md:max-w-6xl">
         <VerticalTimeline>
-          {getTimelineElements(lang, dictionary)}
+          {getTimelineElements()}
           {elements.length < projects.length && (
             <VerticalTimelineElement
               iconClassName="vertical-timeline-element-icon--button cursor-pointer bg-slate-100 hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:hover:bg-slate-800 active:bg-slate-400 dark:active:bg-slate-900"

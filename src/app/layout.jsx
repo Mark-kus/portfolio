@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { cookies } from "next/headers";
 import { DarkModeProvider } from "@/context/DarkModeContext";
 import Navigation from "@/components/Navigation";
-import NotFound from "@/app/not-found";
 import Footer from "@/components/portfolio/Footer";
 
 const title = "Mark-kus | Portfolio";
@@ -55,10 +54,6 @@ export default async function RootLayout({ children }) {
   const isDarkMode =
     isDarkCookie === undefined || isDarkCookie.value === "dark";
 
-  if (!["en", "es"].includes(lang)) {
-    return <NotFound />;
-  }
-
   const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(
     (m) => m.default
   );
@@ -72,7 +67,7 @@ export default async function RootLayout({ children }) {
       >
         <body className={roboto.className}>
           <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-between transition-colors duration-500 min-h-screen">
-            <Navigation lang={lang} dictionary={dictionary.navigation} />
+            <Navigation dictionary={dictionary.navigation} />
 
             {children}
           </main>

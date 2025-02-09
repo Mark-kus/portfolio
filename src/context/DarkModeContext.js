@@ -29,4 +29,4 @@ export const DarkModeProvider = ({ children, initialDarkMode }) => {
   );
 };
 
-export const useDarkModeContext = () => useContext(DarkModeContext);
+export const useDarkMode = () => useContext(DarkModeContext);
