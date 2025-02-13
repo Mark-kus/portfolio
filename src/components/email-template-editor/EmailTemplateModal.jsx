@@ -56,7 +56,7 @@ const EmailTemplateModal = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-opacity-50 bg-black flex justify-center items-center">
+    <div className="fixed inset-0 bg-white/50 bg-black flex justify-center items-center">
       <div className="p-5 rounded-lg w-full mx-4 md:w-4/6 bg-orange-300 dark:bg-green-900 z-10">
         <h1 className="text-2xl mb-5">{dictionary.addModal.title}</h1>
         <form onSubmit={handleSubmit}>
@@ -77,7 +77,7 @@ const EmailTemplateModal = ({
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
                   selectedLanguage === "en" &&
-                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
                 }`}
               >
                 <input
@@ -93,7 +93,7 @@ const EmailTemplateModal = ({
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
                   selectedLanguage === "es" &&
-                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
                 }`}
               >
                 <input
@@ -109,7 +109,7 @@ const EmailTemplateModal = ({
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
                   selectedLanguage === "pt" &&
-                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
                 }`}
               >
                 <input
@@ -129,7 +129,7 @@ const EmailTemplateModal = ({
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
                   selectedSex === "M" &&
-                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
                 }`}
               >
                 <input
@@ -145,7 +145,7 @@ const EmailTemplateModal = ({
               <label
                 className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
                   selectedSex === "W" &&
-                  "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
                 }`}
               >
                 <input

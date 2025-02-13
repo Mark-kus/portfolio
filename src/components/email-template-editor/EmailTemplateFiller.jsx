@@ -80,7 +80,7 @@ const EmailTemplateFiller = ({
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
                 selectedLanguage === "en" &&
-                "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
               }`}
             >
               <input
@@ -96,7 +96,7 @@ const EmailTemplateFiller = ({
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
                 selectedLanguage === "es" &&
-                "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
               }`}
             >
               <input
@@ -112,7 +112,7 @@ const EmailTemplateFiller = ({
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
                 selectedLanguage === "pt" &&
-                "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
               }`}
             >
               <input
@@ -132,7 +132,7 @@ const EmailTemplateFiller = ({
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
                 selectedSex === "M" &&
-                "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
               }`}
             >
               <input
@@ -148,7 +148,7 @@ const EmailTemplateFiller = ({
             <label
               className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
                 selectedSex === "W" &&
-                "border-black !bg-orange-700 text-slate-200 dark:!bg-slate-700"
+                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
               }`}
             >
               <input
@@ -189,7 +189,7 @@ const EmailTemplateFiller = ({
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-xl">{dictionary.preview}</h2>
           <button
-            className="bg-black bg-opacity-40 p-2 w-10"
+            className="bg-black bg-white/40 p-2 w-10"
             onClick={copyEmail}
           >
             {copied ? "✔" : "📝"}

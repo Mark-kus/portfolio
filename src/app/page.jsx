@@ -12,7 +12,7 @@ export default async function Home() {
 
   return (
     <div id="landing">
-      <Content dictionary={dictionary.portfolio} />
+      <Content lang={lang} dictionary={dictionary.portfolio} />
     </div>
   );
 }

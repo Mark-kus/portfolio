@@ -10,7 +10,5 @@ export const GITHUB = {
   href: "https://github.com/Mark-kus",
   username: "Mark-kus",
 };
-export const INSTAGRAM = {
-  href: "https://www.instagram.com/markkus.ok/",
-  username: "markkus.ok",
-};
+
+// TODO: Copy email

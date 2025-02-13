@@ -24,7 +24,10 @@
       "title": "Favorite Technologies"
     },
     "career": {
-      "title": "Career",
+      "title": "Career"
+    },
+    "projects": {
+      "title": "Projects",
       "card": {
         "website": "Visit Website",
         "repository": "Go To Repository"

@@ -4,7 +4,7 @@ import sendEmail from "@/components/portfolio/contact/sendEmail";
 import validateForm from "@/components/portfolio/contact/validateForm";
 import { useState } from "react";
 
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Form({ dictionary }) {
@@ -46,19 +46,26 @@ export default function Form({ dictionary }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.target.reset();
+    if (!sending) {
+      e.target.reset();
 
-    const newErrors = validateForm(inputs, dictionary);
-    const isValid = formIsValid(inputs, newErrors);
+      const newErrors = validateForm(inputs, dictionary);
+      const isValid = formIsValid(inputs, newErrors);
 
-    if (isValid) {
-      setSending(true);
-      sendEmail(inputs, setInputs, setSending, setSubmitted, dictionary);
-    } else {
-      setErrors(newErrors);
+      if (isValid) {
+        setSending(true);
+        try {
+          sendEmail(inputs, dictionary);
+        } catch (error) {
+          setSending(false);
+          toast.error("Failed to send email. Please try again later.");
+        }
+      } else {
+        setErrors(newErrors);
+      }
+
+      if (!submitted) setSubmitted(true);
     }
-
-    if (!submitted) setSubmitted(true);
   };
 
   const isFormValid = formIsValid(inputs, errors);
@@ -77,28 +84,24 @@ export default function Form({ dictionary }) {
   const classNames = {
     form: "flex flex-col w-full p-8 md:p-0",
     header: "text-2xl font-bold",
-    name: `py-2 px-4 my-4 rounded-lg shadow-xl !bg-opacity-20 outline-none focus:!bg-opacity-80 dark:focus:!bg-opacity-30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
-      checkNameError
-        ? "bg-red-500 bg-opacity-50 dark:!bg-opacity-20"
-        : "bg-white"
+    name: `py-2 px-4 my-4 rounded-lg shadow-xl !bg-white/20 outline-hidden focus:!bg-white/80 dark:focus:!bg-white/30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
+      checkNameError ? "bg-red-500 bg-white/50 dark:bg-white/20!" : "bg-white"
     }`,
-    email: `py-2 px-4 my-4 rounded-lg shadow-xl !bg-opacity-20 outline-none focus:!bg-opacity-80 dark:focus:!bg-opacity-30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
-      checkEmailError
-        ? "bg-red-500 bg-opacity-50 dark:!bg-opacity-20"
-        : "bg-white"
+    email: `py-2 px-4 my-4 rounded-lg shadow-xl !bg-white/20 outline-hidden focus:!bg-white/80 dark:focus:!bg-white/30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
+      checkEmailError ? "bg-red-500 bg-white/50 dark:bg-white/20!" : "bg-white"
     }`,
-    message: `resize-none h-40 py-2 px-4 my-4 rounded-lg shadow-xl !bg-opacity-20 outline-none focus:!bg-opacity-80 dark:focus:!bg-opacity-30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
+    message: `resize-none h-40 py-2 px-4 my-4 rounded-lg shadow-xl !bg-white/20 outline-hidden focus:!bg-white/80 dark:focus:!bg-white/30 transition-colors disabled:bg-blue-500 disabled:cursor-wait ${
       checkMessageError
-        ? "bg-red-500 bg-opacity-50 dark:!bg-opacity-20"
+        ? "bg-red-500 bg-white/50 dark:bg-white/20!"
         : "bg-white"
     }`,
     errorText: "text-red-500",
-    submitButton: `w-fit py-1 px-4 my-4 rounded-lg shadow-xl transition-all hover:drop-shadow-xl active:scale-95 ${
+    submitButton: `w-fit py-1 px-4 my-4 rounded-lg shadow-xl transition-all hover:drop-shadow-xl active:scale-95 cursor-pointer ${
       checkFormError
-        ? "bg-red-500 bg-opacity-30 dark:bg-opacity-20 cursor-not-allowed"
+        ? "bg-red-500 bg-white/30 dark:bg-white/20 cursor-not-allowed! active:scale-100"
         : sending
-        ? "bg-blue-500 bg-opacity-30 dark:bg-opacity-20 cursor-wait"
-        : "gradient bg-gradient-gold dark:bg-gradient-marine"
+          ? "bg-blue-500 bg-white/30 dark:bg-white/20 cursor-wait active:scale-100"
+          : "gradient bg-gradient-gold dark:bg-gradient-marine"
     }`,
   };
 

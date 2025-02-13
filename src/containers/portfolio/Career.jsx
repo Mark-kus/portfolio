@@ -1,94 +1,228 @@
-"use client";
+import People from "@/components/svgs/brands/People";
+import SoyHenry from "@/components/svgs/brands/SoyHenry";
+import Epam from "@/components/svgs/brands/Epam";
+import Udemy from "@/components/svgs/brands/Udemy";
+import UTN from "@/components/svgs/brands/UTN";
 
-import Project from "@/components/portfolio/Project";
-import Plus from "@/components/svgs/generic/Plus";
-import { useDarkMode } from "@/context/DarkModeContext";
-import projects from "@/seeds/projects.js";
-import { useState } from "react";
-
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-
-import ProjectsAlert from "@/components/portfolio/ProjectsAlert";
-
-export default function Projects({ lang, dictionary }) {
-  const [elements, setElements] = useState(projects.slice(0, 3));
-  const { isDarkMode } = useDarkMode();
-
-  const loadMore = () => {
-    setElements((prevElements) => [
-      ...prevElements,
-      ...projects.slice(prevElements.length, prevElements.length + 3),
-    ]);
-  };
-
-  const getTimelineElements = () => {
-    return elements.map(({ props, data }, index) => (
-      <VerticalTimelineElement
-        key={index}
-        {...props}
-        textClassName={
-          data.image ? props?.textClassName : `md:mb-12 ${props?.textClassName}`
-        }
-        className="text-black dark:text-white"
-        contentStyle={{
-          backgroundColor: isDarkMode ? "#000" : "#FFF",
-          color: isDarkMode ? "#FFF" : "#000",
-        }}
-        contentArrowStyle={{
-          borderRight: isDarkMode ? "7px solid #000" : "7px solid #FFF",
-        }}
-        dateClassName={data.date[lang] ? props?.dateClassName : "hidden"}
-        date={
-          <div>
-            <span className="dark:md:text-white md:text-black">
-              {data.date[lang]}
-            </span>
-
-            {data.content[lang] && (
-              <p className="dark:md:text-white md:text-black">
-                {data.content[lang]}
-              </p>
-            )}
-          </div>
-        }
-      >
-        <Project lang={lang} project={data} dictionary={dictionary.card} />
-      </VerticalTimelineElement>
-    ));
-  };
+export default function Career({ lang, dictionary }) {
+  const leftStyle = "timeline-start mb-10 md:text-end";
+  const rightStyle = "timeline-end md:mb-10";
 
   return (
     <section id="career" className="flex flex-col items-center">
-      <header className="text-3xl md:text-5xl font-extrabold mb-8 pb-2 bg-clip-text text-transparent bg-gradient-gold dark:bg-gradient-marine">
+      <header className="bg-gradient-gold dark:bg-gradient-marine mb-8 bg-clip-text pb-2 text-3xl font-extrabold text-transparent md:text-5xl">
         {dictionary.title}
       </header>
 
-      {/* Bolita de advertencia e inicio de timeline */}
-      <div className="w-[95%] min-[1170px]:w-auto mr-2 min-[1170px]:mr-0">
-        <ProjectsAlert dictionary={dictionary} />
-      </div>
-
       <article className="w-full md:max-w-6xl">
-        <VerticalTimeline>
-          {getTimelineElements()}
-          {elements.length < projects.length && (
-            <VerticalTimelineElement
-              iconClassName="vertical-timeline-element-icon--button cursor-pointer bg-slate-100 hover:bg-slate-300 transition-colors dark:bg-slate-700 dark:hover:bg-slate-800 active:bg-slate-400 dark:active:bg-slate-900"
-              iconOnClick={loadMore}
-              icon={<Plus />}
-            />
-          )}
-        </VerticalTimeline>
+        <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+          <li>
+            <div className="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className={rightStyle}>
+              <time className="font-mono italic">{career.utn.date[lang]}</time>
+              <div className="text-lg font-black">{career.utn.title[lang]}</div>
+              {career.utn.content[lang]}
+            </div>
+            <hr className="dark:bg-white" />
+          </li>
+          <li>
+            <hr className="dark:bg-white" />
+            <div className="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className={leftStyle}>
+              <time className="font-mono italic">{career.epam.date[lang]}</time>
+              <div className="text-lg font-black">
+                {career.epam.title[lang]}
+              </div>
+              {career.epam.content[lang]}
+            </div>
+            <hr className="dark:bg-white" />
+          </li>
+          <li>
+            <hr className="dark:bg-white" />
+            <div className="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className={rightStyle}>
+              <time className="font-mono italic">
+                {career.people.date[lang]}
+              </time>
+              <div className="text-lg font-black">
+                {career.people.title[lang]}
+              </div>
+              {career.people.content[lang]}
+            </div>
+            <hr className="dark:bg-white" />
+          </li>
+          <li>
+            <hr className="dark:bg-white" />
+            <div className="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className={leftStyle}>
+              <time className="font-mono italic">
+                {career.soyHenry.date[lang]}
+              </time>
+              <div className="text-lg font-black">
+                {career.soyHenry.title[lang]}
+              </div>
+              {career.soyHenry.content[lang]}
+            </div>
+            <hr className="dark:bg-white" />
+          </li>
+          <li>
+            <hr className="dark:bg-white" />
+            <div className="timeline-middle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="h-5 w-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className={rightStyle}>
+              <time className="font-mono italic">
+                {career.udemy.date[lang]}
+              </time>
+              <div className="text-lg font-black">
+                {career.udemy.title[lang]}
+              </div>
+              {career.udemy.content[lang]}
+            </div>
+          </li>
+        </ul>
       </article>
-
-      {/* Bolita final de timeline */}
-      <div className="w-[95%] min-[1170px]:w-auto mr-2 min-[1170px]:mr-0">
-        <div className="rounded-full w-12 h-12 bg-white"></div>
-      </div>
     </section>
   );
 }
+
+const career = {
+  utn: {
+    icon: <UTN />,
+    date: {
+      en: "2024 - Present",
+      es: "2024 - Presente",
+    },
+    title: {
+      en: "National Technological University",
+      es: "Universidad Tecnológica Nacional",
+    },
+    content: {
+      en: "Intrigued by technology and programming, I decided to start the Systems Engineering career at the National Technological University, to continue learning about it from a more formal and structured perspective.",
+      es: "Intrigado por la tecnología y la programación, decidí comenzar la carrera de Ingeniería en Sistemas de Información en la Universidad Tecnológica Nacional, para seguir aprendiendo sobre ello desde una perspectiva más formal y estructurada.",
+    },
+  },
+  epam: {
+    icon: <Epam />,
+    date: {
+      en: "2023 - Present",
+      es: "2023 - Presente",
+    },
+    title: {
+      en: "Vates Software, an EPAM Company",
+      es: "Vates Software, una empresa de EPAM",
+    },
+    content: {
+      en: "I participated in the full stack development team, as a junior and as a leader, using React.js with Next.js along with Python with FastAPI. We implemented Scrum practices, focusing on the fast delivery of customized and quality products according to the client's needs.",
+      es: "Participé en el equipo de desarrollo full stack, como junior y como lider, utilizando React.js con Next.js junto a Python con FastAPI. Implementamos prácticas de Scrum, enfocándonos en la entrega rápida de productos personalizados y de calidad según las necesidades del cliente.",
+    },
+  },
+  people: {
+    icon: <People />,
+    date: {
+      en: "2023 / July - August",
+      es: "2023 / Julio - Agosto",
+    },
+    title: {
+      en: "PPOL Internship",
+      es: "Pasantía en PPOL",
+    },
+    content: {
+      en: "Managed to develop the implementation of various APIs, such as Github, Google Maps and Spotify, using React, to deliver a styled product to embed in the final application.",
+      es: "Me encargué de desarrollar la implementación de varias APIs, como Github, Google Maps y Spotify, utilizando React, para entregar un producto estilizado que incrustar en la aplicación final.",
+    },
+  },
+  soyHenry: {
+    icon: <SoyHenry />,
+    date: {
+      en: "2023 / February - June",
+      es: "2023 / Febrero - Junio",
+    },
+    title: {
+      en: "SoyHenry Bootcamp",
+      es: "Bootcamp de SoyHenry",
+    },
+    content: {
+      en: "Made an intensive full-stack web development bootcamp at SoyHenry, covering front-end, back-end, and database management. The career included technologies such as JavaScript, React, Node.js, Express, and PostgreSQL.",
+      es: "Realicé un bootcamp intensivo de desarrollo web full-stack en SoyHenry, cubriendo front-end, back-end y gestión de bases de datos. El plan de estudios incluyó tecnologías como JavaScript, React, Node.js, Express y PostgreSQL.",
+    },
+  },
+  udemy: {
+    icon: <Udemy />,
+    date: {
+      en: "2022 - 2023",
+      es: "2022 - 2023",
+    },
+    title: {
+      en: "Udemy Web Development Course",
+      es: "Curso de Desarrollo Web de Udemy",
+    },
+    content: {
+      en: "I started my journey in the world of programming by taking a full-stack web development course on Udemy, with Colt Steele as the teacher (a great guy), where I learned the fundamentals of HTML, CSS, JavaScript, Node.js, Express, and MongoDB. That's how I got the hang of programming.",
+      es: "Acá empezó todo. Me anoté en un curso de desarrollo web full stack en Udemy, con Colt Steele como profesor (un tipazo), donde aprendí los fundamentos de HTML, CSS, JavaScript, Node.js, Express y MongoDB. Así le agarré el gustito a la programación.",
+    },
+  },
+};

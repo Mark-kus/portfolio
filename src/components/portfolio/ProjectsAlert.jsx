@@ -29,7 +29,7 @@ const ProjectsAlert = ({ dictionary }) => {
   return (
     <div className="relative w-full">
       <button
-        className="border-2 border-orange-400 text-orange-400 bg-red-200 bg-opacity-20 dark:border-yellow-300 dark:text-yellow-300 dark:bg-yellow-200 dark:bg-opacity-20 rounded-full w-12 h-12 flex justify-center items-center font-semibold focus:ring-2 transition-all"
+        className="border-2 border-orange-400 text-orange-400 bg-red-200 bg-white/20 dark:border-yellow-300 dark:text-yellow-300 dark:bg-yellow-200 dark:bg-white/20 rounded-full w-12 h-12 flex justify-center items-center font-semibold focus:ring-2 transition-all"
         onFocus={handleFocus}
         onBlur={handleBlur}
       >

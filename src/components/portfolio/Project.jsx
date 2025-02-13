@@ -19,7 +19,7 @@ export default function Project({ lang, project, dictionary }) {
             target="_blank"
             noreferrer={"true"}
             href={project.websiteUrl}
-            className="bg-black dark:bg-white bg-opacity-20 dark:bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-10 dark:hover:bg-opacity-30 dark:active:bg-opacity-10 py-2 px-4 rounded-lg transition-colors text-black dark:text-white"
+            className="bg-black dark:bg-white bg-white/20 dark:bg-white/20 hover:bg-white/30 active:bg-white/10 dark:hover:bg-white/30 dark:active:bg-white/10 py-2 px-4 rounded-lg transition-colors text-black dark:text-white"
           >
             {dictionary.website}
           </a>
@@ -29,7 +29,7 @@ export default function Project({ lang, project, dictionary }) {
             target="_blank"
             noreferrer={"true"}
             href={project.repositoryUrl}
-            className="bg-black dark:bg-white bg-opacity-20 dark:bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-10 dark:hover:bg-opacity-30 dark:active:bg-opacity-10 py-2 px-4 rounded-lg transition-colors text-black dark:text-white"
+            className="bg-black dark:bg-white bg-white/20 dark:bg-white/20 hover:bg-white/30 active:bg-white/10 dark:hover:bg-white/30 dark:active:bg-white/10 py-2 px-4 rounded-lg transition-colors text-black dark:text-white"
           >
             {dictionary.repository}
           </a>

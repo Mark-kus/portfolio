@@ -1,6 +1,6 @@
 const DeleteModal = ({ setShowDeleteModal, deleteTemplate, dictionary }) => {
   return (
-    <div className="fixed inset-0 bg-black text-white bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black text-white bg-white/50 flex justify-center items-center">
       <div className="p-5 rounded-lg bg-gray-700 mx-4">
         <p className="mb-5">{dictionary.prompt}</p>
         <div className="flex justify-between gap-10">

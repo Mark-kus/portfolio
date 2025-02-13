@@ -24,12 +24,15 @@
       "title": "Tecnologías Favoritas"
     },
     "career": {
-      "title": "Trayectoria",
+      "title": "Trayectoria"
+    },
+    "projects": {
+      "title": "Proyectos",
       "card": {
-        "website": "Visitar Sitio Web",
-        "repository": "Ir A Repositorio"
+        "website": "Visitar Página",
+        "repository": "Ir al Repositorio"
       },
-      "alert": "Algunos proyectos se suspenden por inactividad, por lo que pueden tardar alrededor de un minuto en cargarse."
+      "alert": "Algunos proyectos se suspenden después de un período de inactividad, por lo que pueden tardar alrededor de un minuto en cargarse."
     },
     "contact": {
       "callToAction": {

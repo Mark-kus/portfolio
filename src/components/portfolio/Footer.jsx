@@ -1,15 +1,14 @@
 import { GITHUB, LINKEDIN } from "@/seeds/socialLinks";
 import GitHub from "@/components/svgs/media/GitHub";
 import LinkedIn from "@/components/svgs/media/LinkedIn";
-import Instagram from "@/components/svgs/media/Instagram";
 
 const styles = {
   footer:
-    "flex justify-between items-center text-black bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg px-6 z-10 fixed bottom-0 w-full",
+    "flex justify-between items-center text-black bg-white bg-white/50 backdrop-filter backdrop-blur-lg px-6 z-10 fixed bottom-0 w-full",
   paragraph: "flex items-center",
   span: "text-sm",
   iconLink:
-    "p-1 m-1 transition-colors rounded hover:bg-opacity-20 hover:bg-white",
+    "p-1 m-1 transition-colors rounded-sm dark:hover:bg-white/20 hover:bg-black/20",
 };
 
 export default function Footer({ dictionary }) {
@@ -42,14 +41,6 @@ export default function Footer({ dictionary }) {
           aria-label="LinkedIn"
         >
           <LinkedIn />
-        </a>
-        <a
-          href={GITHUB.href}
-          target="_BLANK"
-          className={styles.iconLink}
-          aria-label="Instagram"
-        >
-          <Instagram />
         </a>
       </div>
     </footer>

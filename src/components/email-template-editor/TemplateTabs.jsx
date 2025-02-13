@@ -21,7 +21,7 @@ const TemplateTabs = ({
         <button
           key={index}
           className={`w-full bg-orange-300 dark:bg-green-700 p-2 mb-2 ${
-            currentTemplateIndex === index && "bg-orange-400 dark:!bg-green-900"
+            currentTemplateIndex === index && "bg-orange-400 dark:bg-green-900!"
           }`}
           onClick={() => setCurrentTemplateIndex(index)}
         >

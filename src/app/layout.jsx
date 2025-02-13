@@ -67,7 +67,7 @@ export default async function RootLayout({ children }) {
       >
         <body className={roboto.className}>
           <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-between transition-colors duration-500 min-h-screen">
-            <Navigation dictionary={dictionary.navigation} />
+            <Navigation lang={lang} dictionary={dictionary.navigation} />
 
             {children}
           </main>

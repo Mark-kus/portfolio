@@ -1,6 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin 'daisyui';
+
+/* @plugin "daisyui" {
+  include: toggle;
+} */
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  :root {
+    /* Gradient Backgrounds */
+    --gradient-gold: linear-gradient(to right, #d97706, #f59e0b 80%);
+    --gradient-marine: linear-gradient(to left, #1e3a8a, #3b82f6 80%);
+
+    /* Text Colors */
+    --text-transparent: transparent;
+  }
+}
+
+@layer utilities {
+  /* Background Gradients */
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+  .bg-gradient-marine {
+    background-image: var(--gradient-marine);
+  }
+
+  /* Text Colors */
+  .text-transparent {
+    color: var(--text-transparent);
+  }
+
+  /* Background Clip */
+  .bg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
 
 ::-webkit-scrollbar {
   width: 8px;

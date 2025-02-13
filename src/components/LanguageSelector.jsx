@@ -40,9 +40,10 @@ const LanguageSelector = ({ lang }) => {
   return (
     <div className="relative inline-block" onBlur={handleBlur}>
       <button
-        className="cursor-pointer focus:ring-2 dark:ring-current ring-orange-300 hover:ring-gray-300 transition-colors rounded hover:bg-opacity-20 dark:hover:bg-opacity-10 hover:bg-white py-2 px-2"
+        className="cursor-pointer rounded-sm px-2 py-2 ring-orange-300 transition-colors hover:bg-white/20 hover:ring-gray-300 focus:ring-2 dark:ring-current dark:hover:bg-white/10"
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={handleKeyDown}
+        onBlur={() => setIsOpen(false)}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         aria-label="Select Language"
@@ -51,8 +52,7 @@ const LanguageSelector = ({ lang }) => {
       </button>
       {isOpen && (
         <ul
-          className="absolute top-full left-0 bg-amber-700 dark:bg-slate-800 border border-gray-300 w-full shadow-lg"
-          onMouseLeave={() => setIsOpen(false)}
+          className="absolute top-11 left-0 w-full rounded-sm border border-gray-300 bg-amber-700 ring-2 shadow-lg dark:bg-slate-800"
           role="listbox"
           aria-activedescendant={selectedLanguage}
         >
@@ -62,10 +62,10 @@ const LanguageSelector = ({ lang }) => {
               id={language}
               role="option"
               aria-selected={language === selectedLanguage}
-              className={`p-2 cursor-pointer transition-all bg-opacity-20 dark:active:bg-opacity-50 active:bg-opacity-50 ${
+              className={`cursor-pointer p-2 transition-all ${
                 language === selectedLanguage
-                  ? "dark:bg-blue-500 dark:bg-opacity-20 bg-amber-300"
-                  : "dark:hover:bg-blue-500 hover:bg-orange-400"
+                  ? "bg-black/40 dark:bg-blue-800"
+                  : "hover:bg-black/40 dark:hover:bg-blue-800"
               }`}
               onClick={() =>
                 language !== selectedLanguage && handleSelect(language)
