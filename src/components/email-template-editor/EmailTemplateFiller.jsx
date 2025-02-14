@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ActionButtons from "@/components/email-template-editor/ActionButtons";
+import LanguageOptions from "./LanguageOptions";
+import GenderOptions from "./GenderOptions";
 
 const EmailTemplateFiller = ({
   selectedTemplate,
@@ -47,7 +49,7 @@ const EmailTemplateFiller = ({
 
   const fillTemplateFields =
     selectedTemplate.content[selectedLanguage][selectedSex].match(
-      /\[([^\]]+)\]/g
+      /\[([^\]]+)\]/g,
     );
 
   const previewEmail = () => {
@@ -55,7 +57,7 @@ const EmailTemplateFiller = ({
     if (fillTemplateFields) {
       fillTemplateFields.forEach((match) => {
         const fieldName = match.replace(/\[|\]/g, "");
-        const fieldValue = `<span class="bg-orange-300 dark:bg-green-600">${
+        const fieldValue = `<span class="bg-orange-300 dark:bg-white/30">${
           fieldValues[fieldName] ? fieldValues[fieldName] : match
         }</span>`;
         preview = preview.replace(match, fieldValue);
@@ -66,9 +68,9 @@ const EmailTemplateFiller = ({
   };
 
   return (
-    <div className="md:w-3/4 flex md:flex-row flex-col">
+    <div className="flex flex-col md:w-3/4 md:flex-row">
       <div className="md:w-1/2 md:pr-4">
-        <div className="flex justify-between items-center mb-5">
+        <div className="mb-5 flex items-center justify-between">
           <h1 className="text-2xl">{selectedTemplate.name}</h1>
           <ActionButtons
             setShowAddModal={setShowAddModal}
@@ -76,92 +78,18 @@ const EmailTemplateFiller = ({
           />
         </div>
         <div className="mb-5">
-          <div className="flex gap-4">
-            <label
-              className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
-                selectedLanguage === "en" &&
-                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-              }`}
-            >
-              <input
-                type="radio"
-                name="language"
-                value="en"
-                checked={selectedLanguage === "en"}
-                onChange={handleLanguageChange}
-                className="hidden"
-              />
-              {dictionary.languages.english}
-            </label>
-            <label
-              className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
-                selectedLanguage === "es" &&
-                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-              }`}
-            >
-              <input
-                type="radio"
-                name="language"
-                value="es"
-                checked={selectedLanguage === "es"}
-                onChange={handleLanguageChange}
-                className="hidden"
-              />
-              {dictionary.languages.spanish}
-            </label>
-            <label
-              className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
-                selectedLanguage === "pt" &&
-                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-              }`}
-            >
-              <input
-                type="radio"
-                name="language"
-                value="pt"
-                checked={selectedLanguage === "pt"}
-                onChange={handleLanguageChange}
-                className="hidden"
-              />
-              {dictionary.languages.portuguese}
-            </label>
-          </div>
+          <LanguageOptions
+            selectedLanguage={selectedLanguage}
+            handleLanguageChange={handleLanguageChange}
+            dictionary={dictionary}
+          />
         </div>
         <div className="mb-5">
-          <div className="flex gap-4">
-            <label
-              className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
-                selectedSex === "M" &&
-                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-              }`}
-            >
-              <input
-                type="radio"
-                name="sex"
-                value="M"
-                checked={selectedSex === "M"}
-                onChange={handleSexChange}
-                className="hidden"
-              />
-              {dictionary.genders.male}
-            </label>
-            <label
-              className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-700 dark:bg-slate-900 ${
-                selectedSex === "W" &&
-                "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-              }`}
-            >
-              <input
-                type="radio"
-                name="sex"
-                value="W"
-                checked={selectedSex === "W"}
-                onChange={handleSexChange}
-                className="hidden"
-              />
-              {dictionary.genders.female}
-            </label>
-          </div>
+          <GenderOptions
+            selectedSex={selectedSex}
+            handleSexChange={handleSexChange}
+            dictionary={dictionary}
+          />
         </div>
         <div>
           {fillTemplateFields
@@ -169,34 +97,34 @@ const EmailTemplateFiller = ({
                 const fieldName = match.replace(/\[|\]/g, "");
                 return (
                   <div key={index} className="mb-5">
-                    <label className="block mb-2">
+                    <label className="mb-2 block">
                       {fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
+                      <input
+                        type="text"
+                        id={fieldName}
+                        value={fieldValues[fieldName] || ""}
+                        onChange={handleFieldChange}
+                        className="w-full border border-gray-300 bg-orange-300 p-2 text-black dark:bg-gray-800 dark:text-white"
+                      />
                     </label>
-                    <input
-                      type="text"
-                      id={fieldName}
-                      value={fieldValues[fieldName] || ""}
-                      onChange={handleFieldChange}
-                      className="w-full p-2 border border-gray-300 text-black"
-                    />
                   </div>
                 );
               })
             : dictionary.noFields}
         </div>
       </div>
-      <div className="md:w-1/2 md:pl-4 p-4 mb-10">
-        <div className="flex justify-between items-center mb-5">
+      <div className="mb-10 p-4 md:w-1/2 md:pl-4">
+        <div className="mb-5 flex items-center justify-between">
           <h2 className="text-xl">{dictionary.preview}</h2>
           <button
-            className="bg-black bg-white/40 p-2 w-10"
+            className="w-10 cursor-pointer bg-white/40 p-2"
             onClick={copyEmail}
           >
             {copied ? "✔" : "📝"}
           </button>
         </div>
         <div
-          className="p-4 border border-gray-300 bg-gray-100 dark:bg-gray-800"
+          className="border border-gray-300 bg-gray-100 p-4 dark:bg-gray-800"
           dangerouslySetInnerHTML={previewEmail()}
         />
       </div>

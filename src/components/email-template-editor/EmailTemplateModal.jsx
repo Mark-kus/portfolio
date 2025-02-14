@@ -1,4 +1,6 @@
 import { useState } from "react";
+import LanguageOptions from "./LanguageOptions";
+import GenderOptions from "./GenderOptions";
 
 const EmailTemplateModal = ({
   saveTemplates,
@@ -13,7 +15,7 @@ const EmailTemplateModal = ({
       en: { M: "", W: "" },
       es: { M: "", W: "" },
       pt: { M: "", W: "" },
-    }
+    },
   );
 
   const handleLanguageChange = (event) => {
@@ -45,7 +47,7 @@ const EmailTemplateModal = ({
     if (selectedTemplate) {
       const newTemplates = [...templates];
       const templateIndex = templates.findIndex(
-        (template) => template.name === selectedTemplate.name
+        (template) => template.name === selectedTemplate.name,
       );
       newTemplates[templateIndex] = newTemplate;
       saveTemplates(newTemplates);
@@ -56,135 +58,61 @@ const EmailTemplateModal = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-white/50 bg-black flex justify-center items-center">
-      <div className="p-5 rounded-lg w-full mx-4 md:w-4/6 bg-orange-300 dark:bg-green-900 z-10">
-        <h1 className="text-2xl mb-5">{dictionary.addModal.title}</h1>
+    <div className="fixed inset-0 flex items-center justify-center bg-white/20">
+      <div className="z-10 mx-4 w-full rounded-lg bg-orange-300 p-5 md:w-4/6 dark:bg-gray-900">
+        <h1 className="mb-5 text-2xl">{dictionary.addModal.title}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-5">
-            <label className="block mb-2">
+            <label className="mb-2 block">
               {dictionary.addModal.templateName}
+              <input
+                type="text"
+                name="name"
+                defaultValue={selectedTemplate?.name}
+                className="w-full border border-gray-300 bg-black/10 p-2 text-black dark:bg-white/10 dark:text-white"
+                required
+              />
             </label>
-            <input
-              type="text"
-              name="name"
-              defaultValue={selectedTemplate?.name}
-              className="w-full p-2 border border-gray-300 text-black"
-              required
+          </div>
+          <div className="mb-5">
+            <LanguageOptions
+              selectedLanguage={selectedLanguage}
+              handleLanguageChange={handleLanguageChange}
+              dictionary={dictionary}
             />
           </div>
           <div className="mb-5">
-            <div className="flex gap-4">
-              <label
-                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
-                  selectedLanguage === "en" &&
-                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="language"
-                  value="en"
-                  checked={selectedLanguage === "en"}
-                  onChange={handleLanguageChange}
-                  className="hidden"
-                />
-                {dictionary.languages.english}
-              </label>
-              <label
-                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
-                  selectedLanguage === "es" &&
-                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="language"
-                  value="es"
-                  checked={selectedLanguage === "es"}
-                  onChange={handleLanguageChange}
-                  className="hidden"
-                />
-                {dictionary.languages.spanish}
-              </label>
-              <label
-                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
-                  selectedLanguage === "pt" &&
-                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="language"
-                  value="pt"
-                  checked={selectedLanguage === "pt"}
-                  onChange={handleLanguageChange}
-                  className="hidden"
-                />
-                {dictionary.languages.portuguese}
-              </label>
-            </div>
+            <GenderOptions
+              selectedSex={selectedSex}
+              handleSexChange={handleSexChange}
+              dictionary={dictionary}
+            />
           </div>
           <div className="mb-5">
-            <div className="flex gap-4">
-              <label
-                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
-                  selectedSex === "M" &&
-                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="sex"
-                  value="M"
-                  checked={selectedSex === "M"}
-                  onChange={handleSexChange}
-                  className="hidden"
-                />
-                {dictionary.genders.male}
-              </label>
-              <label
-                className={`border-2 p-1 rounded-md w-full flex justify-center items-center cursor-pointer border-orange-500 bg-orange-500 dark:border-slate-900 dark:bg-slate-900 ${
-                  selectedSex === "W" &&
-                  "border-black bg-orange-700! text-slate-200 dark:bg-slate-700!"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="sex"
-                  value="W"
-                  checked={selectedSex === "W"}
-                  onChange={handleSexChange}
-                  className="hidden"
-                />
-                {dictionary.genders.female}
-              </label>
-            </div>
-          </div>
-          <div className="mb-5">
-            <label className="block mb-2">
+            <label className="mb-2 block">
               {dictionary.addModal.templateContent}
+              <textarea
+                name="content"
+                value={content[selectedLanguage][selectedSex]}
+                onChange={handleContentChange}
+                className="w-full border border-gray-300 bg-black/10 p-2 text-black dark:bg-white/10 dark:text-white"
+                rows="10"
+                required
+                placeholder={dictionary.addModal.templateContentPlaceholder}
+              />
             </label>
-            <textarea
-              name="content"
-              value={content[selectedLanguage][selectedSex]}
-              onChange={handleContentChange}
-              className="w-full p-2 border border-gray-300 text-black"
-              rows="5"
-              required
-              placeholder={dictionary.addModal.templateContentPlaceholder}
-            />
           </div>
           <div className="flex justify-end gap-10">
             <button
               type="button"
-              className="bg-gray-500 text-white p-2 w-3/12"
+              className="w-3/12 cursor-pointer bg-gray-500 p-2 text-white"
               onClick={() => saveTemplates(templates)}
             >
               {dictionary.addModal.cancel}
             </button>
             <button
               type="submit"
-              className="bg-orange-500 dark:bg-green-700 text-white p-2 w-3/12"
+              className="w-3/12 cursor-pointer bg-orange-500 p-2 text-white dark:bg-gray-700"
             >
               {dictionary.addModal.save}
             </button>

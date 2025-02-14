@@ -10,9 +10,11 @@ const TemplateTabs = ({
     setShowAddModal(true);
   };
   return (
-    <div className="md:mr-5 md:w-56 w-full">
+    <div className="w-full md:mr-5 md:w-56">
       <button
-        className="w-full bg-orange-300 dark:bg-green-700 p-2 mb-2"
+        className={`mb-2 w-full cursor-pointer bg-orange-300 p-2 dark:bg-gray-700 ${
+          currentTemplateIndex === null && "bg-orange-400 dark:bg-gray-950!"
+        }`}
         onClick={openAddTemplateModal}
       >
         {dictionary.addTemplate}
@@ -20,8 +22,8 @@ const TemplateTabs = ({
       {templates.map((template, index) => (
         <button
           key={index}
-          className={`w-full bg-orange-300 dark:bg-green-700 p-2 mb-2 ${
-            currentTemplateIndex === index && "bg-orange-400 dark:bg-green-900!"
+          className={`mb-2 w-full cursor-pointer bg-orange-300 p-2 dark:bg-gray-700 ${
+            currentTemplateIndex === index && "bg-orange-400 dark:bg-gray-950!"
           }`}
           onClick={() => setCurrentTemplateIndex(index)}
         >

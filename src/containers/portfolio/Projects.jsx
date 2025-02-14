@@ -8,6 +8,7 @@ import NextJS from "@/components/svgs/techonologies/NextJS";
 import OnConstruction from "@/components/svgs/generic/OnConstruction";
 import Mail from "@/components/svgs/media/Mail";
 import { useState } from "react";
+import ProjectPreview from "@/components/portfolio/ProjectPreview";
 
 export default function Projects({ lang, dictionary }) {
   const [activeFilter, setActiveFilter] = useState(null);
@@ -127,7 +128,12 @@ export default function Projects({ lang, dictionary }) {
                   {projects.emailTemplateEditor.title[lang]}
                 </div>
                 {projects.emailTemplateEditor.content[lang]}
-                <div className="mt-2 flex justify-end gap-1">
+                <ProjectPreview
+                  lang={lang}
+                  project={projects.emailTemplateEditor}
+                  dictionary={dictionary.card}
+                />
+                <div className="mt-2 flex gap-1 md:justify-end">
                   <FilterTags tags={projects.emailTemplateEditor.tags} />
                 </div>
               </div>
@@ -164,6 +170,12 @@ export default function Projects({ lang, dictionary }) {
                   {projects.hueneyRuca.title[lang]}
                 </div>
                 {projects.hueneyRuca.content[lang]}
+
+                <ProjectPreview
+                  lang={lang}
+                  project={projects.hueneyRuca}
+                  dictionary={dictionary.card}
+                />
                 <div className="mt-2 flex gap-1">
                   <FilterTags tags={projects.hueneyRuca.tags} />
                 </div>
@@ -200,7 +212,12 @@ export default function Projects({ lang, dictionary }) {
                   {projects.dogsAPI.title[lang]}
                 </div>
                 {projects.dogsAPI.content[lang]}
-                <div className="mt-2 flex justify-end gap-1">
+                <ProjectPreview
+                  lang={lang}
+                  project={projects.dogsAPI}
+                  dictionary={dictionary.card}
+                />
+                <div className="mt-2 flex gap-1 md:justify-end">
                   <FilterTags tags={projects.dogsAPI.tags} />
                 </div>
               </div>
@@ -237,6 +254,11 @@ export default function Projects({ lang, dictionary }) {
                   {projects.rickAndMortyAPI.title[lang]}
                 </div>
                 {projects.rickAndMortyAPI.content[lang]}
+                <ProjectPreview
+                  lang={lang}
+                  project={projects.rickAndMortyAPI}
+                  dictionary={dictionary.card}
+                />
                 <div className="mt-2 flex gap-1">
                   <FilterTags tags={projects.rickAndMortyAPI.tags} />
                 </div>
@@ -251,7 +273,6 @@ export default function Projects({ lang, dictionary }) {
 
 const projects = {
   onConstruction: {
-    icon: <OnConstruction />,
     date: {
       en: null,
       es: null,
@@ -274,7 +295,6 @@ const projects = {
     repositoryUrl: null,
   },
   emailTemplateEditor: {
-    icon: <Mail />,
     date: {
       en: "2025 / February",
       es: "2025 / Febrero",
@@ -293,11 +313,10 @@ const projects = {
       en: "Email Template Editor",
       es: "Editor de Plantillas de Correo",
     },
-    websiteUrl: "https://mark-kus.vercel.app/en/projects/email-template-editor",
+    websiteUrl: "https://mark-kus.vercel.app/projects/email-template-editor",
     repositoryUrl: null,
   },
   hueneyRuca: {
-    icon: <NextJS />,
     date: {
       en: "2023 / May - June",
       es: "2023 / Mayo - Junio",
@@ -320,7 +339,6 @@ const projects = {
     repositoryUrl: "https://github.com/Mark-kus/hueney-ruca",
   },
   dogsAPI: {
-    icon: <ReactJS />,
     date: {
       en: "2023 / April - May",
       es: "2023 / Abril - Mayo",
@@ -343,7 +361,6 @@ const projects = {
     repositoryUrl: "https://github.com/Mark-kus/dogs-api",
   },
   rickAndMortyAPI: {
-    icon: <ReactJS />,
     date: {
       en: "2023 / March - April",
       es: "2023 / Marzo - Abril",
