@@ -10,7 +10,7 @@ export function middleware(request) {
 
   // Get the language from cookies or fallback to preferred language
   const langCookie = request.cookies.get("lang");
-  const language = allowedLanguages.includes(langCookie.value)
+  const language = allowedLanguages.includes(langCookie?.value)
     ? langCookie.value
     : preferredLanguage;
   const response = NextResponse.next();
@@ -28,10 +28,7 @@ export function middleware(request) {
 
   // Check for theme cookie and set it based on user preference if it doesn't exist
   const themeCookie = request.cookies.get("theme");
-  if (
-    !themeCookie ||
-    (themeCookie.value !== "dark" && themeCookie.value !== "light")
-  ) {
+  if (themeCookie?.value !== "dark" && themeCookie?.value !== "light") {
     const preferenceHeader = request.headers.get("sec-ch-prefers-color-scheme");
     const prefersDarkMode = preferenceHeader
       ? preferenceHeader === "dark"
