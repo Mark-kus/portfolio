@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "About Me",
+    "projects": "Projects",
     "career": "Career",
     "contact": "Contact"
   },
@@ -19,9 +20,6 @@
       "part6": "and",
       "tangerines": "tangerines",
       "part7": "When I play volleyball, I play as a middle blocker or setter."
-    },
-    "technologies": {
-      "title": "Favorite Technologies"
     },
     "career": {
       "title": "Career"

@@ -10,5 +10,3 @@ export const GITHUB = {
   href: "https://github.com/Mark-kus",
   username: "Mark-kus",
 };
-
-// TODO: Copy email

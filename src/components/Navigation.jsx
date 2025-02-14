@@ -13,7 +13,7 @@ export default function Navigation({ lang, dictionary }) {
 
   const classnames = {
     nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
-    logo: "md:ml-20 md:absolute md:left-0",
+    logo: "md:ml-20 ml-6 md:absolute md:left-0",
     menuItems: "flex list-none gap-3 items-center mr-5",
     themeButton:
       "text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-orange-300 dark:bg-black",
@@ -23,21 +23,13 @@ export default function Navigation({ lang, dictionary }) {
       "transition-all duration-500 opacity-0 -translate-x-5 dark:opacity-100 dark:-translate-x-0",
   };
 
-  return (
-    <nav
-      className={classnames.nav}
-      role="navigation"
-      aria-label="Main Navigation"
-    >
-      <span className={classnames.logo}>
-        <PersonalLogo aria-label="Personal Logo" />
-      </span>
-
-      <ul className={classnames.menuItems}>
+  const NavigationLinks = () => {
+    return (
+      <>
         <li>
           <Link
             href={`/`}
-            className="transition-colors rounded-sm hover:bg-white/20 dark:hover:bg-white/10 text-sm md:text-base px-2 py-2 md:px-4"
+            className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#about"
             aria-label={dictionary.home}
           >
@@ -46,8 +38,18 @@ export default function Navigation({ lang, dictionary }) {
         </li>
         <li>
           <Link
+            href={`/#projects`}
+            className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
+            data-section="#projects"
+            aria-label={dictionary.projects}
+          >
+            {dictionary.projects}
+          </Link>
+        </li>
+        <li>
+          <Link
             href={`/#career`}
-            className="transition-colors rounded-sm hover:bg-white/20 dark:hover:bg-white/10 text-sm md:text-base px-2 py-2 md:px-4"
+            className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#career"
             aria-label={dictionary.career}
           >
@@ -57,36 +59,85 @@ export default function Navigation({ lang, dictionary }) {
         <li>
           <Link
             href={`/#contact`}
-            className="transition-colors rounded-sm hover:bg-white/20 dark:hover:bg-white/10 text-sm md:text-base px-2 py-2 md:px-4"
+            className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#contact"
             aria-label={dictionary.contact}
           >
             {dictionary.contact}
           </Link>
         </li>
-      </ul>
-      <div className="hidden md:block h-6 w-0.5 bg-white/20"></div>
-      <div className="hidden sm:block md:mr-20 ml-5">
-        <ul className={classnames.menuItems}>
-          <li className="rounded-3xl">
-            <LanguageSelector lang={lang} />
-          </li>
-          <li>
-            <button
-              name="Toggle dark mode"
-              onClick={toggleDarkMode}
-              className={classnames.themeButton}
-              aria-label="Toggle dark mode"
+      </>
+    );
+  };
+
+  return (
+    <nav
+      className={classnames.nav}
+      role="navigation"
+      aria-label="Main Navigation"
+    >
+      <div className="navbar">
+        <span className={classnames.logo}>
+          <PersonalLogo aria-label="Personal Logo" />
+        </span>
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost ml-2 focus:bg-gray-700 active:bg-gray-600 lg:hidden"
             >
-              <picture className={classnames.sunIcon}>
-                <Sun aria-hidden="true" />
-              </picture>
-              <picture className={classnames.moonIcon}>
-                <Moon aria-hidden="true" />
-              </picture>
-            </button>
-          </li>
-        </ul>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content rounded-box text-base-content z-[1] mt-3 w-32 p-2 shadow dark:bg-gray-700"
+            >
+              <NavigationLinks />
+            </ul>
+          </div>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">
+            <NavigationLinks />
+          </ul>
+        </div>
+        <div className="hidden h-6 w-0.5 bg-white/20 md:block"></div>
+        <div className="ml-5 block md:mr-20">
+          <ul className={classnames.menuItems}>
+            <li className="rounded-3xl">
+              <LanguageSelector lang={lang} />
+            </li>
+            <li>
+              <button
+                name="Toggle dark mode"
+                onClick={toggleDarkMode}
+                className={classnames.themeButton}
+                aria-label="Toggle dark mode"
+              >
+                <picture className={classnames.sunIcon}>
+                  <Sun aria-hidden="true" />
+                </picture>
+                <picture className={classnames.moonIcon}>
+                  <Moon aria-hidden="true" />
+                </picture>
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

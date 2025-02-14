@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import markkusDark from "@/assets/markkus-dark.webp";
-import markkusLight from "@/assets/markkus-light.webp";
+import markkusLight from "@/assets/markkus-light.webp"; // TODO: Get a better image
 import { useDarkMode } from "@/context/DarkModeContext";
 
 const PersonalImage = () => {
@@ -14,17 +14,15 @@ const PersonalImage = () => {
         loading="eager"
         src={markkusDark}
         alt="Image of Marco Tignanelli"
-        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
-          isDarkMode ? "opacity-100 delay-100" : "opacity-0"
-        }`}
+        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500`}
         width={320}
         height={320}
         sizes="(max-width: 640px) 80vw, 320px"
         priority
       />
-      <Image
+      {/* <Image
         loading="eager"
-        src={markkusLight}
+        src={markkusDark}
         alt="Image of Marco Tignanelli"
         className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
           isDarkMode ? "opacity-0" : "opacity-100 delay-100"
@@ -33,7 +31,7 @@ const PersonalImage = () => {
         height={320}
         sizes="(max-width: 640px) 80vw, 320px"
         priority
-      />
+      /> */}
     </div>
   );
 };

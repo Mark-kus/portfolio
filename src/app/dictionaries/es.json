@@ -1,6 +1,7 @@
 {
   "navigation": {
     "home": "Sobre Mí",
+    "projects": "Proyectos",
     "career": "Trayectoria",
     "contact": "Contacto"
   },
@@ -19,9 +20,6 @@
       "part6": "y las",
       "tangerines": "mandarinas",
       "part7": "Cuando juego al voley, juego de central o armador."
-    },
-    "technologies": {
-      "title": "Tecnologías Favoritas"
     },
     "career": {
       "title": "Trayectoria"

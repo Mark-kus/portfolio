@@ -263,7 +263,7 @@ const projects = {
       es: "Alguien tenía muchas plantillas de emails, todas con propósitos distintos. Reemplazaba el contenido de unos corchetes por el texto que correspondía. Este MVP utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
     },
     image: null,
-    tags: ["React", "Tailwind CSS", "Local Storage"],
+    tags: ["React", "Tailwind CSS"],
     alt: {
       en: "Email Template Editor",
       es: "Editor de Plantillas de Correo",
@@ -309,7 +309,7 @@ const projects = {
       es: "Desarrollé un sitio web por mi cuenta para demostrar lo aprendido durante los módulos de front, back y base de datos de SoyHenry, como proyecto integrador, utilizando React para la UI, Express en el back-end y Sequelize para la gestión de la base de datos.",
     },
     image: dogs,
-    tags: ["React", "Express", "Sequelize"],
+    tags: ["React", "Express", "PostgreSQL"],
     alt: {
       en: "Dogs API",
       es: "Dogs API",
