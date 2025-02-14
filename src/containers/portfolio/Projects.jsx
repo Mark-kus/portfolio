@@ -3,10 +3,7 @@
 import hueneyRuca from "@/assets/projects/hueneyRuca.webp";
 import rickAndMorty from "@/assets/projects/rickAndMorty.webp";
 import dogs from "@/assets/projects/dogs.webp";
-import ReactJS from "@/components/svgs/techonologies/ReactJS";
-import NextJS from "@/components/svgs/techonologies/NextJS";
-import OnConstruction from "@/components/svgs/generic/OnConstruction";
-import Mail from "@/components/svgs/media/Mail";
+import emailTemplateEditor from "@/assets/projects/email-template-editor.webp";
 import { useState } from "react";
 import ProjectPreview from "@/components/portfolio/ProjectPreview";
 
@@ -307,7 +304,7 @@ const projects = {
       en: "Someone had many email templates, all with different purposes. They replaced the content of some brackets with the corresponding text. This MVP uses local data persistence so that anyone can save their own templates, load content into them, and copy the result to the clipboard after a preview.",
       es: "Alguien tenía muchas plantillas de emails, todas con propósitos distintos. Reemplazaba el contenido de unos corchetes por el texto que correspondía. Este MVP utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
     },
-    image: null,
+    image: emailTemplateEditor,
     tags: ["React", "Tailwind CSS"],
     alt: {
       en: "Email Template Editor",

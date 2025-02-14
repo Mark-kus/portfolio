@@ -68,7 +68,7 @@ const EmailTemplateFiller = ({
   };
 
   return (
-    <div className="flex flex-col md:w-3/4 md:flex-row">
+    <div className="flex flex-col md:flex-row">
       <div className="md:w-1/2 md:pr-4">
         <div className="mb-5 flex items-center justify-between">
           <h1 className="text-2xl">{selectedTemplate.name}</h1>

@@ -10,10 +10,9 @@ export function middleware(request) {
 
   // Get the language from cookies or fallback to preferred language
   const langCookie = request.cookies.get("lang");
-  const language = allowedLanguages.includes(langCookie)
-    ? langCookie
+  const language = allowedLanguages.includes(langCookie.value)
+    ? langCookie.value
     : preferredLanguage;
-
   const response = NextResponse.next();
 
   // Modify headers only for HTML files
