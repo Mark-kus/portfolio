@@ -35,15 +35,27 @@ export default function Projects({ lang, dictionary }) {
       return projects[project].tags?.includes(activeFilter);
     });
 
+  const FilterTags = ({ tags }) => {
+    return tags.map((tag, index) => (
+      <button
+        onClick={() => handleFilterChange(tag)}
+        key={index}
+        className={`btn border-none font-medium shadow-none dark:bg-white dark:text-black ${activeFilter === tag && "bg-orange-300 text-black dark:bg-gray-700! dark:text-white"}`}
+      >
+        {tag}
+      </button>
+    ));
+  };
+
   return (
     <section id="projects" className="flex flex-col items-center">
       <header className="bg-gradient-gold dark:bg-gradient-marine mb-8 bg-clip-text pb-2 text-3xl font-extrabold text-transparent md:text-5xl">
         {dictionary.title}
       </header>
 
-      <form className="filter not-sm:flex not-sm:gap-2 not-sm:justify-center">
+      <form className="filter not-sm:flex not-sm:justify-center not-sm:gap-2">
         <input
-          className="btn btn-square bg-error border-white"
+          className="btn btn-square border-none bg-gray-50 text-black shadow-none dark:bg-black dark:text-white"
           type="reset"
           value="×"
           onClick={() => setActiveFilter(null)}
@@ -51,11 +63,12 @@ export default function Projects({ lang, dictionary }) {
         {filters.map((filter) => (
           <input
             key={filter}
-            className="btn border-none bg-black font-medium shadow-none dark:bg-white dark:text-black"
+            className={`btn border-none font-medium shadow-none shadow-black dark:bg-white dark:text-black ${activeFilter === filter && "bg-orange-300 text-black dark:bg-gray-700! dark:text-white"}`}
             type="radio"
             name="filter"
             aria-label={filter}
             value={filter}
+            checked={activeFilter === filter}
             onChange={() => handleFilterChange(filter)}
           />
         ))}
@@ -114,6 +127,9 @@ export default function Projects({ lang, dictionary }) {
                   {projects.emailTemplateEditor.title[lang]}
                 </div>
                 {projects.emailTemplateEditor.content[lang]}
+                <div className="mt-2 flex justify-end gap-1">
+                  <FilterTags tags={projects.emailTemplateEditor.tags} />
+                </div>
               </div>
               {(!activeFilter ||
                 !Object.is(
@@ -148,6 +164,9 @@ export default function Projects({ lang, dictionary }) {
                   {projects.hueneyRuca.title[lang]}
                 </div>
                 {projects.hueneyRuca.content[lang]}
+                <div className="mt-2 flex gap-1">
+                  <FilterTags tags={projects.hueneyRuca.tags} />
+                </div>
               </div>
               {(!activeFilter ||
                 !Object.is(
@@ -181,6 +200,9 @@ export default function Projects({ lang, dictionary }) {
                   {projects.dogsAPI.title[lang]}
                 </div>
                 {projects.dogsAPI.content[lang]}
+                <div className="mt-2 flex justify-end gap-1">
+                  <FilterTags tags={projects.dogsAPI.tags} />
+                </div>
               </div>
               {(!activeFilter ||
                 !Object.is(
@@ -215,6 +237,9 @@ export default function Projects({ lang, dictionary }) {
                   {projects.rickAndMortyAPI.title[lang]}
                 </div>
                 {projects.rickAndMortyAPI.content[lang]}
+                <div className="mt-2 flex gap-1">
+                  <FilterTags tags={projects.rickAndMortyAPI.tags} />
+                </div>
               </div>
             </li>
           )}
