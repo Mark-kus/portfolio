@@ -76,7 +76,7 @@ export default function Navigation({ lang, dictionary }) {
       role="navigation"
       aria-label="Main Navigation"
     >
-      <div className="navbar">
+      <div className="navbar justify-between">
         <span className={classnames.logo}>
           <PersonalLogo aria-label="Personal Logo" />
         </span>
@@ -116,7 +116,7 @@ export default function Navigation({ lang, dictionary }) {
           </ul>
         </div>
         <div className="hidden h-6 w-0.5 bg-white/20 md:block"></div>
-        <div className="ml-5 block md:mr-20">
+        <div>
           <ul className={classnames.menuItems}>
             <li className="rounded-3xl">
               <LanguageSelector lang={lang} />

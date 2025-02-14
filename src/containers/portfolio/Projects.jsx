@@ -40,7 +40,7 @@ export default function Projects({ lang, dictionary }) {
       <button
         onClick={() => handleFilterChange(tag)}
         key={index}
-        className={`btn border-none font-medium shadow-none dark:bg-white dark:text-black ${activeFilter === tag && "bg-orange-300 text-black dark:bg-gray-700! dark:text-white"}`}
+        className={`btn border-none font-medium shadow-none hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/70 ${activeFilter === tag && "bg-orange-300 text-black hover:bg-orange-300 dark:bg-gray-700! dark:text-white"}`}
       >
         {tag}
       </button>
@@ -63,7 +63,7 @@ export default function Projects({ lang, dictionary }) {
         {filters.map((filter) => (
           <input
             key={filter}
-            className={`btn border-none font-medium shadow-none shadow-black dark:bg-white dark:text-black ${activeFilter === filter && "bg-orange-300 text-black dark:bg-gray-700! dark:text-white"}`}
+            className={`btn border-none font-medium shadow-none shadow-black hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/70 ${activeFilter === filter && "bg-orange-300 text-black hover:bg-orange-300 dark:bg-gray-700! dark:text-white"}`}
             type="radio"
             name="filter"
             aria-label={filter}
