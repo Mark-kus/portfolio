@@ -37,10 +37,11 @@ const Main = ({ dictionary }) => {
     const newTemplates = templates.filter(
       (_, index) => index !== currentTemplateIndex
     );
+    const lastTemplateIndex = newTemplates.length - 1;
     setTemplates(newTemplates);
-    setCurrentTemplateIndex(null);
+    setCurrentTemplateIndex(lastTemplateIndex);
     setShowDeleteModal(false);
-    saveUserData(null, newTemplates);
+    saveUserData(lastTemplateIndex, newTemplates);
   };
 
   const loadTemplate = (index) => {
@@ -48,8 +49,10 @@ const Main = ({ dictionary }) => {
   };
 
   const saveTemplates = (newTemplates) => {
+    const lastTemplateIndex = newTemplates.length - 1;
     setTemplates(newTemplates);
-    saveUserData(currentTemplateIndex, newTemplates);
+    saveUserData(lastTemplateIndex, newTemplates);
+    setCurrentTemplateIndex(lastTemplateIndex);
     setShowAddModal(false);
   };
 
