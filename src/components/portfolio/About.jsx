@@ -48,11 +48,7 @@ export default function About({ dictionary }) {
           <span className="text-blue-700 dark:text-blue-400">
             {dictionary.blue}
           </span>{" "}
-          {dictionary.part6}{" "}
-          <span className="text-orange-800 dark:text-orange-400">
-            {dictionary.tangerines}
-          </span>
-          . {dictionary.part7}
+          {dictionary.part6}
         </p>
       </article>
     </article>

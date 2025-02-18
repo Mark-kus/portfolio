@@ -79,7 +79,7 @@ export default function Projects({ lang, dictionary }) {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                class="h-5 w-5"
+                className="h-5 w-5"
               >
                 <path
                   fillRule="evenodd"
@@ -108,7 +108,7 @@ export default function Projects({ lang, dictionary }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -150,7 +150,7 @@ export default function Projects({ lang, dictionary }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -192,7 +192,7 @@ export default function Projects({ lang, dictionary }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -234,7 +234,7 @@ export default function Projects({ lang, dictionary }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-5 w-5"
+                  className="h-5 w-5"
                 >
                   <path
                     fillRule="evenodd"
@@ -305,7 +305,7 @@ const projects = {
       es: "Alguien tenía muchas plantillas de emails, todas con propósitos distintos. Reemplazaba el contenido de unos corchetes por el texto que correspondía. Este MVP utiliza persistencia de datos local para que cualquiera pueda guardar sus propias plantillas, cargarles contenido y copiar el resultado al portapapeles tras una vista previa.",
     },
     image: emailTemplateEditor,
-    tags: ["React", "Tailwind CSS"],
+    tags: ["React", "Next.js", "Tailwind CSS"],
     alt: {
       en: "Email Template Editor",
       es: "Editor de Plantillas de Correo",

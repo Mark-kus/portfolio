@@ -15,11 +15,9 @@
       "myOwn": "myself",
       "part4": "while I study engineering and business at",
       "college": "college",
-      "part5": "I'm good at seeking information, problem solving and communication. I like to learn stuff, teach stuff, the color",
+      "part5": "I'm proficient at seeking information, problem solving and communication. I like to learn stuff, teach stuff, the color",
       "blue": "blue",
-      "part6": "and",
-      "tangerines": "tangerines",
-      "part7": "When I play volleyball, I play as a middle blocker or setter."
+      "part6": "and playing middle blocker in volleyball."
     },
     "career": {
       "title": "Career"
@@ -35,7 +33,7 @@
     "contact": {
       "callToAction": {
         "title": "Get in Touch",
-        "subtitle": "I am very approachable and would love to speak to you. Feel free to send me an email, follow me in social media or simply complete the enquiry form.",
+        "subtitle": "I am very approachable and would love to speak to you. Feel free to send me an email, follow me in social media or simply complete this form.",
         "openResume": "Open Resume"
       },
       "form": {

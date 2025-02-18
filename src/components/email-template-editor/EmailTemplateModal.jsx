@@ -59,7 +59,7 @@ const EmailTemplateModal = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white/20">
-      <div className="z-10 mx-4 w-full rounded-lg bg-orange-300 p-5 md:w-4/6 dark:bg-gray-900">
+      <div className="z-10 mx-4 w-full max-w-lg rounded-lg bg-orange-300 p-5 dark:bg-gray-900">
         <h1 className="mb-5 text-2xl">{dictionary.addModal.title}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-5">
