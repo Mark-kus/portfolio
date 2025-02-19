@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LanguageOptions from "./LanguageOptions";
-import GenderOptions from "./GenderOptions";
+import LanguageOptions from "@/components/email-template-editor/LanguageOptions";
+import GenderOptions from "@/components/email-template-editor/GenderOptions";
 
 const EmailTemplateModal = ({
   saveTemplates,
@@ -9,14 +9,28 @@ const EmailTemplateModal = ({
   dictionary,
 }) => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
-  const [selectedSex, setSelectedSex] = useState("M");
-  const [content, setContent] = useState(
-    selectedTemplate?.content || {
-      en: { M: "", W: "" },
-      es: { M: "", W: "" },
-      pt: { M: "", W: "" },
-    },
-  );
+  const [selectedSex, setSelectedSex] = useState("m");
+
+  const [content, setContent] = useState(() => {
+    const defaultContent = {
+      en: { m: "", f: "" },
+      es: { m: "", f: "" },
+      pt: { m: "", f: "" },
+    };
+
+    if (selectedTemplate?.content) {
+      Object.keys(defaultContent).forEach((lang) => {
+        if (selectedTemplate.content[lang]) {
+          defaultContent[lang] = {
+            m: selectedTemplate.content[lang].m || "",
+            f: selectedTemplate.content[lang].f || "",
+          };
+        }
+      });
+    }
+
+    return defaultContent;
+  });
 
   const handleLanguageChange = (event) => {
     setSelectedLanguage(event.target.value);
@@ -44,11 +58,32 @@ const EmailTemplateModal = ({
       content,
     };
 
+    // Remove languages that don't have any data in their masculine or feminine dictionaries
+    Object.keys(newTemplate.content).forEach((language) => {
+      if (
+        !newTemplate.content[language].m &&
+        !newTemplate.content[language].f
+      ) {
+        delete newTemplate.content[language];
+      }
+    });
+
+    // Remove genders of the remaining languages that don't have any data in them
+    Object.keys(newTemplate.content).forEach((language) => {
+      if (!newTemplate.content[language].m) {
+        delete newTemplate.content[language].m;
+      }
+      if (!newTemplate.content[language].f) {
+        delete newTemplate.content[language].f;
+      }
+    });
+
     if (selectedTemplate) {
       const newTemplates = [...templates];
       const templateIndex = templates.findIndex(
         (template) => template.name === selectedTemplate.name,
       );
+
       newTemplates[templateIndex] = newTemplate;
       saveTemplates(newTemplates);
       return;
@@ -57,9 +92,12 @@ const EmailTemplateModal = ({
     }
   };
 
+  const languageInclude = Object.keys(content);
+  const genderInclude = Object.keys(content[selectedLanguage]);
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white/20">
-      <div className="z-10 mx-4 w-full max-w-lg rounded-lg bg-orange-300 p-5 dark:bg-gray-900">
+      <div className="z-10 mx-4 w-full max-w-3xl h-[80%] min-h-[560px] rounded-lg bg-orange-300 p-5 dark:bg-gray-900">
         <h1 className="mb-5 text-2xl">{dictionary.addModal.title}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-5">
@@ -76,6 +114,7 @@ const EmailTemplateModal = ({
           </div>
           <div className="mb-5">
             <LanguageOptions
+              include={languageInclude}
               selectedLanguage={selectedLanguage}
               handleLanguageChange={handleLanguageChange}
               dictionary={dictionary}
@@ -83,6 +122,7 @@ const EmailTemplateModal = ({
           </div>
           <div className="mb-5">
             <GenderOptions
+              include={genderInclude}
               selectedSex={selectedSex}
               handleSexChange={handleSexChange}
               dictionary={dictionary}
@@ -96,7 +136,7 @@ const EmailTemplateModal = ({
                 value={content[selectedLanguage][selectedSex]}
                 onChange={handleContentChange}
                 className="w-full border border-gray-300 bg-black/10 p-2 text-black dark:bg-white/10 dark:text-white"
-                rows="10"
+                rows="7"
                 required
                 placeholder={dictionary.addModal.templateContentPlaceholder}
               />

@@ -12,7 +12,7 @@ const saveUserData = (lastTemplateIndex, templates) => {
     JSON.stringify({
       lastTemplateIndex,
       templates,
-    })
+    }),
   );
 };
 
@@ -35,7 +35,7 @@ const Main = ({ dictionary }) => {
 
   const deleteTemplate = () => {
     const newTemplates = templates.filter(
-      (_, index) => index !== currentTemplateIndex
+      (_, index) => index !== currentTemplateIndex,
     );
     const lastTemplateIndex = newTemplates.length - 1;
     setTemplates(newTemplates);
@@ -68,7 +68,7 @@ const Main = ({ dictionary }) => {
     currentTemplateIndex !== null ? templates[currentTemplateIndex] : null;
 
   return (
-    <div className="flex md:flex-row flex-col p-5 bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
+    <div className="flex min-h-screen flex-col bg-orange-200 p-5 text-gray-900 md:flex-row dark:bg-gray-900 dark:text-white">
       <TemplateTabs
         currentTemplateIndex={currentTemplateIndex}
         setCurrentTemplateIndex={loadTemplate}

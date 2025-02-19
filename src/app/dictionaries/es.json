@@ -75,13 +75,13 @@
     },
     "editor": {
       "languages": {
-        "spanish": "Español",
-        "english": "Inglés",
-        "portuguese": "Portugués"
+        "es": "Español",
+        "en": "Inglés",
+        "pt": "Portugués"
       },
       "genders": {
-        "male": "Masculino",
-        "female": "Femenino"
+        "m": "Masculino",
+        "f": "Femenino"
       },
       "actions": {
         "save": "Guardar",

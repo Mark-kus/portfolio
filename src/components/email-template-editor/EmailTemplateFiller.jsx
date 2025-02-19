@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ActionButtons from "@/components/email-template-editor/ActionButtons";
-import LanguageOptions from "./LanguageOptions";
-import GenderOptions from "./GenderOptions";
+import LanguageOptions from "@/components/email-template-editor/LanguageOptions";
+import GenderOptions from "@/components/email-template-editor/GenderOptions";
 
 const EmailTemplateFiller = ({
   selectedTemplate,
@@ -9,23 +9,30 @@ const EmailTemplateFiller = ({
   setShowDeleteModal,
   dictionary,
 }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
-  const [selectedSex, setSelectedSex] = useState("M");
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    Object.keys(selectedTemplate.content)[0],
+  );
+  const [selectedSex, setSelectedSex] = useState(
+    Object.keys(selectedTemplate.content[selectedLanguage])[0],
+  );
   const [fieldValues, setFieldValues] = useState({});
   const [copied, setCopied] = useState(false);
 
-  const handleLanguageChange = (e) => {
-    setSelectedLanguage(e.target.value);
+  const handleLanguageChange = (event) => {
+    setSelectedLanguage(event.target.value);
+    setSelectedSex(
+      Object.keys(selectedTemplate.content[event.target.value])[0],
+    );
   };
 
-  const handleSexChange = (e) => {
-    setSelectedSex(e.target.value);
+  const handleSexChange = (event) => {
+    setSelectedSex(event.target.value);
   };
 
-  const handleFieldChange = (e) => {
+  const handleFieldChange = (event) => {
     setFieldValues({
       ...fieldValues,
-      [e.target.id]: e.target.value,
+      [event.target.id]: event.target.value,
     });
   };
 
@@ -67,8 +74,11 @@ const EmailTemplateFiller = ({
     return { __html: preview };
   };
 
+  const languageInclude = Object.keys(selectedTemplate.content);
+  const genderInclude = Object.keys(selectedTemplate.content[selectedLanguage]);
+
   return (
-    <div className="flex flex-col md:flex-row w-full">
+    <div className="flex w-full flex-col md:flex-row">
       <div className="md:w-1/2 md:pr-4">
         <div className="mb-5 flex items-center justify-between">
           <h1 className="text-2xl">{selectedTemplate.name}</h1>
@@ -79,6 +89,7 @@ const EmailTemplateFiller = ({
         </div>
         <div className="mb-5">
           <LanguageOptions
+            include={languageInclude}
             selectedLanguage={selectedLanguage}
             handleLanguageChange={handleLanguageChange}
             dictionary={dictionary}
@@ -86,6 +97,7 @@ const EmailTemplateFiller = ({
         </div>
         <div className="mb-5">
           <GenderOptions
+            include={genderInclude}
             selectedSex={selectedSex}
             handleSexChange={handleSexChange}
             dictionary={dictionary}
