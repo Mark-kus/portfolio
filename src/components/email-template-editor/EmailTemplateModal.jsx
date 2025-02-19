@@ -97,7 +97,7 @@ const EmailTemplateModal = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white/20">
-      <div className="z-10 mx-4 w-full max-w-3xl h-[80%] min-h-[560px] rounded-lg bg-orange-300 p-5 dark:bg-gray-900">
+      <div className="z-10 mx-4 w-full max-w-3xl h-[560px] rounded-lg bg-orange-300 p-5 dark:bg-gray-900">
         <h1 className="mb-5 text-2xl">{dictionary.addModal.title}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-5">
@@ -135,7 +135,7 @@ const EmailTemplateModal = ({
                 name="content"
                 value={content[selectedLanguage][selectedSex]}
                 onChange={handleContentChange}
-                className="w-full border border-gray-300 bg-black/10 p-2 text-black dark:bg-white/10 dark:text-white"
+                className="w-full resize-none border border-gray-300 bg-black/10 p-2 text-black dark:bg-white/10 dark:text-white"
                 rows="7"
                 required
                 placeholder={dictionary.addModal.templateContentPlaceholder}
