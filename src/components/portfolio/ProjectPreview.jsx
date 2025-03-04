@@ -5,7 +5,7 @@ export default function ProjectPreview({ lang, project, dictionary }) {
   return (
     <>
       {project.image && (
-        <picture className="overflow-hidden w-full h-5/12 block rounded-lg mt-2">
+        <picture className="overflow-hidden w-full h-5/12 block rounded-lg mt-2 border border-black dark:border-white">
           <Image
             src={project.image}
             alt={project.alt[lang]}

@@ -69,6 +69,7 @@ const CallToAction = ({ lang, dictionary }) => {
             <button
               onClick={() => copyToClipboard(EMAIL.username)}
               className="h-7 w-7 cursor-pointer rounded-md p-0.5 transition-colors hover:bg-white/20"
+              aria-label="Copy email to clipboard"
             >
               <svg
                 viewBox="0 0 24 24"

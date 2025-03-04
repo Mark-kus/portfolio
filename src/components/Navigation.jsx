@@ -12,9 +12,9 @@ export default function Navigation({ lang, dictionary }) {
   const { toggleDarkMode } = useDarkMode();
 
   const classnames = {
-    nav: "flex justify-between md:justify-end items-center p-3 bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
-    logo: "md:ml-20 ml-6 md:absolute md:left-0",
-    menuItems: "flex list-none gap-3 items-center mr-5",
+    nav: "flex justify-between md:justify-end items-center bg-amber-700 dark:bg-slate-800 text-white transition-colors duration-500",
+    logo: "md:ml-10 ml-6 md:absolute md:left-0",
+    menuItems: "flex list-none gap-3 items-center mr-10",
     themeButton:
       "text-white p-2 flex rounded-full transition-all hover:ring-2 hover:ring-gray-300 bg-orange-300 dark:bg-black",
     sunIcon:
@@ -31,7 +31,7 @@ export default function Navigation({ lang, dictionary }) {
             href={`/`}
             className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#about"
-            aria-label={dictionary.home}
+            aria-label={`${dictionary.home} button`}
           >
             {dictionary.home}
           </Link>
@@ -41,7 +41,7 @@ export default function Navigation({ lang, dictionary }) {
             href={`/#projects`}
             className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#projects"
-            aria-label={dictionary.projects}
+            aria-label={`${dictionary.projects} button`}
           >
             {dictionary.projects}
           </Link>
@@ -51,7 +51,7 @@ export default function Navigation({ lang, dictionary }) {
             href={`/#career`}
             className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#career"
-            aria-label={dictionary.career}
+            aria-label={`${dictionary.career} button`}
           >
             {dictionary.career}
           </Link>
@@ -61,7 +61,7 @@ export default function Navigation({ lang, dictionary }) {
             href={`/#contact`}
             className="rounded-sm px-2 py-2 text-sm transition-colors hover:bg-white/20 md:px-4 md:text-base dark:hover:bg-white/10"
             data-section="#contact"
-            aria-label={dictionary.contact}
+            aria-label={`${dictionary.contact} button`}
           >
             {dictionary.contact}
           </Link>
@@ -76,16 +76,17 @@ export default function Navigation({ lang, dictionary }) {
       role="navigation"
       aria-label="Main Navigation"
     >
-      <div className="navbar justify-between">
+      <div className="navbar justify-between md:w-fit">
         <span className={classnames.logo}>
           <PersonalLogo aria-label="Personal Logo" />
         </span>
-        <div className="navbar-start">
-          <div className="dropdown">
+        <div className="navbar-end mr-6">
+          <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost ml-2 focus:bg-gray-700 active:bg-gray-600 lg:hidden"
+              className="btn btn-ghost ml-2 focus:bg-gray-700 active:bg-gray-600 md:hidden"
+              aria-label="Menu"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -110,13 +111,15 @@ export default function Navigation({ lang, dictionary }) {
             </ul>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center mr-4 hidden md:flex md:mr-0">
           <ul className="menu menu-horizontal px-1">
             <NavigationLinks />
           </ul>
         </div>
-        <div className="hidden h-6 w-0.5 bg-white/20 md:block"></div>
-        <div>
+       <hr 
+          className="hidden md:block border-l transition-all border-gray-300 dark:border-gray-600 h-8 mx-4"
+       />
+        <div className="hidden md:block">
           <ul className={classnames.menuItems}>
             <li className="rounded-3xl">
               <LanguageSelector lang={lang} />

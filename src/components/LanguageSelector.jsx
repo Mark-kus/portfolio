@@ -40,7 +40,7 @@ const LanguageSelector = ({ lang }) => {
   return (
     <div className="relative inline-block" onBlur={handleBlur}>
       <button
-        className="cursor-pointer rounded-sm px-2 py-2 ring-orange-300 transition-colors hover:bg-white/20 hover:ring-gray-300 focus:ring-2 dark:ring-current dark:hover:bg-white/10"
+        className="cursor-pointer rounded-sm px-4 py-2 ring-orange-300 transition-colors hover:bg-white/20 hover:ring-gray-300 focus:ring-2 dark:ring-current dark:hover:bg-white/10"
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={handleKeyDown}
         aria-haspopup="listbox"
@@ -61,7 +61,7 @@ const LanguageSelector = ({ lang }) => {
               id={language}
               role="option"
               aria-selected={language === selectedLanguage}
-              className={`z-1 cursor-pointer p-2 transition-all ${
+              className={`z-1 cursor-pointer p-2 transition-all text-center ${
                 language === selectedLanguage
                   ? "bg-black/40 dark:bg-blue-800"
                   : "hover:bg-black/40 dark:hover:bg-blue-800"

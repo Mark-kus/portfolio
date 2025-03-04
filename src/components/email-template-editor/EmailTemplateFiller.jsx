@@ -64,7 +64,7 @@ const EmailTemplateFiller = ({
     if (fillTemplateFields) {
       fillTemplateFields.forEach((match) => {
         const fieldName = match.replace(/\[|\]/g, "");
-        const fieldValue = `<span className="bg-orange-300 dark:bg-white/30">${
+        const fieldValue = `<span>${
           fieldValues[fieldName] ? fieldValues[fieldName] : match
         }</span>`;
         preview = preview.replace(match, fieldValue);
