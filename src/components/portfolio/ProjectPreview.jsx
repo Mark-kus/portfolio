@@ -1,7 +1,9 @@
+import { memo } from "react";
 import Image from "next/image";
 
-export default function ProjectPreview({ lang, project, dictionary }) {
+const ProjectPreview = memo(({ lang, project, dictionary }) => {
   const btnClassName = "w-full text-center dark:bg-white/20 bg-white/80 hover:bg-white/30 active:bg-white/60 dark:active:bg-white/10 py-2 px-4 rounded-lg transition-colors text-black dark:text-white";
+  
   return (
     <>
       {project.image && (
@@ -9,6 +11,11 @@ export default function ProjectPreview({ lang, project, dictionary }) {
           <Image
             src={project.image}
             alt={project.alt[lang]}
+            width={600}
+            height={400}
+            sizes="(max-width: 768px) 100vw, 600px"
+            loading="lazy"
+            quality={80}
             className="w-full h-full object-cover block hover:scale-105 transition-transform duration-500"
           />
         </picture>
@@ -17,7 +24,7 @@ export default function ProjectPreview({ lang, project, dictionary }) {
         {project.websiteUrl && (
           <a
             target="_blank"
-            noreferrer={"true"}
+            rel="noopener noreferrer"
             href={project.websiteUrl}
             className={btnClassName}
           >
@@ -27,7 +34,7 @@ export default function ProjectPreview({ lang, project, dictionary }) {
         {project.repositoryUrl && (
           <a
             target="_blank"
-            noreferrer={"true"}
+            rel="noopener noreferrer"
             href={project.repositoryUrl}
             className={btnClassName}
           >
@@ -37,4 +44,8 @@ export default function ProjectPreview({ lang, project, dictionary }) {
       </div>
     </>
   );
-}
+});
+
+ProjectPreview.displayName = 'ProjectPreview';
+
+export default ProjectPreview;

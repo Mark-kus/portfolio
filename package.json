@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -18,7 +19,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "clean": "rm -rf .next node_modules",
-    "reinstall": "pnpm clean && pnpm install"
+    "reinstall": "pnpm clean && pnpm install",
+    "performance:test": "pnpm build && pnpm start"
   },
   "dependencies": {
     "@emailjs/browser": "^3.12.1",
@@ -35,6 +37,7 @@
     "tailwindcss": "^4.0.6"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^15.4.3",
     "@types/jest": "^29.5.14",
     "cypress": "^14.1.0",
     "daisyui": "^5.0.0",

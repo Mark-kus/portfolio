@@ -1,3 +1,4 @@
+import { memo } from "react";
 import PersonalImage from "./PersonalImage";
 
 const classNames = {
@@ -8,9 +9,10 @@ const classNames = {
   subHeader:
     "text-2xl mb-2 bg-clip-text text-transparent bg-gradient-marine dark:bg-gradient-gold",
   paragraph: "md:text-lg max-w-[900px] xl:max-w-[1200px]",
+  link: "underline transition-colors duration-200"
 };
 
-export default function About({ dictionary }) {
+const About = memo(({ dictionary }) => {
   return (
     <article className={classNames.container}>
       <PersonalImage />
@@ -23,7 +25,8 @@ export default function About({ dictionary }) {
           <a
             href="https://www.udemy.com/"
             target="_blank"
-            className="text-violet-700 dark:text-violet-400 underline"
+            rel="noopener noreferrer"
+            className={`text-violet-700 dark:text-violet-400 ${classNames.link}`}
           >
             Udemy
           </a>
@@ -31,7 +34,8 @@ export default function About({ dictionary }) {
           <a
             href="https://www.soyhenry.com/"
             target="_blank"
-            className="text-orange-800 dark:text-yellow-400 underline"
+            rel="noopener noreferrer"
+            className={`text-orange-800 dark:text-yellow-400 ${classNames.link}`}
           >
             SoyHenry
           </a>
@@ -53,4 +57,8 @@ export default function About({ dictionary }) {
       </article>
     </article>
   );
-}
+});
+
+About.displayName = 'About';
+
+export default About;

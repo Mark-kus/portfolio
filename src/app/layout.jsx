@@ -41,11 +41,24 @@ export const metadata = {
     card: "summary_large_image",
     images: ["/preview.jpg"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 const roboto = Roboto({
   weight: ["500"],
   subsets: ["latin"],
+  display: "swap", // Improve font loading performance
+  preload: true,
 });
 
 export default async function RootLayout({ children }) {
@@ -66,6 +79,19 @@ export default async function RootLayout({ children }) {
         className={isDarkMode ? "dark" : ""}
         suppressHydrationWarning
       >
+        <head>
+          {/* Preload critical resources */}
+          <link rel="preload" href="/preview.jpg" as="image" />
+          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          
+          {/* Optimize viewport for mobile */}
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+          
+          {/* Theme color for mobile browsers */}
+          <meta name="theme-color" content="#d97706" media="(prefers-color-scheme: light)" />
+          <meta name="theme-color" content="#1e3a8a" media="(prefers-color-scheme: dark)" />
+        </head>
         <body className={roboto.className}>
           <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-between transition-colors duration-500 min-h-screen">
             <Navigation lang={validLang} dictionary={dictionary.navigation} />
