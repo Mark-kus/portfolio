@@ -6,6 +6,7 @@ import { cookies } from "next/headers";
 import { DarkModeProvider } from "@/context/DarkModeContext";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/portfolio/Footer";
+import { getDictionary, validateLanguage } from "@/lib/language";
 
 const title = "Mark-kus | Portfolio";
 const description =
@@ -54,20 +55,20 @@ export default async function RootLayout({ children }) {
   const isDarkMode =
     isDarkCookie === undefined || isDarkCookie.value === "dark";
 
-  const dictionary = await import(`@/app/dictionaries/${lang}.json`).then(
-    (m) => m.default
-  );
+  // Ensure we only use supported languages
+  const validLang = validateLanguage(lang);
+  const dictionary = await getDictionary(validLang);
 
   return (
     <DarkModeProvider initialDarkMode={isDarkMode}>
       <html
-        lang={lang}
+        lang={validLang}
         className={isDarkMode ? "dark" : ""}
         suppressHydrationWarning
       >
         <body className={roboto.className}>
           <main className="bg-orange-200 dark:bg-gray-900 text-gray-900 dark:text-white flex flex-col justify-between transition-colors duration-500 min-h-screen">
-            <Navigation lang={lang} dictionary={dictionary.navigation} />
+            <Navigation lang={validLang} dictionary={dictionary.navigation} />
 
             {children}
           </main>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
+import { SUPPORTED_LANGUAGES } from "@/lib/language";
 
-export const allowedLanguages = ["en", "es"];
+export const allowedLanguages = SUPPORTED_LANGUAGES;
 
 export function middleware(request) {
   const acceptLanguage = request.headers.get("accept-language");
@@ -12,7 +13,9 @@ export function middleware(request) {
   const langCookie = request.cookies.get("lang");
   const language = allowedLanguages.includes(langCookie?.value)
     ? langCookie.value
-    : preferredLanguage;
+    : allowedLanguages.includes(preferredLanguage)
+    ? preferredLanguage
+    : "en"; // Default to English if preferred language is not supported
   const response = NextResponse.next();
 
   // Modify headers only for HTML files
