@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @plugin 'daisyui';
 
-/* Enable GPU acceleration for transforms */
 @custom-variant dark (&:is(.dark *));
 
 /*
@@ -19,21 +18,6 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
-  }
-  
-  /* Optimize font rendering */
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-  
-  /* Enable GPU acceleration for commonly animated elements */
-  .transition-colors,
-  .transition-opacity,
-  .transition-transform {
-    transform: translateZ(0);
-    will-change: transform, opacity;
   }
 }
 
@@ -67,20 +51,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-  }
-  
-  /* Performance optimized animations */
-  .animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: .5;
-    }
   }
 }
 

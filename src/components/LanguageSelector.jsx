@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import Cookies from "js-cookie";
 import { allowedLanguages } from "@/middleware";
 
@@ -51,7 +53,7 @@ const LanguageSelector = ({ lang }) => {
       </button>
       {isOpen && (
         <ul
-          className="absolute top-11 left-0 w-full rounded-sm border border-gray-300 bg-amber-700 ring-2 shadow-lg dark:bg-slate-800"
+          className="absolute top-11 left-0 w-full rounded-sm border border-gray-300 bg-amber-700 shadow-lg ring-2 dark:bg-slate-800"
           role="listbox"
           aria-activedescendant={selectedLanguage}
         >
@@ -61,7 +63,7 @@ const LanguageSelector = ({ lang }) => {
               id={language}
               role="option"
               aria-selected={language === selectedLanguage}
-              className={`z-1 cursor-pointer p-2 transition-all text-center ${
+              className={`z-1 cursor-pointer p-2 text-center transition-all ${
                 language === selectedLanguage
                   ? "bg-black/40 dark:bg-blue-800"
                   : "hover:bg-black/40 dark:hover:bg-blue-800"

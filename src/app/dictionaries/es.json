@@ -14,10 +14,7 @@
       "part3": "y ahora aprendo el lado del desarrollo por",
       "myOwn": "mi cuenta",
       "part4": "y sobre la ingenieria y el negocio en la",
-      "college": "facultad",
-      "part5": "Se me da bien la búsqueda de información, la resolución de problemas y la comunicación. Me gusta aprender cosas, enseñar cosas, el color",
-      "blue": "azul",
-      "part6": "y jugar de central en el voley."
+      "college": "facultad"
     },
     "career": {
       "title": "Trayectoria"
@@ -61,41 +58,6 @@
         "submit": "Enviar Mensaje",
         "success": "¡Correo enviado! Espero hablar con vos pronto ;)",
         "error": "¡Ocurrió un error! Sin embargo, podés intentar contactarme a través de mis redes sociales :)"
-      }
-    }
-  },
-  "emailTemplateEditor": {
-    "navigation": {
-      "addTemplate": "Agregar Plantilla"
-    },
-    "deleteModal": {
-      "prompt": "¿Estás seguro de que querés eliminar esta plantilla?",
-      "cancel": "Cancelar",
-      "delete": "Eliminar"
-    },
-    "editor": {
-      "languages": {
-        "es": "Español",
-        "en": "Inglés",
-        "pt": "Portugués"
-      },
-      "genders": {
-        "m": "Masculino",
-        "f": "Femenino"
-      },
-      "actions": {
-        "save": "Guardar",
-        "cancel": "Cancelar"
-      },
-      "noFields": "No hay campos para cargar",
-      "preview": "Vista Previa",
-      "addModal": {
-        "title": "Agregar Plantilla",
-        "templateName": "Nombre de Plantilla",
-        "templateContent": "Plantilla de Email",
-        "templateContentPlaceholder": "Hola [nombre]. Esto producirá un campo de entrada para la variable 'nombre'.",
-        "cancel": "Cancelar",
-        "save": "Guardar"
       }
     }
   },
