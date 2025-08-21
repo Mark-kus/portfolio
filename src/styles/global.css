@@ -71,3 +71,52 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(47, 79, 79);
 }
+
+.embla {
+  overflow: hidden;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.embla__container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+}
+
+/* Custom gradient overlays for project images */
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(217, 119, 6, 0.1) 0%,
+    rgba(245, 158, 11, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark .project-image-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 138, 0.1) 0%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+}
