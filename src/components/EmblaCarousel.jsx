@@ -3,11 +3,16 @@
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
-import ProjectPreview from "./ProjectPreview";
-
 import hueneyRuca from "@/assets/projects/hueneyRuca.webp";
 import toolbox from "@/assets/projects/toolbox.webp";
 import turnero from "@/assets/projects/turnero.webp";
+import {
+  Actions,
+  Content,
+  Header,
+  PreviewImage,
+  ProjectPreview,
+} from "./ProjectPreview";
 
 export function EmblaCarousel({ lang, dictionary }) {
   const [emblaRef] = useEmblaCarousel(
@@ -36,21 +41,18 @@ export function EmblaCarousel({ lang, dictionary }) {
               <div className="group h-full rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_12px_20px_rgba(0,0,0,0.12)] dark:bg-black/20 dark:hover:shadow-[0_12px_24px_rgba(0,0,0,0.4)]">
                 <div className="flex h-full flex-col">
                   {/* Project Header */}
-                  <ProjectPreview.Header project={project} lang={lang} />
+                  <Header project={project} lang={lang} />
 
                   {/* Project Image and Actions */}
                   <div className="mb-4 flex-shrink-0">
                     <ProjectPreview>
-                      <ProjectPreview.Image project={project} lang={lang} />
-                      <ProjectPreview.Actions
-                        project={project}
-                        dictionary={dictionary.card}
-                      />
+                      <PreviewImage project={project} lang={lang} />
+                      <Actions project={project} dictionary={dictionary.card} />
                     </ProjectPreview>
                   </div>
 
                   {/* Project Content */}
-                  <ProjectPreview.Content project={project} lang={lang} />
+                  <Content project={project} lang={lang} />
                 </div>
               </div>
             </div>

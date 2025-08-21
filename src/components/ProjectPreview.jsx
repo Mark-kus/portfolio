@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 // Main composition component
-const ProjectPreview = ({ children, className = "" }) => {
+export const ProjectPreview = ({ children, className = "" }) => {
   return <div className={`space-y-4 ${className}`}>{children}</div>;
 };
 
 // Image component
-ProjectPreview.Image = ({ project, lang, className = "" }) => {
+export const PreviewImage = ({ project, lang, className = "" }) => {
   return (
     <div
       className={`relative aspect-[16/10] overflow-hidden rounded-xl ${className}`}
@@ -42,7 +42,7 @@ ProjectPreview.Image = ({ project, lang, className = "" }) => {
 };
 
 // Actions/Buttons component
-ProjectPreview.Actions = ({ project, dictionary, className = "" }) => {
+export const Actions = ({ project, dictionary, className = "" }) => {
   if (!project.websiteUrl && !project.repositoryUrl) {
     return null;
   }
@@ -50,21 +50,17 @@ ProjectPreview.Actions = ({ project, dictionary, className = "" }) => {
   return (
     <div className={`mt-4 flex gap-2 ${className}`}>
       {project.websiteUrl && (
-        <ProjectPreview.Button href={project.websiteUrl}>
-          {dictionary.website}
-        </ProjectPreview.Button>
+        <Button href={project.websiteUrl}>{dictionary.website}</Button>
       )}
       {project.repositoryUrl && (
-        <ProjectPreview.Button href={project.repositoryUrl}>
-          {dictionary.repository}
-        </ProjectPreview.Button>
+        <Button href={project.repositoryUrl}>{dictionary.repository}</Button>
       )}
     </div>
   );
 };
 
 // Individual button component
-ProjectPreview.Button = ({ href, children, className = "" }) => {
+export const Button = ({ href, children, className = "" }) => {
   return (
     <a
       target="_blank"
@@ -78,7 +74,7 @@ ProjectPreview.Button = ({ href, children, className = "" }) => {
 };
 
 // Header component for project metadata
-ProjectPreview.Header = ({ project, lang, className = "" }) => {
+export const Header = ({ project, lang, className = "" }) => {
   return (
     <div className={`mb-4 ${className}`}>
       <time className="font-mono text-sm italic opacity-70">
@@ -92,7 +88,7 @@ ProjectPreview.Header = ({ project, lang, className = "" }) => {
 };
 
 // Content component for project description
-ProjectPreview.Content = ({ project, lang, className = "" }) => {
+export const Content = ({ project, lang, className = "" }) => {
   return (
     <div className={`flex-grow ${className}`}>
       <p className="text-sm leading-relaxed opacity-80">
