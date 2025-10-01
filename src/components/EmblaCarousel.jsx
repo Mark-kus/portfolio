@@ -95,12 +95,12 @@ const projects = {
       es: "Toolbox",
     },
     content: {
-      en: "Cross-platform mobile application for tool management and tracking. Built for a technical high school with a focus on organization and efficiency.",
-      es: "Aplicación móvil multiplataforma para la gestión de un pañol. Promete organización y eficiencia en el seguimiento de las herramientas prestadas. Creada para una escuela secundaria técnica.",
+      en: "Web application for tool management and tracking. Built for a technical high school with a focus on organization and efficiency.",
+      es: "Aplicación web para la gestión de un pañol. Promete organización y eficiencia en el seguimiento de las herramientas prestadas. Creada para una escuela secundaria técnica.",
     },
     image: toolbox,
     alt: {
-      en: "Toolbox Mobile App Interface",
+      en: "Toolbox Web App Interface",
       es: "Interfaz de la App Toolbox",
     },
     websiteUrl: null,

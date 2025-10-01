@@ -16,30 +16,50 @@ export default function Career({ lang, dictionary }) {
             </div>
             <div className={rightStyle}>
               <time className="font-mono italic">{career.utn.date[lang]}</time>
-              <div className="text-lg font-black">{career.utn.title[lang]}</div>
+              <div className="text-lg italic">{career.utn.title[lang]}</div>
               {career.utn.content[lang]}
             </div>
             <hr className="dark:bg-white" />
           </li>
 
-          {/* EPAM */}
+          {/* EPAM Systems */}
           <li>
             <hr className="dark:bg-white" />
             <div className="timeline-middle">
               <TimelineIcon />
             </div>
             <div className={leftStyle}>
-              <time className="font-mono italic">{career.epam.date[lang]}</time>
-              <div className="text-lg font-black">
-                {career.epam.title[lang]}
+              <time className="font-mono italic">
+                {career.epamSystems.date[lang]}
+              </time>
+              <div className="text-lg italic">
+                {career.epamSystems.title[lang]}
               </div>
-              {career.epam.content[lang]}
+              {career.epamSystems.content[lang]}
+            </div>
+            <hr className="dark:bg-white" />
+          </li>
+
+          {/* Vates Software */}
+          <li>
+            <hr className="dark:bg-white" />
+            <div className="timeline-middle">
+              <TimelineIcon />
+            </div>
+            <div className={rightStyle}>
+              <time className="font-mono italic">
+                {career.vatesSoftware.date[lang]}
+              </time>
+              <div className="text-lg italic">
+                {career.vatesSoftware.title[lang]}
+              </div>
+              {career.vatesSoftware.content[lang]}
             </div>
             <hr className="dark:bg-white" />
           </li>
 
           {/* People */}
-          <li>
+          {/* <li>
             <hr className="dark:bg-white" />
             <div className="timeline-middle">
               <TimelineIcon />
@@ -48,13 +68,11 @@ export default function Career({ lang, dictionary }) {
               <time className="font-mono italic">
                 {career.people.date[lang]}
               </time>
-              <div className="text-lg font-black">
-                {career.people.title[lang]}
-              </div>
+              <div className="text-lg italic">{career.people.title[lang]}</div>
               {career.people.content[lang]}
             </div>
             <hr className="dark:bg-white" />
-          </li>
+          </li> */}
 
           {/* SoyHenry */}
           <li>
@@ -66,16 +84,16 @@ export default function Career({ lang, dictionary }) {
               <time className="font-mono italic">
                 {career.soyHenry.date[lang]}
               </time>
-              <div className="text-lg font-black">
+              <div className="text-lg italic">
                 {career.soyHenry.title[lang]}
               </div>
               {career.soyHenry.content[lang]}
             </div>
-            <hr className="dark:bg-white" />
+            {/* <hr className="dark:bg-white" /> */}
           </li>
 
           {/* Udemy */}
-          <li>
+          {/* <li>
             <hr className="dark:bg-white" />
             <div className="timeline-middle">
               <TimelineIcon />
@@ -84,12 +102,10 @@ export default function Career({ lang, dictionary }) {
               <time className="font-mono italic">
                 {career.udemy.date[lang]}
               </time>
-              <div className="text-lg font-black">
-                {career.udemy.title[lang]}
-              </div>
+              <div className="text-lg italic">{career.udemy.title[lang]}</div>
               {career.udemy.content[lang]}
             </div>
-          </li>
+          </li> */}
         </ul>
       </article>
     </section>
@@ -114,18 +130,32 @@ const career = {
       es: "Intrigado por la tecnología y la programación, decidí comenzar la carrera de Ingeniería en Sistemas de Información en la Universidad Tecnológica Nacional, para seguir aprendiendo sobre ello desde una perspectiva más formal y estructurada.",
     },
   },
-  epam: {
+  epamSystems: {
     date: {
-      en: "2023 - Present",
-      es: "2023 - Presente",
+      en: "March 2024 - September 2025",
+      es: "Marzo 2024 - Septiembre 2025",
     },
     title: {
-      en: "Vates Software, an EPAM Company",
-      es: "Vates Software, una empresa de EPAM",
+      en: "EPAM Systems - Software Engineer",
+      es: "EPAM Systems - Ingeniero de Software",
     },
     content: {
-      en: "I participated in the full stack development team, as a junior and as a leader, using React.js with Next.js along with Python with FastAPI. We implemented Scrum practices, focusing on the fast delivery of customized and quality products according to the client's needs.",
-      es: "Participé en el equipo de desarrollo full stack, como junior y como lider, utilizando React.js con Next.js junto a Python con FastAPI. Implementamos prácticas de Scrum, enfocándonos en la entrega rápida de productos personalizados y de calidad según las necesidades del cliente.",
+      en: "Developed a full-stack application for personalized meal plans with an admin dashboard. Refactored a RESTful API, normalized database structures, and optimized React state management, reducing code size by over 20%. Coordinated team efforts, improved workflows, and mentored a team member in key technologies for better code quality.",
+      es: "Desarrollé una aplicación full-stack para generar planes de comidas personalizados con un panel de administración. Refactoricé una API RESTful, normalicé estructuras de base de datos y optimicé la gestión de estado en React, reduciendo el código en más de 20%. Coordiné esfuerzos del equipo, mejoré flujos de trabajo y brindé mentoría en tecnologías clave.",
+    },
+  },
+  vatesSoftware: {
+    date: {
+      en: "August 2023 - March 2024",
+      es: "Agosto 2023 - Marzo 2024",
+    },
+    title: {
+      en: "Vates Software - Full Stack Developer",
+      es: "Vates Software - Desarrollador Full Stack",
+    },
+    content: {
+      en: "Built two key applications for internal operations: a commission calculation system and a weighted quality index platform. Designed and implemented backend APIs with Python, FastAPI, and PostgreSQL. Collaborated in front-end development using React and Next.js, converting Figma designs into pixel-perfect interfaces while following Scrum best practices.",
+      es: "Construí dos aplicaciones clave para operaciones internas: un sistema de cálculo de comisiones y una plataforma de índice de calidad ponderado. Diseñé e implementé APIs backend con Python, FastAPI y PostgreSQL. Colaboré en el desarrollo frontend utilizando React y Next.js, transformando diseños de Figma en interfaces pixel-perfect siguiendo las mejores prácticas de Scrum.",
     },
   },
   people: {
