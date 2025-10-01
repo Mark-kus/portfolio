@@ -44,21 +44,32 @@ export default function Form({ dictionary }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!sending) {
-      e.target.reset();
-
       const newErrors = validateForm(inputs, dictionary);
       const isValid = formIsValid(inputs, newErrors);
 
       if (isValid) {
         setSending(true);
+        const isDark = localStorage.getItem("theme") === "dark";
+
         try {
-          sendEmail(inputs, dictionary);
+          await sendEmail(inputs);
+          toast.success(dictionary.success, {
+            autoClose: 4000,
+            theme: isDark ? "dark" : "light",
+          });
+          setInputs({ name: "", email: "", message: "" });
+          setSubmitted(false);
+          e.target.reset();
         } catch (error) {
+          toast.error(dictionary.error, {
+            autoClose: 4000,
+            theme: isDark ? "dark" : "light",
+          });
+        } finally {
           setSending(false);
-          toast.error("Failed to send email. Please try again later.");
         }
       } else {
         setErrors(newErrors);
