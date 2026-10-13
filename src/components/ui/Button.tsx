@@ -1,6 +1,6 @@
 "use client";
 
-import { ButtonHTMLAttributes, forwardRef, isValidElement, cloneElement } from "react";
+import { ButtonHTMLAttributes, forwardRef, isValidElement, cloneElement, MouseEvent as ReactMouseEvent } from "react";
 import { cn } from "@/lib/utils";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", loading, asChild = false, children, disabled, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50";
+    const baseStyles = "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
 
     const variants = {
       primary: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm",
@@ -29,10 +29,18 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const buttonClassName = cn(baseStyles, variants[variant], sizes[size], className);
 
     if (asChild && isValidElement(children)) {
-      const child = children as React.ReactElement<any>;
+      const child = children as React.ReactElement<React.AnchorHTMLAttributes<HTMLAnchorElement>>;
       const childProps = child.props;
 
-      const mergedProps = {
+      const handleClick = (e: ReactMouseEvent<HTMLAnchorElement>) => {
+        if (disabled || loading) {
+          e.preventDefault();
+          return;
+        }
+        childProps.onClick?.(e);
+      };
+
+      const mergedProps: React.AnchorHTMLAttributes<HTMLAnchorElement> = {
         ...childProps,
         className: cn(
           buttonClassName,
@@ -42,13 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         style: {
           ...childProps.style,
         },
-        onClick: (e: React.MouseEvent) => {
-          if (disabled || loading) {
-            e.preventDefault();
-            return;
-          }
-          childProps.onClick?.(e);
-        },
+        onClick: handleClick,
         ...(disabled && { "aria-disabled": "true" }),
         ...(loading && { "aria-busy": "true" }),
       };
@@ -56,10 +58,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       return cloneElement(child, mergedProps, child.props.children);
     }
 
-    const Comp = "button";
-
     return (
-      <Comp
+      <button
         ref={ref}
         className={buttonClassName}
         disabled={disabled || loading}
@@ -72,7 +72,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           </svg>
         )}
         {children}
-      </Comp>
+      </button>
     );
   }
 );

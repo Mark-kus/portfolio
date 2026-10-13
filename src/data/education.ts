@@ -46,6 +46,6 @@ export const certifications: Certification[] = [
 
 export const languages = [
   { name: "Español", level: "Nativo" },
-  { name: "Inglés", level: "B2 (CEFR) — lectura técnica fluida, comunicación profesional escrita/oral" },
-  { name: "Portugués (Brasil)", level: "Fluidez conversacional (uso diario)" },
+  { name: "Inglés", level: "B2 (CEFR) — lectura técnica fluida" },
+  { name: "Portugués (Brasil)", level: "Fluidez conversacional" },
 ];

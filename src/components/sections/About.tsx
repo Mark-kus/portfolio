@@ -7,7 +7,7 @@ export function About() {
     <Section id="about" variant="alt" size="lg">
       <SectionHeader
         title="Sobre mí"
-        subtitle="Ingeniero en Sistemas en formación con experiencia construyendo soluciones end-to-end"
+        subtitle="Estudiante de Ingeniería en Sistemas con experiencia construyendo soluciones end-to-end"
       />
       <div className="max-w-4xl mx-auto">
         <div className="prose prose-invert max-w-none space-y-6">
