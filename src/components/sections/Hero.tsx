@@ -37,7 +37,7 @@ export function Hero() {
             <Button variant="secondary" size="lg" asChild>
               <a href="#contact">Contactarme</a>
             </Button>
-            <Button variant="ghost" size="lg" asChild>
+            <Button variant="ghost" size="lg" asChild className="border border-border">
               <a href={personal.links.portfolio} target="_blank" rel="noopener noreferrer">
                 Descargar CV
               </a>

@@ -10,10 +10,10 @@ export function Skills() {
         title="Habilidades"
         subtitle="Tecnologías y prácticas con evidencia en proyectos reales"
       />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 [grid-auto-rows:auto] [align-items:start]">
         {skills.categories.map((category, catIndex) => (
           <article key={category.name} className="animate-slide-up" style={{ animationDelay: `${(catIndex + 1) * 100}ms` }}>
-            <Card variant="outlined" padding="lg">
+            <Card variant="outlined" padding="lg" className="h-full">
               <div className="mb-4">
                 <h3 className="text-lg font-semibold tracking-tight">{category.name}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{category.items.length} tecnologías</p>
