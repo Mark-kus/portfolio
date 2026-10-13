@@ -32,7 +32,7 @@ export const projects: Project[] = [
     problem: "Las escuelas usan cuadernos físicos o plataformas costosas e inseguras para comunicaciones entre docentes, directivos y familias. No hay trazabilidad, las notificaciones no llegan a tiempo y la gestión de permisos es manual.",
     objective: "Crear un sistema de comunicaciones escolares instalable (PWA), seguro, gratuito de operar y replicable a otras escuelas, con notificaciones push, roles granulares y autenticación por invitación.",
     architecture: "Arquitectura TDD con IA (OpenCode): specs → tests → implementación, validación human-in-the-loop. Stack serverless: Cloudflare Pages/Workers (edge), Supabase (PostgreSQL + RLS + Auth + Edge Functions), Resend (email transaccional), Web Push API + VAPID. Service Worker manual para PWA instalable (display: standalone). Autenticación por tokens de invitación vía email. RLS en Supabase para aislamiento por curso/rol. Costo $0/mes en free tiers (solo dominio), soporta 1000+ usuarios, zero-maintenance.",
-    stack: ["TypeScript", "React", "Cloudflare Pages/Workers", "Supabase (PostgreSQL, Auth, RLS, Edge Functions)", "Resend", "Web Push API / VAPID", "PWA / Service Worker"],
+    stack: ["TypeScript", "React", "Cloudflare Pages/Workers", "Supabase", "Resend", "Web Push API / VAPID", "PWA / Service Worker"],
     role: "Desarrollador Full Stack (iniciativa propia, pro-bono)",
     contributions: [
       "Detección de necesidad y definición de requisitos con directivos",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     problem: "Demostrar competencias full stack end-to-end en proyecto final de bootcamp: arquitectura, frontend, backend, deployment, testing, todo en 6 semanas trabajando solo.",
     objective: "Construir e-commerce funcional y desplegado que integre auth, pagos, panel admin y base de datos relacional, aplicando Scrum y prácticas de ingeniería aprendidas.",
     architecture: "Next.js (App Router) + Supabase (PostgreSQL, Auth, RLS) + Stripe. Arquitectura serverless. RLS para seguridad a nivel fila. Componentes reutilizables. Testing interno. Deploy en Vercel.",
-    stack: ["Next.js", "React", "TypeScript", "Supabase (PostgreSQL, Auth, RLS)", "Stripe", "Git", "Vercel"],
+    stack: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Git", "Vercel"],
     role: "Desarrollador Full Stack (solo, proyecto final bootcamp)",
     contributions: [
       "Arquitectura completa: frontend, backend, DB, auth, pagos, deployment",

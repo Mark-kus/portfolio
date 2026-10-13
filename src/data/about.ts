@@ -5,9 +5,9 @@ export const about = {
     "Me interesa la automatización de flujos, la aplicación práctica de IA y el diseño de soluciones simples, mantenibles y alineadas con objetivos de negocio.",
   ],
   highlights: [
-    "Full stack end-to-end: Python/FastAPI + React/Next.js + PostgreSQL/Supabase",
-    "Optimización de procesos: refactoring sin frenar entregas, arquitectura mantenible",
-    "Mentoría y coordinación: Scrum, code review, pair programming, onboarding",
-    "Arquitectura y calidad: TDD, Clean Architecture, RLS, DB normalization, KISS",
+    "Full Stack Python + React",
+    "Clean Architecture & TDD",
+    "Mentoría de equipos",
+    "Automatización con IA",
   ],
 };

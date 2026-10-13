@@ -47,10 +47,10 @@ export function Projects() {
         >
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-2">
-              <Badge variant="primary" size="md">
+              <Badge variant="primary" size="sm" className="px-3 py-1 text-xs">
                 {selectedProject.status}
               </Badge>
-              {selectedProject.featured && <Badge variant="outline" size="sm">Destacado</Badge>}
+              {selectedProject.featured && <Badge variant="outline" size="sm" className="px-3 py-1 text-xs">Destacado</Badge>}
             </div>
 
             <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">
@@ -59,7 +59,7 @@ export function Projects() {
 
             <div className="flex flex-wrap gap-2">
               {selectedProject.stack.map((tech) => (
-                <Badge key={tech} variant="secondary" size="sm">
+                <Badge key={tech} variant="secondary" size="sm" className="px-3 py-1 text-xs">
                   {tech}
                 </Badge>
               ))}

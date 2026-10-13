@@ -62,18 +62,17 @@ function ModalContent({ isOpen, onClose, title, children, size = "lg" }: ModalPr
       >
         <div className="flex items-center justify-between p-4 border-b border-border">
           <h2 id="modal-title" className="text-xl font-semibold">{title}</h2>
-          <Button
-            variant="ghost"
-            size="sm"
+          <button
+            type="button"
             onClick={onClose}
             aria-label="Cerrar modal"
-            className="h-8 w-8 p-0"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
           >
-            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
-          </Button>
+          </button>
         </div>
         <div className="p-6 max-h-[70vh] overflow-y-auto">
           {children}

@@ -152,7 +152,7 @@ export function Contact() {
               <CardTitle>Canales directos</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2" role="list" aria-label="Canales de contacto">
+              <div className="flex flex-col gap-4" role="list" aria-label="Canales de contacto">
                 {contactItems.map((item, index) => (
                   <a
                     key={index}

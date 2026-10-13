@@ -7,7 +7,7 @@ export const skills = {
         "FastAPI",
         "REST APIs",
         "PostgreSQL",
-        "Supabase (Auth, RLS, Edge Functions)",
+        "Supabase",
         "SQL",
       ],
     },
