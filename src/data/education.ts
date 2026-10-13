@@ -15,7 +15,7 @@ export const education: Education[] = [
     details: [
       "Graduación estimada: 2029",
       "Part-time hasta septiembre 2025, full-time desde entonces",
-      "Materias base cursadas: Algoritmos, Estructuras de Datos, Arquitectura, SO, Redes, Bases de Datos, Ingeniería de Software",
+      "Materias base cursadas: Algoritmos, Estructuras de Datos, Matemática Discreta, Arquitectura, SSOO, Análisis de Sistemas",
     ],
   },
   {

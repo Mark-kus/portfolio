@@ -26,7 +26,7 @@ export function Education() {
                     </Badge>
                   </div>
                 </CardHeader>
-                <div className="p-6 pt-0">
+                <div className="px-0 pb-6">
                   <p className="text-sm text-muted-foreground mb-4">{edu.location}</p>
                   <ul className="space-y-2 text-sm text-muted-foreground" role="list">
                     {edu.details.map((detail, detailIndex) => (
@@ -49,6 +49,7 @@ export function Education() {
             <Card variant="outlined" padding="lg">
               <CardHeader>
                 <CardTitle>Certificaciones</CardTitle>
+                <p className="mt-1 text-sm text-muted-foreground">5 certificaciones técnicas</p>
               </CardHeader>
               <div className="p-6 pt-0">
                 <div className="flex flex-wrap gap-2" role="list" aria-label="Certificaciones">
@@ -67,6 +68,7 @@ export function Education() {
             <Card variant="outlined" padding="lg">
               <CardHeader>
                 <CardTitle>Idiomas</CardTitle>
+                <p className="mt-1 text-sm text-muted-foreground">3 idiomas</p>
               </CardHeader>
               <div className="p-6 pt-0">
                 <dl className="space-y-3" role="list">
