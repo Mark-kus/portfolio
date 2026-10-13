@@ -1,0 +1,6 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <text x="600" y="280" font-family="system-ui, sans-serif" font-size="48" font-weight="bold" fill="#22c55e" text-anchor="middle">Marco Tignanelli</text>
+  <text x="600" y="350" font-family="system-ui, sans-serif" font-size="24" fill="#ededed" text-anchor="middle">Analista y desarrollador de soluciones orientadas al negocio</text>
+  <text x="600" y="420" font-family="system-ui, sans-serif" font-size="18" fill="#a1a1aa" text-anchor="middle">Python/FastAPI + React/Next.js • UTN • EPAM Systems</text>
+</svg>
