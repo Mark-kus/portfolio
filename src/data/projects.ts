@@ -101,6 +101,7 @@ export const projects: Project[] = [
     learnings: "Supabase + Next.js acelera full stack drásticamente. RLS reemplaza lógica de authz en backend. Stripe integration es directa con webhooks. Working solo exige priorización ruthless.",
     status: "Completado",
     links: {
+      demo: "https://henry-hueney-ruca.vercel.app",
       repo: "https://github.com/Mark-kus/hueney-ruca",
     },
     featured: true,
