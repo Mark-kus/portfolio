@@ -38,7 +38,7 @@ export function Hero() {
               <a href="#contact">Contactarme</a>
             </Button>
             <Button variant="ghost" size="lg" asChild className="border border-border">
-              <a href="/cv" target="_blank" rel="noopener noreferrer">
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
                 Ver CV
               </a>
             </Button>

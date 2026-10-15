@@ -9,7 +9,7 @@ interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
